@@ -555,6 +555,46 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
                             if 1 == valid_first_put_card(put_card_list, put_len):
                                 cpass = 0
                                 return put_card_list, card_index_list, put_len, cpass
+            #straight                
+            put_card_list   = [0] * 5
+            card_index_list = [0] * 5
+            put_len         = 0
+            for i in range(0, card_len-4):
+                put_card_list[0] = card_list[i]
+                card_index_list[0] = i
+                for i2 in range(i+1, card_len-3):
+                    put_len = 1
+                    if put_card_list[0]/4 + 1 < card_list[i2]/4:
+                        break
+                    elif put_card_list[0]/4 + 1 == card_list[i2]/4:
+                        put_card_list[1] = card_list[i2]
+                        card_index_list[1] = i2
+                        for i3 in range(i2+1, card_len-2):
+                            put_len = 2
+                            if put_card_list[1]/4 + 1 < card_list[i3]/4:
+                                break
+                            elif put_card_list[1]/4 + 1 == card_list[i3]/4:
+                                put_card_list[2] = card_list[i3]
+                                card_index_list[2] = i3                                
+                                for i4 in range(i3+1, card_len-1):
+                                    put_len = 3
+                                    if put_card_list[2]/4 + 1 < card_list[i4]/4:
+                                        break
+                                    elif put_card_list[2]/4 + 1 == card_list[i4]/4:
+                                        put_card_list[3] = card_list[i4]
+                                        card_index_list[3] = i4
+                                        for i5 in range(i4+1, card_len):
+                                            put_len = 4
+                                            if put_card_list[3]/4 + 1 < card_list[i5]/4:
+                                                break
+                                            elif put_card_list[3]/4 + 1 == card_list[i5]/4:
+                                                put_card_list[4] = card_list[i5]
+                                                card_index_list[4] = i5
+                                                put_len = 5
+                                                if  1 == valid_first_put_card(put_card_list, put_len):
+                                                    cpass = 0
+                                                    return put_card_list, card_index_list, put_len, cpass
+            #end straight            
             put_card_list   = [0] * 5
             card_index_list = [0] * 5
             put_len         = 0
@@ -661,7 +701,49 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
                             if 1 == valid_first_put_card(put_card_list, put_len):
                                 cpass = 0
                                 return put_card_list, card_index_list, put_len, cpass
-                            
+            #straight                
+            put_card_list   = [0] * 5
+            card_index_list = [0] * 5
+            put_len         = 0
+            for i in range(0, card_len-4):
+                put_card_list[0] = card_list[i]
+                card_index_list[0] = i
+                for i2 in range(i+1, card_len-3):
+                    put_len = 1
+                    if put_card_list[0]/4 + 1 < card_list[i2]/4:
+                        break
+                    elif put_card_list[0]/4 + 1 == card_list[i2]/4:
+                        put_card_list[1] = card_list[i2]
+                        card_index_list[1] = i2
+                        for i3 in range(i2+1, card_len-2):
+                            put_len = 2
+                            if put_card_list[1]/4 + 1 < card_list[i3]/4:
+                                break
+                            elif put_card_list[1]/4 + 1 == card_list[i3]/4:
+                                put_card_list[2] = card_list[i3]
+                                card_index_list[2] = i3                                
+                                for i4 in range(i3+1, card_len-1):
+                                    put_len = 3
+                                    if put_card_list[2]/4 + 1 < card_list[i4]/4:
+                                        break
+                                    elif put_card_list[2]/4 + 1 == card_list[i4]/4:
+                                        put_card_list[3] = card_list[i4]
+                                        card_index_list[3] = i4
+                                        for i5 in range(i4+1, card_len):
+                                            put_len = 4
+                                            if put_card_list[3]/4 + 1 < card_list[i5]/4:
+                                                break
+                                            elif put_card_list[3]/4 + 1 == card_list[i5]/4:
+                                                put_card_list[4] = card_list[i5]
+                                                card_index_list[4] = i5
+                                                put_len = 5
+                                                if  1 == valid_first_put_card(put_card_list, put_len):
+                                                    cpass = 0
+                                                    return put_card_list, card_index_list, put_len, cpass
+            #end straight
+            put_card_list   = [0] * 5
+            card_index_list = [0] * 5
+            put_len         = 0
             small_card = card_list[0]
             small_card_index = 0
             for i in range(0, card_len):
@@ -696,10 +778,8 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
                 small_card_index %= card_len
                 small_card = card_list[small_card_index]
     else:
-        if org_card_len > 1:
-            #cpass = 1
-            return put_card_list, card_index_list, put_len, cpass
-        else: #org_card_len = 1
+        if org_card_len == 5:
+            #cpass == 1
             for i in range(0, card_len-2):
                 if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4:
                     put_card_list[0] = card_list[i]
@@ -721,6 +801,48 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
                             if 1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
                                 cpass = 0
                                 return put_card_list, card_index_list, put_len, cpass
+            #straight                
+            put_card_list   = [0] * 5
+            card_index_list = [0] * 5
+            put_len         = 0
+            for i in range(0, card_len-4):
+                put_card_list[0] = card_list[i]
+                card_index_list[0] = i
+                for i2 in range(i+1, card_len-3):
+                    put_len = 1
+                    if put_card_list[0]/4 + 1 < card_list[i2]/4:
+                        break
+                    elif put_card_list[0]/4 + 1 == card_list[i2]/4:
+                        put_card_list[1] = card_list[i2]
+                        card_index_list[1] = i2
+                        for i3 in range(i2+1, card_len-2):
+                            put_len = 2
+                            if put_card_list[1]/4 + 1 < card_list[i3]/4:
+                                break
+                            elif put_card_list[1]/4 + 1 == card_list[i3]/4:
+                                put_card_list[2] = card_list[i3]
+                                card_index_list[2] = i3                                
+                                for i4 in range(i3+1, card_len-1):
+                                    put_len = 3
+                                    if put_card_list[2]/4 + 1 < card_list[i4]/4:
+                                        break
+                                    elif put_card_list[2]/4 + 1 == card_list[i4]/4:
+                                        put_card_list[3] = card_list[i4]
+                                        card_index_list[3] = i4
+                                        for i5 in range(i4+1, card_len):
+                                            put_len = 4
+                                            if put_card_list[3]/4 + 1 < card_list[i5]/4:
+                                                break
+                                            elif put_card_list[3]/4 + 1 == card_list[i5]/4:
+                                                put_card_list[4] = card_list[i5]
+                                                card_index_list[4] = i5
+                                                put_len = 5
+                                                if  1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
+                                                    cpass = 0
+                                                    return put_card_list, card_index_list, put_len, cpass
+            #end straight
+            return put_card_list, card_index_list, put_len, cpass
+        else: #org_card_len = 1
             put_card_list   = [0] * 5
             card_index_list = [0] * 5
             put_len         = 0
