@@ -1424,12 +1424,11 @@ if __name__ == "__main__":
             display_card_x = org_display_card_x - num_of_desktop_card*P_1c.get_width()/2
             for x in range(0, num_of_desktop_card):
                 desktop_card_rect[x][0] = display_card_x + x*P_1c.get_width()
-        screen.blit(write("Left Button of Mouse"),(screen_width -250,screen_height - 200))
-        screen.blit(write("=> Select Card"), (screen_width -250,screen_height - 175))
-        screen.blit(write("Right Button of Mouse"),(screen_width -250,screen_height - 150))
-        screen.blit(write("=> Put Card"),(screen_width -250,screen_height - 125))
-        #screen.blit(write("SPACE : Pass"),(screen_width -250,screen_height - 100))
-        #screen.blit(write("ESC : Quit Game"),(screen_width -250,screen_height - 50))
+        #screen.blit(write("Left Button of Mouse"),(screen_width -250,screen_height - 200))
+        #screen.blit(write("=> Select Card"), (screen_width -250,screen_height - 175))
+        #screen.blit(write("Right Button of Mouse"),(screen_width -250,screen_height - 150))
+        #screen.blit(write("=> Put Card"),(screen_width -250,screen_height - 125))
+        
         display_num_of_cards(player_card_list, num_of_card)
         display_p2_num_of_cards(p2_card_list, p2_num_of_card)
         display_p3_num_of_cards(p3_card_list, p3_num_of_card)
