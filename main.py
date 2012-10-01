@@ -377,6 +377,8 @@ def five_card(card_list):
                 seq_start += 1
                 seq += 1
             #else:pass
+    if 1 == card_number[12] and 1 == card_number[0] and 1 == card_number[1] and 1 == card_number[2] and 1 == card_number[3]:
+        seq = 5
     for i in range(0,13):
         if 3 == card_number[i]:
             three_num = 1
