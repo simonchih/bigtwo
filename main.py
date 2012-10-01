@@ -449,16 +449,21 @@ def compare_card( org_card_list, org_len, put_card_list, put_len):
         elif 5 == org_len:
             if five_card(put_card_list) == 9000:
                 #print 'Super Card'
-                if five_card(org_card_list)+one_card(org_card_list, 5) < five_card(put_card_list)+one_card(put_card_list, 5):
+                if five_card(org_card_list) < 9000:
+                    return 1
+                elif five_card(org_card_list)+one_card(org_card_list, 5) < five_card(put_card_list)+one_card(put_card_list, 5):
                     return 1
                 else:
                     return -1
             elif five_card(put_card_list) == 8000:
                 #print 'Super Card2'
-                if five_card(org_card_list)+fk_big(org_card_list) < five_card(put_card_list)+fk_big(put_card_list):
-                    return 1
-                else:
+                if 9000 == five_card(org_card_list):
                     return -1
+                elif 8000 == five_card(org_card_list):
+                    if five_card(org_card_list)+fk_big(org_card_list) < five_card(put_card_list)+fk_big(put_card_list):
+                        return 1
+                else:
+                    return 1
             elif five_card(org_card_list) == 6000: #five_card(put_card_list)<7000
                 if 6000 == five_card(put_card_list):
                     if five_card(org_card_list)+full_house_big(org_card_list) < five_card(put_card_list)+full_house_big(put_card_list):
