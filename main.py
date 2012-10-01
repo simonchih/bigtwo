@@ -59,7 +59,7 @@ import pygame
 from pygame.locals import *
 from sys import exit
 
-def handle_put(player_id, player_card_len):
+def handle_put(player_card_len):
     global first_put
     global card_clicked_list
     global desktop_card_list
@@ -70,65 +70,51 @@ def handle_put(player_id, player_card_len):
     put_card_list = [0]*13
     put_len = 0
     
-    if 1 == player_id:
-        for ci in range(0, player_card_len):
-            if 1 == card_clicked_list[ci]:
-                put_card_list[put_len] = player_card_list[ci]
-                put_len += 1
-        
-        if 1 == start3c:
-            s3c = 0
+
+    for ci in range(0, player_card_len):
+        if 1 == card_clicked_list[ci]:
+            put_card_list[put_len] = player_card_list[ci]
+            put_len += 1
+    
+    if 1 == first_put:
+        if 1 == valid_first_put_card(put_card_list, put_len):
+            owner = 1
+            num_of_desktop_card = put_len
             for ci in range(0, put_len):
-                if put_card_list[ci] == 4:
-                    s3c = 1
-            if 0 == s3c:
-                for ci in range(0, player_card_len):
-                    if 1 == card_clicked_list[ci]:
-                        move_clicked_card([0,1],ci)
-                        card_clicked_list[ci] = 0
-                return 0
-        
-        if 1 == first_put:
-            if 1 == valid_first_put_card(put_card_list, put_len):
-                owner = 1
-                if 1 == start3c:
-                    start3c = 0
-                num_of_desktop_card = put_len
-                for ci in range(0, put_len):
-                    desktop_card_list[ci] = put_card_list[ci]
-                for ci in range(0, player_card_len):
-                    if 1 == card_clicked_list[ci]:
-                        #print 'ci=%d' % ci
-                        card_clicked_list[ci] = 0
-                        player_card_list[ci] = 100 #put card set to value 100
-                player_card_list.sort()
-                first_put = 0
-                return put_len
-            else:
-                for ci in range(0, player_card_len):
-                    if 1 == card_clicked_list[ci]:
-                        move_clicked_card([0,1],ci)
-                        card_clicked_list[ci] = 0
-                return 0
+                desktop_card_list[ci] = put_card_list[ci]
+            for ci in range(0, player_card_len):
+                if 1 == card_clicked_list[ci]:
+                    #print 'ci=%d' % ci
+                    card_clicked_list[ci] = 0
+                    player_card_list[ci] = 100 #put card set to value 100
+            player_card_list.sort()
+            first_put = 0
+            return put_len
         else:
-            if 1 == compare_card(desktop_card_list, num_of_desktop_card, put_card_list, put_len):
-                owner = 1
-                num_of_desktop_card = put_len
-                for ci in range(0, put_len):
-                    desktop_card_list[ci] = put_card_list[ci]
-                for ci in range(0, player_card_len):
-                    if 1 == card_clicked_list[ci]:
-                        card_clicked_list[ci] = 0
-                        player_card_list[ci] = 100 #put card set to value 100
-                player_card_list.sort()
-                return put_len
-            else:
-                for ci in range(0, player_card_len):
-                    if 1 == card_clicked_list[ci]:
-                        move_clicked_card([0,1],ci)
-                        card_clicked_list[ci] = 0
-                return 0
-        
+            for ci in range(0, player_card_len):
+                if 1 == card_clicked_list[ci]:
+                    move_clicked_card([0,1],ci)
+                    card_clicked_list[ci] = 0
+            return 0
+    else:
+        if 1 == compare_card(desktop_card_list, num_of_desktop_card, put_card_list, put_len):
+            owner = 1
+            num_of_desktop_card = put_len
+            for ci in range(0, put_len):
+                desktop_card_list[ci] = put_card_list[ci]
+            for ci in range(0, player_card_len):
+                if 1 == card_clicked_list[ci]:
+                    card_clicked_list[ci] = 0
+                    player_card_list[ci] = 100 #put card set to value 100
+            player_card_list.sort()
+            return put_len
+        else:
+            for ci in range(0, player_card_len):
+                if 1 == card_clicked_list[ci]:
+                    move_clicked_card([0,1],ci)
+                    card_clicked_list[ci] = 0
+            return 0
+    
     
 
 def display_desktop_cards(list, num):
@@ -456,18 +442,32 @@ def compare_card( org_card_list, org_len, put_card_list, put_len):
         return -1#put card small than orginal card
 
 def valid_first_put_card(put_card_list, put_len):
+    global start3c
+    s3c = 1 
+    if 1 == start3c:
+        for i in range(0, put_len):
+            if 4 == put_card_list[i]:
+                s3c = 0
+        if 1 == s3c:
+            return -1
     if 1 == put_len:
         if one_card(put_card_list, 1) > 0:
+            if 1 == start3c:
+                start3c = 0
             return 1
         else:
             return -1
     elif 2 == put_len:
         if two_card(put_card_list) > 0:
+            if 1 == start3c:
+                start3c = 0
             return 1
         else:
             return -1
     elif 5 == put_len:
         if five_card(put_card_list) > 0:
+            if 1 == start3c:
+                start3c = 0
             return 1
         else:
             return -1
@@ -476,7 +476,6 @@ def valid_first_put_card(put_card_list, put_len):
 
 #return put_card_list, card_index_list, put_len, cpass
 def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
-    global start3c
     cpass = 1
     put_card_list   = [0] * 5
     card_index_list = [0] * 5
@@ -497,8 +496,6 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
                 put_len            = 1
                 if 1 == valid_first_put_card(put_card_list, put_len):
                     cpass = 0
-                    if 4 == put_card_list[0]:
-                        start3c = 0
                     return put_card_list, card_index_list, put_len, cpass
                 small_card_index += 1
                 small_card_index %= card_len
@@ -616,8 +613,6 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
                 put_len            = 1
                 if 1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
                     cpass = 0
-                    if 4 == put_card_list[0]:
-                        start3c = 0
                     return put_card_list, card_index_list, put_len, cpass
                 small_card_index += 1
                 small_card_index %= card_len
@@ -939,7 +934,7 @@ while True:
                     time.sleep(1)
                     continue
                 clicked = 0
-                p_len = handle_put(1, num_of_card)
+                p_len = handle_put(num_of_card)
                 if  p_len > 0:
                     for i in range(0, 13): 
                         player_card_rect[i][1] = player_card_y
