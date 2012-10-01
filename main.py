@@ -1188,260 +1188,261 @@ def ai():
                     return 0
     else:
         return 0
+
+if __name__ == "__main__":        
+    SCREEN_SIZE = (1280, 720) 
+    pygame.init()
+     
+    screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
+    pygame.display.set_caption("Big Two")
+     
+    background = pygame.image.load(background_image_filename).convert()
+    P_1c = pygame.image.load(iP_1c).convert()
+    P_1d = pygame.image.load(iP_1d).convert()
+    P_1h = pygame.image.load(iP_1h).convert()
+    P_1s = pygame.image.load(iP_1s).convert()
+    P_2c = pygame.image.load(iP_2c).convert()
+    P_2d = pygame.image.load(iP_2d).convert()
+    P_2h = pygame.image.load(iP_2h).convert()
+    P_2s = pygame.image.load(iP_2s).convert()
+    P_3c = pygame.image.load(iP_3c).convert()
+    P_3d = pygame.image.load(iP_3d).convert()
+    P_3h = pygame.image.load(iP_3h).convert()
+    P_3s = pygame.image.load(iP_3s).convert()
+    P_4c = pygame.image.load(iP_4c).convert()
+    P_4d = pygame.image.load(iP_4d).convert()
+    P_4h = pygame.image.load(iP_4h).convert()
+    P_4s = pygame.image.load(iP_4s).convert()
+    P_5c = pygame.image.load(iP_5c).convert()
+    P_5d = pygame.image.load(iP_5d).convert()
+    P_5h = pygame.image.load(iP_5h).convert()
+    P_5s = pygame.image.load(iP_5s).convert()
+    P_6c = pygame.image.load(iP_6c).convert()
+    P_6d = pygame.image.load(iP_6d).convert()
+    P_6h = pygame.image.load(iP_6h).convert()
+    P_6s = pygame.image.load(iP_6s).convert()
+    P_7c = pygame.image.load(iP_7c).convert()
+    P_7d = pygame.image.load(iP_7d).convert()
+    P_7h = pygame.image.load(iP_7h).convert()
+    P_7s = pygame.image.load(iP_7s).convert()
+    P_8c = pygame.image.load(iP_8c).convert()
+    P_8d = pygame.image.load(iP_8d).convert()
+    P_8h = pygame.image.load(iP_8h).convert()
+    P_8s = pygame.image.load(iP_8s).convert()
+    P_9c = pygame.image.load(iP_9c).convert()
+    P_9d = pygame.image.load(iP_9d).convert()
+    P_9h = pygame.image.load(iP_9h).convert()
+    P_9s = pygame.image.load(iP_9s).convert()
+    P_10c = pygame.image.load(iP_10c).convert()
+    P_10d = pygame.image.load(iP_10d).convert()
+    P_10h = pygame.image.load(iP_10h).convert()
+    P_10s = pygame.image.load(iP_10s).convert()
+    P_11c = pygame.image.load(iP_11c).convert()
+    P_11d = pygame.image.load(iP_11d).convert()
+    P_11h = pygame.image.load(iP_11h).convert()
+    P_11s = pygame.image.load(iP_11s).convert() 
+    P_12c = pygame.image.load(iP_12c).convert()
+    P_12d = pygame.image.load(iP_12d).convert()
+    P_12h = pygame.image.load(iP_12h).convert()
+    P_12s = pygame.image.load(iP_12s).convert() 
+    P_13c = pygame.image.load(iP_13c).convert()
+    P_13d = pygame.image.load(iP_13d).convert()
+    P_13h = pygame.image.load(iP_13h).convert()
+    P_13s = pygame.image.load(iP_13s).convert() 
+    Back_Card = pygame.image.load(iBack_Card).convert()
+    Back_Card90 = pygame.transform.rotate(Back_Card , 90)
+    Back_Cardn90 = pygame.transform.rotate(Back_Card , -90)
+
+    num_of_card     = 13
+    p2_num_of_card  = 13
+    p3_num_of_card  = 13
+    p4_num_of_card  = 13
+    start_turn = 1
         
-SCREEN_SIZE = (1280, 720) 
-pygame.init()
- 
-screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
-pygame.display.set_caption("Big Two")
- 
-background = pygame.image.load(background_image_filename).convert()
-P_1c = pygame.image.load(iP_1c).convert()
-P_1d = pygame.image.load(iP_1d).convert()
-P_1h = pygame.image.load(iP_1h).convert()
-P_1s = pygame.image.load(iP_1s).convert()
-P_2c = pygame.image.load(iP_2c).convert()
-P_2d = pygame.image.load(iP_2d).convert()
-P_2h = pygame.image.load(iP_2h).convert()
-P_2s = pygame.image.load(iP_2s).convert()
-P_3c = pygame.image.load(iP_3c).convert()
-P_3d = pygame.image.load(iP_3d).convert()
-P_3h = pygame.image.load(iP_3h).convert()
-P_3s = pygame.image.load(iP_3s).convert()
-P_4c = pygame.image.load(iP_4c).convert()
-P_4d = pygame.image.load(iP_4d).convert()
-P_4h = pygame.image.load(iP_4h).convert()
-P_4s = pygame.image.load(iP_4s).convert()
-P_5c = pygame.image.load(iP_5c).convert()
-P_5d = pygame.image.load(iP_5d).convert()
-P_5h = pygame.image.load(iP_5h).convert()
-P_5s = pygame.image.load(iP_5s).convert()
-P_6c = pygame.image.load(iP_6c).convert()
-P_6d = pygame.image.load(iP_6d).convert()
-P_6h = pygame.image.load(iP_6h).convert()
-P_6s = pygame.image.load(iP_6s).convert()
-P_7c = pygame.image.load(iP_7c).convert()
-P_7d = pygame.image.load(iP_7d).convert()
-P_7h = pygame.image.load(iP_7h).convert()
-P_7s = pygame.image.load(iP_7s).convert()
-P_8c = pygame.image.load(iP_8c).convert()
-P_8d = pygame.image.load(iP_8d).convert()
-P_8h = pygame.image.load(iP_8h).convert()
-P_8s = pygame.image.load(iP_8s).convert()
-P_9c = pygame.image.load(iP_9c).convert()
-P_9d = pygame.image.load(iP_9d).convert()
-P_9h = pygame.image.load(iP_9h).convert()
-P_9s = pygame.image.load(iP_9s).convert()
-P_10c = pygame.image.load(iP_10c).convert()
-P_10d = pygame.image.load(iP_10d).convert()
-P_10h = pygame.image.load(iP_10h).convert()
-P_10s = pygame.image.load(iP_10s).convert()
-P_11c = pygame.image.load(iP_11c).convert()
-P_11d = pygame.image.load(iP_11d).convert()
-P_11h = pygame.image.load(iP_11h).convert()
-P_11s = pygame.image.load(iP_11s).convert() 
-P_12c = pygame.image.load(iP_12c).convert()
-P_12d = pygame.image.load(iP_12d).convert()
-P_12h = pygame.image.load(iP_12h).convert()
-P_12s = pygame.image.load(iP_12s).convert() 
-P_13c = pygame.image.load(iP_13c).convert()
-P_13d = pygame.image.load(iP_13d).convert()
-P_13h = pygame.image.load(iP_13h).convert()
-P_13s = pygame.image.load(iP_13s).convert() 
-Back_Card = pygame.image.load(iBack_Card).convert()
-Back_Card90 = pygame.transform.rotate(Back_Card , 90)
-Back_Cardn90 = pygame.transform.rotate(Back_Card , -90)
+    while True:
+        if 1 == start_turn:
+            card_clicked_list    = [0] * 13
+            p2_card_clicked_list = [0] * 13
+            p3_card_clicked_list = [0] * 13
+            p4_card_clicked_list = [0] * 13
+            player_card_list  = [0] * 13
+            player_card_rect  = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
+            p2_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
+            p3_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
+            p4_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
+            desktop_card_list = [0] * 5
+            desktop_card_rect = [[0,0], [0,0], [0,0], [0,0], [0,0]]
+            p2_card_list     = [0] * 13
+            p3_card_list     = [0] * 13
+            p4_card_list     = [0] * 13
+            all_card_list    = [0] * 52
 
-num_of_card     = 13
-p2_num_of_card  = 13
-p3_num_of_card  = 13
-p4_num_of_card  = 13
-start_turn = 1
-    
-while True:
-    if 1 == start_turn:
-        card_clicked_list    = [0] * 13
-        p2_card_clicked_list = [0] * 13
-        p3_card_clicked_list = [0] * 13
-        p4_card_clicked_list = [0] * 13
-        player_card_list  = [0] * 13
-        player_card_rect  = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
-        p2_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
-        p3_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
-        p4_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
-        desktop_card_list = [0] * 5
-        desktop_card_rect = [[0,0], [0,0], [0,0], [0,0], [0,0]]
-        p2_card_list     = [0] * 13
-        p3_card_list     = [0] * 13
-        p4_card_list     = [0] * 13
-        all_card_list    = [0] * 52
+            org_player_card_x = SCREEN_SIZE[0]/2-4*P_1c.get_width()
+            player_card_x     = SCREEN_SIZE[0]/2-4*P_1c.get_width()
+            player_card_y     = 500
+            org_p2_card_y = 50 + P_1c.get_height()
+            p2_card_x     = SCREEN_SIZE[0]-5*Back_Card90.get_width()/2-10
+            p2_card_y     = 50 + P_1c.get_height()
+            org_p3_card_x = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
+            p3_card_x     = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
+            p3_card_y     = 50
+            org_p4_card_y = 50 + P_1c.get_height() 
+            p4_card_x     = Back_Cardn90.get_width()
+            p4_card_y     = 50 + P_1c.get_height()
+            org_display_card_x = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
+            display_card_x     = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
+            display_card_y     = 280
 
-        org_player_card_x = SCREEN_SIZE[0]/2-4*P_1c.get_width()
-        player_card_x     = SCREEN_SIZE[0]/2-4*P_1c.get_width()
-        player_card_y     = 500
-        org_p2_card_y = 50 + P_1c.get_height()
-        p2_card_x     = SCREEN_SIZE[0]-5*Back_Card90.get_width()/2-10
-        p2_card_y     = 50 + P_1c.get_height()
-        org_p3_card_x = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
-        p3_card_x     = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
-        p3_card_y     = 50
-        org_p4_card_y = 50 + P_1c.get_height() 
-        p4_card_x     = Back_Cardn90.get_width()
-        p4_card_y     = 50 + P_1c.get_height()
-        org_display_card_x = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
-        display_card_x     = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
-        display_card_y     = 280
+            click_move_y =  30
+            put_card_alreay = 0
+            first_put       = 1
+            turn_id = 1
+            clicked = 0
+            start3c = 1
 
-        click_move_y =  30
-        put_card_alreay = 0
-        first_put       = 1
-        turn_id = 1
-        clicked = 0
-        start3c = 1
+            num_of_card     = 13
+            p2_num_of_card  = 13
+            p3_num_of_card  = 13
+            p4_num_of_card  = 13
+            num_of_desktop_card = 0
 
-        num_of_card     = 13
-        p2_num_of_card  = 13
-        p3_num_of_card  = 13
-        p4_num_of_card  = 13
-        num_of_desktop_card = 0
-
-        count_pass = 0
-        p_pass  = 0
-        p2_pass = 0
-        p3_pass = 0
-        p4_pass = 0
-        
-        random.seed()
-        p4_card_list = ini_random_cards(p4_card_list, 4)
-        p3_card_list = ini_random_cards(p3_card_list, 3)
-        p2_card_list = ini_random_cards(p2_card_list, 2)
-        player_card_list = ini_random_cards(player_card_list, 1)
-        player_card_list.sort()
-        p2_card_list.sort()
-        p3_card_list.sort()
-        p4_card_list.sort()
-        
-        start_turn_id = turn_id
-        owner         = start_turn_id
-
-        screen.blit(background, (0,0))
-         
-        screen_width, screen_height = SCREEN_SIZE
-         
-        for i in range(0, 13): 
-            player_card_rect[i][1] = player_card_y
-            player_card_rect[i][0] = player_card_x+i*P_1c.get_width()/2
-            p2_card_rect[i][1]     = p2_card_y+i*Back_Card90.get_height()/4
-            p2_card_rect[i][0]     = p2_card_x
-            p3_card_rect[i][1]     = p3_card_y
-            p3_card_rect[i][0]     = p3_card_x+i*Back_Card.get_width()/2
-            p4_card_rect[i][1]     = p4_card_y+i*Back_Cardn90.get_height()/4
-            p4_card_rect[i][0]     = p4_card_x
-            #print (num_to_cards_rect(player_card_list[i])[0], num_to_cards_rect(player_card_list[i])[1])
-            #print (player_card_rect[i][0], player_card_rect[i][1])
-
-        for i in range(0,5):
-            desktop_card_rect[i][1] = display_card_y
-
-        start_turn = 0
-    
-    #print 'turn_id=%d, first_put=%d, owner=%d' % (turn_id, first_put, owner)
-    #for i in range(0, num_of_desktop_card):
-    #    print "[%d]=%d" % (i, desktop_card_list[i])
-    for event in pygame.event.get():
-        if event.type == QUIT:
-            exit()
-        if event.type == MOUSEBUTTONDOWN:
-            if event.button == 1 and turn_id == 1:
-                handle_click_card(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1])
-                #print 'left button'
-            if event.button == 3 and turn_id == 1:
-                if 1 == owner and 0 == first_put:
-                    turn_id += 1
-                    continue
-                for i in range (0, num_of_card):
-                    if 1 == card_clicked_list[i]:
-                        clicked = 1
-                if 0 == clicked and 0 == first_put:
-                    p_pass = 1
-                    count_pass += 1
-                    turn_id = 2
-                    time.sleep(1)
-                    continue
-                clicked = 0
-                p_len = handle_put(num_of_card)
-                if  p_len > 0:
-                    for i in range(0, 13): 
-                        player_card_rect[i][1] = player_card_y
-                    num_of_card -= p_len
-                    put_card_alreay = 1
-                    turn_id = 2
-                    #time.sleep(1)
-                #print 'right button'                
-    if 3 == count_pass:
-        count_pass = 0
-        p_pass  = 0
-        p2_pass = 0
-        p3_pass = 0
-        p4_pass = 0
-        num_of_desktop_card = 0
-        first_put = 1
-        turn_id = owner
-    
-    if num_of_card != 0 and p2_num_of_card != 0 and p3_num_of_card != 0 and p4_num_of_card != 0:
-        if 1 == ai(): 
-            put_card_alreay = 1  
-    
-    if 1 == turn_id and 1 == p_pass:
-        turn_id = 2
-    
-    if 0 == num_of_card:
-        winner = 1
-        start_turn = 1
-    elif 0 == p2_num_of_card:
-        winner = 2
-        start_turn = 1
-    elif 0 == p3_num_of_card:
-        winner = 3
-        start_turn = 1
-    elif 0 == p4_num_of_card:
-        winner = 4
-        start_turn = 1
-        
-    fill_background()
-    if 1 == put_card_alreay:              
-        put_card_alreay = 0
-        
-        player_card_x = org_player_card_x+(13-num_of_card)*P_1c.get_width()/4 
-        for x in range(0, num_of_card):
-            player_card_rect[x][0] = player_card_x+x*P_1c.get_width()/2
+            count_pass = 0
+            p_pass  = 0
+            p2_pass = 0
+            p3_pass = 0
+            p4_pass = 0
             
-        p3_card_x = org_p3_card_x + (13-p3_num_of_card)*Back_Card.get_width()/4
-        for x in range(0, p3_num_of_card):
-            p3_card_rect[x][0] = p3_card_x + x*Back_Card.get_width()/2
+            random.seed()
+            p4_card_list = ini_random_cards(p4_card_list, 4)
+            p3_card_list = ini_random_cards(p3_card_list, 3)
+            p2_card_list = ini_random_cards(p2_card_list, 2)
+            player_card_list = ini_random_cards(player_card_list, 1)
+            player_card_list.sort()
+            p2_card_list.sort()
+            p3_card_list.sort()
+            p4_card_list.sort()
+            
+            start_turn_id = turn_id
+            owner         = start_turn_id
+
+            screen.blit(background, (0,0))
+             
+            screen_width, screen_height = SCREEN_SIZE
+             
+            for i in range(0, 13): 
+                player_card_rect[i][1] = player_card_y
+                player_card_rect[i][0] = player_card_x+i*P_1c.get_width()/2
+                p2_card_rect[i][1]     = p2_card_y+i*Back_Card90.get_height()/4
+                p2_card_rect[i][0]     = p2_card_x
+                p3_card_rect[i][1]     = p3_card_y
+                p3_card_rect[i][0]     = p3_card_x+i*Back_Card.get_width()/2
+                p4_card_rect[i][1]     = p4_card_y+i*Back_Cardn90.get_height()/4
+                p4_card_rect[i][0]     = p4_card_x
+                #print (num_to_cards_rect(player_card_list[i])[0], num_to_cards_rect(player_card_list[i])[1])
+                #print (player_card_rect[i][0], player_card_rect[i][1])
+
+            for i in range(0,5):
+                desktop_card_rect[i][1] = display_card_y
+
+            start_turn = 0
         
-        display_card_x = org_display_card_x - num_of_desktop_card*P_1c.get_width()/2
-        for x in range(0, num_of_desktop_card):
-            desktop_card_rect[x][0] = display_card_x + x*P_1c.get_width()
-    screen.blit(write("Left Button of Mouse"),(screen_width -250,screen_height - 200))
-    screen.blit(write("=> Select Card"), (screen_width -250,screen_height - 175))
-    screen.blit(write("Right Button of Mouse"),(screen_width -250,screen_height - 150))
-    screen.blit(write("=> Put Card"),(screen_width -250,screen_height - 125))
-    #screen.blit(write("SPACE : Pass"),(screen_width -250,screen_height - 100))
-    #screen.blit(write("ESC : Quit Game"),(screen_width -250,screen_height - 50))
-    display_num_of_cards(player_card_list, num_of_card)
-    display_p2_num_of_cards(p2_card_list, p2_num_of_card)
-    display_p3_num_of_cards(p3_card_list, p3_num_of_card)
-    display_p4_num_of_cards(p4_card_list, p4_num_of_card)
-    display_desktop_cards(desktop_card_list, num_of_desktop_card)
-    
-    if 1 == p_pass:
-        screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 550))
-    if 1 == p2_pass:
-        screen.blit(write("Pass", (0, 0, 255)), (p2_card_x+40, screen_height/2-65))
-    if 1 == p3_pass:
-        screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 100))
-    if 1 == p4_pass:
-        screen.blit(write("Pass", (0, 0, 255)), (p4_card_x+40, screen_height/2-65))
+        #print 'turn_id=%d, first_put=%d, owner=%d' % (turn_id, first_put, owner)
+        #for i in range(0, num_of_desktop_card):
+        #    print "[%d]=%d" % (i, desktop_card_list[i])
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                exit()
+            if event.type == MOUSEBUTTONDOWN:
+                if event.button == 1 and turn_id == 1:
+                    handle_click_card(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1])
+                    #print 'left button'
+                if event.button == 3 and turn_id == 1:
+                    if 1 == owner and 0 == first_put:
+                        turn_id += 1
+                        continue
+                    for i in range (0, num_of_card):
+                        if 1 == card_clicked_list[i]:
+                            clicked = 1
+                    if 0 == clicked and 0 == first_put:
+                        p_pass = 1
+                        count_pass += 1
+                        turn_id = 2
+                        time.sleep(1)
+                        continue
+                    clicked = 0
+                    p_len = handle_put(num_of_card)
+                    if  p_len > 0:
+                        for i in range(0, 13): 
+                            player_card_rect[i][1] = player_card_y
+                        num_of_card -= p_len
+                        put_card_alreay = 1
+                        turn_id = 2
+                        #time.sleep(1)
+                    #print 'right button'                
+        if 3 == count_pass:
+            count_pass = 0
+            p_pass  = 0
+            p2_pass = 0
+            p3_pass = 0
+            p4_pass = 0
+            num_of_desktop_card = 0
+            first_put = 1
+            turn_id = owner
         
-    pygame.display.update()
+        if num_of_card != 0 and p2_num_of_card != 0 and p3_num_of_card != 0 and p4_num_of_card != 0:
+            if 1 == ai(): 
+                put_card_alreay = 1  
+        
+        if 1 == turn_id and 1 == p_pass:
+            turn_id = 2
+        
+        if 0 == num_of_card:
+            winner = 1
+            start_turn = 1
+        elif 0 == p2_num_of_card:
+            winner = 2
+            start_turn = 1
+        elif 0 == p3_num_of_card:
+            winner = 3
+            start_turn = 1
+        elif 0 == p4_num_of_card:
+            winner = 4
+            start_turn = 1
+            
+        fill_background()
+        if 1 == put_card_alreay:              
+            put_card_alreay = 0
+            
+            player_card_x = org_player_card_x+(13-num_of_card)*P_1c.get_width()/4 
+            for x in range(0, num_of_card):
+                player_card_rect[x][0] = player_card_x+x*P_1c.get_width()/2
+                
+            p3_card_x = org_p3_card_x + (13-p3_num_of_card)*Back_Card.get_width()/4
+            for x in range(0, p3_num_of_card):
+                p3_card_rect[x][0] = p3_card_x + x*Back_Card.get_width()/2
+            
+            display_card_x = org_display_card_x - num_of_desktop_card*P_1c.get_width()/2
+            for x in range(0, num_of_desktop_card):
+                desktop_card_rect[x][0] = display_card_x + x*P_1c.get_width()
+        screen.blit(write("Left Button of Mouse"),(screen_width -250,screen_height - 200))
+        screen.blit(write("=> Select Card"), (screen_width -250,screen_height - 175))
+        screen.blit(write("Right Button of Mouse"),(screen_width -250,screen_height - 150))
+        screen.blit(write("=> Put Card"),(screen_width -250,screen_height - 125))
+        #screen.blit(write("SPACE : Pass"),(screen_width -250,screen_height - 100))
+        #screen.blit(write("ESC : Quit Game"),(screen_width -250,screen_height - 50))
+        display_num_of_cards(player_card_list, num_of_card)
+        display_p2_num_of_cards(p2_card_list, p2_num_of_card)
+        display_p3_num_of_cards(p3_card_list, p3_num_of_card)
+        display_p4_num_of_cards(p4_card_list, p4_num_of_card)
+        display_desktop_cards(desktop_card_list, num_of_desktop_card)
+        
+        if 1 == p_pass:
+            screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 550))
+        if 1 == p2_pass:
+            screen.blit(write("Pass", (0, 0, 255)), (p2_card_x+40, screen_height/2-65))
+        if 1 == p3_pass:
+            screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 100))
+        if 1 == p4_pass:
+            screen.blit(write("Pass", (0, 0, 255)), (p4_card_x+40, screen_height/2-65))
+            
+        pygame.display.update()
