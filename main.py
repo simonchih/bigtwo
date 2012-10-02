@@ -51,6 +51,7 @@ iP_13c = 'Image/13c.gif'
 iP_13d = 'Image/13d.gif'
 iP_13h = 'Image/13h.gif'
 iP_13s = 'Image/13s.gif'
+iP_pass = 'Image/pass.jpg'
 iBack_Card = 'Image/back101.gif'
  
 import random, os
@@ -1252,6 +1253,7 @@ if __name__ == "__main__":
     Back_Card = pygame.image.load(iBack_Card).convert()
     Back_Card90 = pygame.transform.rotate(Back_Card , 90)
     Back_Cardn90 = pygame.transform.rotate(Back_Card , -90)
+    P_pass = pygame.image.load(iP_pass).convert()
 
     num_of_card     = 13
     p2_num_of_card  = 13
@@ -1436,12 +1438,16 @@ if __name__ == "__main__":
         display_desktop_cards(desktop_card_list, num_of_desktop_card)
         
         if 1 == p_pass:
-            screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 550))
+            #screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 550))
+            screen.blit(P_pass, (screen_width/2-50, 550))            
         if 1 == p2_pass:
-            screen.blit(write("Pass", (0, 0, 255)), (p2_card_x+40, screen_height/2-65))
+            #screen.blit(write("Pass", (0, 0, 255)), (p2_card_x+40, screen_height/2-65))
+            screen.blit(P_pass, (p2_card_x+40, screen_height/2-65))
         if 1 == p3_pass:
-            screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 100))
+            #screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 100))
+            screen.blit(P_pass, (screen_width/2-50, 100))
         if 1 == p4_pass:
-            screen.blit(write("Pass", (0, 0, 255)), (p4_card_x+40, screen_height/2-65))
+            #screen.blit(write("Pass", (0, 0, 255)), (p4_card_x+40, screen_height/2-65))
+            screen.blit(P_pass, (p4_card_x+40, screen_height/2-65))
             
         pygame.display.update()
