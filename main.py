@@ -1549,6 +1549,7 @@ if __name__ == "__main__":
                         put_card_alreay = 1
                         turn_id = 2
                         display_all()
+                        pygame.display.update()
                         #time.sleep(1)
                     #print 'right button'                
         if 3 == count_pass:
