@@ -1573,6 +1573,10 @@ if __name__ == "__main__":
             
         display_all()
         
+        if num_of_card != 0 and p2_num_of_card != 0 and p3_num_of_card != 0 and p4_num_of_card != 0:
+            if 1 == ai(): 
+                put_card_alreay = 1 
+        
         if 1 == p_pass:
             #screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 550))
             screen.blit(P_pass, (screen_width/2-50, 550))            
@@ -1585,10 +1589,6 @@ if __name__ == "__main__":
         if 1 == p4_pass:
             #screen.blit(write("Pass", (0, 0, 255)), (p4_card_x+40, screen_height/2-65))
             screen.blit(P_pass, (p4_card_x+40, screen_height/2-65))
-        
-        if num_of_card != 0 and p2_num_of_card != 0 and p3_num_of_card != 0 and p4_num_of_card != 0:
-            if 1 == ai(): 
-                put_card_alreay = 1  
         
         if 3 == count_pass:
             count_pass = 0
