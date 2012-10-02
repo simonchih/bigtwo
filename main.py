@@ -115,7 +115,41 @@ def handle_put(player_card_len):
                     move_clicked_card([0,1],ci)
                     card_clicked_list[ci] = 0
             return 0
+
+def display_all():
+    global put_card_alreay
+    global player_card_x
+    global player_card_rect
+    global p3_card_x
+    global p3_card_rect
+    global display_card_x
+    global desktop_card_rect
     
+    fill_background()
+    if 1 == put_card_alreay:              
+        put_card_alreay = 0
+        
+        player_card_x = org_player_card_x+(13-num_of_card)*P_1c.get_width()/4 
+        for x in range(0, num_of_card):
+            player_card_rect[x][0] = player_card_x+x*P_1c.get_width()/2
+            
+        p3_card_x = org_p3_card_x + (13-p3_num_of_card)*Back_Card.get_width()/4
+        for x in range(0, p3_num_of_card):
+            p3_card_rect[x][0] = p3_card_x + x*Back_Card.get_width()/2
+        
+        display_card_x = org_display_card_x - num_of_desktop_card*P_1c.get_width()/2
+        for x in range(0, num_of_desktop_card):
+            desktop_card_rect[x][0] = display_card_x + x*P_1c.get_width()
+    screen.blit(write("Left Button of Mouse"),(screen_width -250,screen_height - 200))
+    screen.blit(write("=> Select Cards"), (screen_width -250,screen_height - 175))
+    screen.blit(write("Right Button of Mouse"),(screen_width -250,screen_height - 150))
+    screen.blit(write("=> Show Cards"),(screen_width -250,screen_height - 125))
+    
+    display_num_of_cards(player_card_list, num_of_card)
+    display_p2_num_of_cards(p2_card_list, p2_num_of_card)
+    display_p3_num_of_cards(p3_card_list, p3_num_of_card)
+    display_p4_num_of_cards(p4_card_list, p4_num_of_card)
+    display_desktop_cards(desktop_card_list, num_of_desktop_card)
     
 
 def display_desktop_cards(list, num):
@@ -1514,6 +1548,7 @@ if __name__ == "__main__":
                         num_of_card -= p_len
                         put_card_alreay = 1
                         turn_id = 2
+                        display_all()
                         #time.sleep(1)
                     #print 'right button'                
         if 3 == count_pass:
@@ -1542,31 +1577,7 @@ if __name__ == "__main__":
             winner = 4
             start_turn = 1
             
-        fill_background()
-        if 1 == put_card_alreay:              
-            put_card_alreay = 0
-            
-            player_card_x = org_player_card_x+(13-num_of_card)*P_1c.get_width()/4 
-            for x in range(0, num_of_card):
-                player_card_rect[x][0] = player_card_x+x*P_1c.get_width()/2
-                
-            p3_card_x = org_p3_card_x + (13-p3_num_of_card)*Back_Card.get_width()/4
-            for x in range(0, p3_num_of_card):
-                p3_card_rect[x][0] = p3_card_x + x*Back_Card.get_width()/2
-            
-            display_card_x = org_display_card_x - num_of_desktop_card*P_1c.get_width()/2
-            for x in range(0, num_of_desktop_card):
-                desktop_card_rect[x][0] = display_card_x + x*P_1c.get_width()
-        screen.blit(write("Left Button of Mouse"),(screen_width -250,screen_height - 200))
-        screen.blit(write("=> Select Cards"), (screen_width -250,screen_height - 175))
-        screen.blit(write("Right Button of Mouse"),(screen_width -250,screen_height - 150))
-        screen.blit(write("=> Show Cards"),(screen_width -250,screen_height - 125))
-        
-        display_num_of_cards(player_card_list, num_of_card)
-        display_p2_num_of_cards(p2_card_list, p2_num_of_card)
-        display_p3_num_of_cards(p3_card_list, p3_num_of_card)
-        display_p4_num_of_cards(p4_card_list, p4_num_of_card)
-        display_desktop_cards(desktop_card_list, num_of_desktop_card)
+        display_all()
         
         if 1 == p_pass:
             #screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 550))
