@@ -1538,6 +1538,8 @@ if __name__ == "__main__":
                         p_pass = 1
                         count_pass += 1
                         turn_id = 2
+                        display_all()
+                        pygame.display.update()
                         time.sleep(1)
                         continue
                     clicked = 0
@@ -1552,16 +1554,7 @@ if __name__ == "__main__":
                         pygame.display.update()
                         #time.sleep(1)
                     #print 'right button'                
-        if 3 == count_pass:
-            count_pass = 0
-            p_pass  = 0
-            p2_pass = 0
-            p3_pass = 0
-            p4_pass = 0
-            num_of_desktop_card = 0
-            first_put = 1
-            turn_id = owner
-        
+                    
         if 1 == turn_id and 1 == p_pass:
             turn_id = 2
         
@@ -1596,5 +1589,16 @@ if __name__ == "__main__":
         if num_of_card != 0 and p2_num_of_card != 0 and p3_num_of_card != 0 and p4_num_of_card != 0:
             if 1 == ai(): 
                 put_card_alreay = 1  
-                
+        
+        if 3 == count_pass:
+            count_pass = 0
+            p_pass  = 0
+            p2_pass = 0
+            p3_pass = 0
+            p4_pass = 0
+            num_of_desktop_card = 0
+            first_put = 1
+            turn_id = owner
+            pygame.display.update()
+            time.sleep(1)
         pygame.display.update()
