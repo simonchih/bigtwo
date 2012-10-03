@@ -578,76 +578,189 @@ def valid_first_put_card(put_card_list, put_len):
     else:
         return -1
 
+def straight_flush(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
+    cpass = 1
+    put_card_list   = [0] * 5
+    card_index_list = [0] * 5
+    put_len         = 0
+    for i in range(0, card_len-4):
+        put_card_list[0] = card_list[i]
+        card_index_list[0]  = i
+        put_len = 1
+        for j in range(i+1, card_len):
+            if put_card_list[put_len-1]/4 + 1 < card_list[j]/4:
+                break
+            if put_card_list[put_len-1]/4 + 1 == card_list[j]/4 and put_card_list[put_len-1]%4 == card_list[j]%4:
+                put_card_list[put_len] = card_list[j]
+                card_index_list[put_len] = j
+                put_len += 1
+            if 5 == put_len:
+                if  func == valid_first_put_card:
+                    if  1 == func(put_card_list, put_len):
+                        cpass = 0
+                        return put_card_list, card_index_list, put_len, cpass
+                elif func == compare_card:
+                    if 1 == func(org_card_list, org_card_len, put_card_list, put_len):
+                        cpass = 0
+                        return put_card_list, card_index_list, put_len, cpass
+                break
+    return put_card_list, card_index_list, put_len, cpass
+
+def four_kind(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
+    cpass = 1
+    put_card_list   = [0] * 5
+    card_index_list = [0] * 5
+    other_small_index = 0    
+    put_len           = 0
+    four_kind_n       = 0
+    
+    if card_len > 5:
+        for i in range(0, card_len-3):
+            if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4 == card_list[i+3]/4:
+                put_card_list[0] = card_list[i]
+                put_card_list[1] = card_list[i+1]
+                put_card_list[2] = card_list[i+2]
+                put_card_list[3] = card_list[i+3]
+                card_index_list[:4] = [i, i+1, i+2, i+3]
+                four_kind_n = card_list[i+3]                    
+                other_small_index = four_kind_small_card(four_kind_n, card_list, card_len)
+                put_card_list[4] = card_list[other_small_index]
+                card_index_list[4] = other_small_index
+                put_len = 5
+                if func == valid_first_put_card:
+                    if  1 == func(put_card_list, put_len):
+                        cpass = 0
+                        return put_card_list, card_index_list, put_len, cpass
+                elif func == compare_card:
+                    if 1 == func(org_card_list, org_card_len, put_card_list, put_len):
+                        cpass = 0
+                        return put_card_list, card_index_list, put_len, cpass
+                    
+    return put_card_list, card_index_list, put_len, cpass
+
+def one(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
+    cpass = 1
+    put_card_list   = [0] * 5
+    card_index_list = [0] * 5
+    put_len         = 0
+    small_card = card_list[0]
+    small_card_index = 0
+    for i in range(0, card_len):
+        if one_card([small_card], 1) > one_card([card_list[i]], 1):
+            small_card = card_list[i]
+            small_card_index = i
+    for i in range(0, card_len):
+        put_card_list[0]   = small_card 
+        card_index_list[0] = small_card_index
+        put_len            = 1
+        if func == valid_first_put_card:
+            if 1 == func(put_card_list, put_len):
+                cpass = 0
+                return put_card_list, card_index_list, put_len, cpass
+        elif func == compare_card:
+            if 1 == func(org_card_list, org_card_len, put_card_list, put_len):
+                cpass = 0
+                return put_card_list, card_index_list, put_len, cpass
+        small_card_index += 1
+        small_card_index %= card_len
+        small_card = card_list[small_card_index]
+    return put_card_list, card_index_list, put_len, cpass
+    
+def full_house(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
+    cpass = 1
+    put_card_list   = [0] * 5
+    card_index_list = [0] * 5
+    put_len         = 0
+    for i in range(0, card_len-2):
+        if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4:
+            put_card_list[0] = card_list[i]
+            card_index_list[0] = i
+            put_card_list[1] = card_list[i+1]
+            card_index_list[1] = i+1
+            put_card_list[2] = card_list[i+2]
+            card_index_list[2] = i+2
+            put_len = 3
+            for j in range(0, card_len-1):
+                if j == card_index_list[0] or j == card_index_list[1] or j == card_index_list[2]:
+                    continue
+                elif card_list[j]/4 == card_list[j+1]/4:
+                    put_card_list[3] = card_list[j]
+                    card_index_list[3] = j
+                    put_card_list[4] = card_list[j+1]
+                    card_index_list[4] = j+1
+                    put_len = 5
+                    if func == valid_first_put_card:
+                        if 1 == func(put_card_list, put_len):
+                            cpass = 0
+                            return put_card_list, card_index_list, put_len, cpass
+                    elif func == compare_card:
+                        if 1 == func(org_card_list, org_card_len, put_card_list, put_len):
+                            cpass = 0
+                            return put_card_list, card_index_list, put_len, cpass
+    return put_card_list, card_index_list, put_len, cpass
+
+def straight(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
+    cpass = 1
+    put_card_list   = [0] * 5
+    card_index_list = [0] * 5
+    put_len         = 0
+    for i in range(0, card_len-4):
+        put_card_list[0] = card_list[i]
+        card_index_list[0] = i
+        for i2 in range(i+1, card_len-3):
+            put_len = 1
+            if put_card_list[0]/4 + 1 < card_list[i2]/4:
+                break
+            elif put_card_list[0]/4 + 1 == card_list[i2]/4:
+                put_card_list[1] = card_list[i2]
+                card_index_list[1] = i2
+                for i3 in range(i2+1, card_len-2):
+                    put_len = 2
+                    if put_card_list[1]/4 + 1 < card_list[i3]/4:
+                        break
+                    elif put_card_list[1]/4 + 1 == card_list[i3]/4:
+                        put_card_list[2] = card_list[i3]
+                        card_index_list[2] = i3                                
+                        for i4 in range(i3+1, card_len-1):
+                            put_len = 3
+                            if put_card_list[2]/4 + 1 < card_list[i4]/4:
+                                break
+                            elif put_card_list[2]/4 + 1 == card_list[i4]/4:
+                                put_card_list[3] = card_list[i4]
+                                card_index_list[3] = i4
+                                for i5 in range(i4+1, card_len):
+                                    put_len = 4
+                                    if put_card_list[3]/4 + 1 < card_list[i5]/4:
+                                        break
+                                    elif put_card_list[3]/4 + 1 == card_list[i5]/4:
+                                        put_card_list[4] = card_list[i5]
+                                        card_index_list[4] = i5
+                                        put_len = 5
+                                        if func ==  valid_first_put_card:
+                                            if 1 == func(put_card_list, put_len):
+                                                cpass = 0
+                                                return put_card_list, card_index_list, put_len, cpass
+                                        elif func == compare_card:
+                                            if  1 == func(org_card_list, org_card_len, put_card_list, put_len):
+                                                cpass = 0
+                                                return put_card_list, card_index_list, put_len, cpass
+    return put_card_list, card_index_list, put_len, cpass
+    
 #return put_card_list, card_index_list, put_len, cpass
 def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
     cpass = 1
     put_card_list   = [0] * 5
     card_index_list = [0] * 5
     put_len         = 0
-    small_card      = 0
-    small_card_index = 0
     if 1 == fp:
         if card_len > 6:
-            for i in range(0, card_len-2):
-                if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4:
-                    put_card_list[0] = card_list[i]
-                    card_index_list[0] = i
-                    put_card_list[1] = card_list[i+1]
-                    card_index_list[1] = i+1
-                    put_card_list[2] = card_list[i+2]
-                    card_index_list[2] = i+2
-                    put_len = 3
-                    for j in range(0, card_len-1):
-                        if j == card_index_list[0] or j == card_index_list[1] or j == card_index_list[2]:
-                            continue
-                        elif card_list[j]/4 == card_list[j+1]/4:
-                            put_card_list[3] = card_list[j]
-                            card_index_list[3] = j
-                            put_card_list[4] = card_list[j+1]
-                            card_index_list[4] = j+1
-                            put_len = 5
-                            if 1 == valid_first_put_card(put_card_list, put_len):
-                                cpass = 0
-                                return put_card_list, card_index_list, put_len, cpass
+            put_card_list, card_index_list, put_len, cpass = full_house(card_list, card_len, valid_first_put_card)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass                
             #straight                
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            put_len         = 0
-            for i in range(0, card_len-4):
-                put_card_list[0] = card_list[i]
-                card_index_list[0] = i
-                for i2 in range(i+1, card_len-3):
-                    put_len = 1
-                    if put_card_list[0]/4 + 1 < card_list[i2]/4:
-                        break
-                    elif put_card_list[0]/4 + 1 == card_list[i2]/4:
-                        put_card_list[1] = card_list[i2]
-                        card_index_list[1] = i2
-                        for i3 in range(i2+1, card_len-2):
-                            put_len = 2
-                            if put_card_list[1]/4 + 1 < card_list[i3]/4:
-                                break
-                            elif put_card_list[1]/4 + 1 == card_list[i3]/4:
-                                put_card_list[2] = card_list[i3]
-                                card_index_list[2] = i3                                
-                                for i4 in range(i3+1, card_len-1):
-                                    put_len = 3
-                                    if put_card_list[2]/4 + 1 < card_list[i4]/4:
-                                        break
-                                    elif put_card_list[2]/4 + 1 == card_list[i4]/4:
-                                        put_card_list[3] = card_list[i4]
-                                        card_index_list[3] = i4
-                                        for i5 in range(i4+1, card_len):
-                                            put_len = 4
-                                            if put_card_list[3]/4 + 1 < card_list[i5]/4:
-                                                break
-                                            elif put_card_list[3]/4 + 1 == card_list[i5]/4:
-                                                put_card_list[4] = card_list[i5]
-                                                card_index_list[4] = i5
-                                                put_len = 5
-                                                if  1 == valid_first_put_card(put_card_list, put_len):
-                                                    cpass = 0
-                                                    return put_card_list, card_index_list, put_len, cpass
+            put_card_list, card_index_list, put_len, cpass = straight(card_list, card_len, valid_first_put_card)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass    
             #end straight
             
             #pair
@@ -679,129 +792,24 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
                     cpass = 0
                     return put_card_list, card_index_list, put_len, cpass
             #end pair
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            put_len         = 0
-            small_card = card_list[0]
-            small_card_index = 0
-            for i in range(0, card_len):
-                if one_card([small_card], 1) > one_card([card_list[i]], 1):
-                    small_card = card_list[i]
-                    small_card_index = i
-            for i in range(0, card_len):
-                put_card_list[0]   = small_card 
-                card_index_list[0] = small_card_index
-                put_len            = 1
-                if 1 == valid_first_put_card(put_card_list, put_len):
-                    cpass = 0
-                    return put_card_list, card_index_list, put_len, cpass
-                small_card_index += 1
-                small_card_index %= card_len
-                small_card = card_list[small_card_index]
+            put_card_list, card_index_list, put_len, cpass = one(card_list, card_len, valid_first_put_card)
+            
         elif 6 == card_len or 5 == card_len:
-            for i in range(0, card_len-4):
-                put_card_list[0] = card_list[i]
-                card_index_list[0]  = i
-                put_len = 1
-                for j in range(i+1, card_len):
-                    if put_card_list[put_len-1]/4 + 1 < card_list[j]/4:
-                        break
-                    if put_card_list[put_len-1]/4 + 1 == card_list[j]/4 and put_card_list[put_len-1]%4 == card_list[j]%4:
-                        put_card_list[put_len] = card_list[j]
-                        card_index_list[put_len] = j
-                        put_len += 1
-                    if 5 == put_len:
-                        if  1 == valid_first_put_card(put_card_list, put_len):
-                            cpass = 0
-                            return put_card_list, card_index_list, put_len, cpass
-                        break
+            put_card_list, card_index_list, put_len, cpass = straight_flush(card_list, card_len, valid_first_put_card)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass             
             # four kind
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            other_small_index = 0    
-            put_len           = 0
-            four_kind_n       = 0
-            
-            if card_len > 5:
-                for i in range(0, card_len-3):
-                    if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4 == card_list[i+3]/4:
-                        put_card_list[0] = card_list[i]
-                        put_card_list[1] = card_list[i+1]
-                        put_card_list[2] = card_list[i+2]
-                        put_card_list[3] = card_list[i+3]
-                        card_index_list[:4] = [i, i+1, i+2, i+3]
-                        four_kind_n = card_list[i+3]                    
-                        other_small_index = four_kind_small_card(four_kind_n, card_list, card_len)
-                        put_card_list[4] = card_list[other_small_index]
-                        card_index_list[4] = other_small_index
-                        put_len = 5
-                        if  1 == valid_first_put_card(put_card_list, put_len):
-                            cpass = 0
-                            return put_card_list, card_index_list, put_len, cpass
+            put_card_list, card_index_list, put_len, cpass = four_kind(card_list, card_len, valid_first_put_card)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass
             #end four kind
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            put_len         = 0
-            for i in range(0, card_len-2):
-                if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4:
-                    put_card_list[0] = card_list[i]
-                    card_index_list[0] = i
-                    put_card_list[1] = card_list[i+1]
-                    card_index_list[1] = i+1
-                    put_card_list[2] = card_list[i+2]
-                    card_index_list[2] = i+2
-                    put_len = 3
-                    for j in range(0, card_len-1):
-                        if j == card_index_list[0] or j == card_index_list[1] or j == card_index_list[2]:
-                            continue
-                        elif card_list[j]/4 == card_list[j+1]/4:
-                            put_card_list[3] = card_list[j]
-                            card_index_list[3] = j
-                            put_card_list[4] = card_list[j+1]
-                            card_index_list[4] = j+1
-                            put_len = 5
-                            if 1 == valid_first_put_card(put_card_list, put_len):
-                                cpass = 0
-                                return put_card_list, card_index_list, put_len, cpass
+            put_card_list, card_index_list, put_len, cpass = full_house(card_list, card_len, valid_first_put_card)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass
             #straight                
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            put_len         = 0
-            for i in range(0, card_len-4):
-                put_card_list[0] = card_list[i]
-                card_index_list[0] = i
-                for i2 in range(i+1, card_len-3):
-                    put_len = 1
-                    if put_card_list[0]/4 + 1 < card_list[i2]/4:
-                        break
-                    elif put_card_list[0]/4 + 1 == card_list[i2]/4:
-                        put_card_list[1] = card_list[i2]
-                        card_index_list[1] = i2
-                        for i3 in range(i2+1, card_len-2):
-                            put_len = 2
-                            if put_card_list[1]/4 + 1 < card_list[i3]/4:
-                                break
-                            elif put_card_list[1]/4 + 1 == card_list[i3]/4:
-                                put_card_list[2] = card_list[i3]
-                                card_index_list[2] = i3                                
-                                for i4 in range(i3+1, card_len-1):
-                                    put_len = 3
-                                    if put_card_list[2]/4 + 1 < card_list[i4]/4:
-                                        break
-                                    elif put_card_list[2]/4 + 1 == card_list[i4]/4:
-                                        put_card_list[3] = card_list[i4]
-                                        card_index_list[3] = i4
-                                        for i5 in range(i4+1, card_len):
-                                            put_len = 4
-                                            if put_card_list[3]/4 + 1 < card_list[i5]/4:
-                                                break
-                                            elif put_card_list[3]/4 + 1 == card_list[i5]/4:
-                                                put_card_list[4] = card_list[i5]
-                                                card_index_list[4] = i5
-                                                put_len = 5
-                                                if  1 == valid_first_put_card(put_card_list, put_len):
-                                                    cpass = 0
-                                                    return put_card_list, card_index_list, put_len, cpass
+            put_card_list, card_index_list, put_len, cpass = straight(card_list, card_len, valid_first_put_card)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass
             #end straight
             #pair
             put_card_list   = [0] * 5
@@ -832,25 +840,8 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
                     cpass = 0
                     return put_card_list, card_index_list, put_len, cpass
             #end pair
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            put_len         = 0
-            small_card = card_list[0]
-            small_card_index = 0
-            for i in range(0, card_len):
-                if one_card([small_card], 1) > one_card([card_list[i]], 1):
-                    small_card = card_list[i]
-                    small_card_index = i
-            for i in range(0, card_len):
-                put_card_list[0]   = small_card 
-                card_index_list[0] = small_card_index
-                put_len            = 1
-                if 1 == valid_first_put_card(put_card_list, put_len):
-                    cpass = 0
-                    return put_card_list, card_index_list, put_len, cpass
-                small_card_index += 1
-                small_card_index %= card_len
-                small_card = card_list[small_card_index]
+            put_card_list, card_index_list, put_len, cpass = one(card_list, card_len, valid_first_put_card)
+            
         elif card_len >= 2:
             #pair
             put_card_list   = [0] * 5
@@ -881,151 +872,31 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
                     cpass = 0
                     return put_card_list, card_index_list, put_len, cpass
             #end pair
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            put_len         = 0
-            small_card = card_list[0]
-            small_card_index = 0
-            for i in range(0, card_len):
-                if one_card([small_card], 1) > one_card([card_list[i]], 1):
-                    small_card = card_list[i]
-                    small_card_index = i
-            for i in range(0, card_len):
-                put_card_list[0]   = small_card 
-                card_index_list[0] = small_card_index
-                put_len            = 1
-                if 1 == valid_first_put_card(put_card_list, put_len):
-                    cpass = 0
-                    return put_card_list, card_index_list, put_len, cpass
-                small_card_index += 1
-                small_card_index %= card_len
-                small_card = card_list[small_card_index]
+            put_card_list, card_index_list, put_len, cpass = one(card_list, card_len, valid_first_put_card)
+            
         else:
-            small_card = card_list[0]
-            small_card_index = 0
-            for i in range(0, card_len):
-                if one_card([small_card], 1) > one_card([card_list[i]], 1):
-                    small_card = card_list[i]
-                    small_card_index = i
-            for i in range(0, card_len):
-                put_card_list[0]   = small_card 
-                card_index_list[0] = small_card_index
-                put_len            = 1
-                if 1 == valid_first_put_card(put_card_list, put_len):
-                    cpass = 0
-                    return put_card_list, card_index_list, put_len, cpass
-                small_card_index += 1
-                small_card_index %= card_len
-                small_card = card_list[small_card_index]
+            put_card_list, card_index_list, put_len, cpass = one(card_list, card_len, valid_first_put_card)
     else:
         if org_card_len == 5:
             #cpass == 1
-            for i in range(0, card_len-2):
-                if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4:
-                    put_card_list[0] = card_list[i]
-                    card_index_list[0] = i
-                    put_card_list[1] = card_list[i+1]
-                    card_index_list[1] = i+1
-                    put_card_list[2] = card_list[i+2]
-                    card_index_list[2] = i+2
-                    put_len = 3
-                    for j in range(0, card_len-1):
-                        if j == card_index_list[0] or j == card_index_list[1] or j == card_index_list[2]:
-                            continue
-                        elif card_list[j]/4 == card_list[j+1]/4:
-                            put_card_list[3] = card_list[j]
-                            card_index_list[3] = j
-                            put_card_list[4] = card_list[j+1]
-                            card_index_list[4] = j+1
-                            put_len = 5
-                            if 1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
-                                cpass = 0
-                                return put_card_list, card_index_list, put_len, cpass
-            #straight                
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            put_len         = 0
-            for i in range(0, card_len-4):
-                put_card_list[0] = card_list[i]
-                card_index_list[0] = i
-                for i2 in range(i+1, card_len-3):
-                    put_len = 1
-                    if put_card_list[0]/4 + 1 < card_list[i2]/4:
-                        break
-                    elif put_card_list[0]/4 + 1 == card_list[i2]/4:
-                        put_card_list[1] = card_list[i2]
-                        card_index_list[1] = i2
-                        for i3 in range(i2+1, card_len-2):
-                            put_len = 2
-                            if put_card_list[1]/4 + 1 < card_list[i3]/4:
-                                break
-                            elif put_card_list[1]/4 + 1 == card_list[i3]/4:
-                                put_card_list[2] = card_list[i3]
-                                card_index_list[2] = i3                                
-                                for i4 in range(i3+1, card_len-1):
-                                    put_len = 3
-                                    if put_card_list[2]/4 + 1 < card_list[i4]/4:
-                                        break
-                                    elif put_card_list[2]/4 + 1 == card_list[i4]/4:
-                                        put_card_list[3] = card_list[i4]
-                                        card_index_list[3] = i4
-                                        for i5 in range(i4+1, card_len):
-                                            put_len = 4
-                                            if put_card_list[3]/4 + 1 < card_list[i5]/4:
-                                                break
-                                            elif put_card_list[3]/4 + 1 == card_list[i5]/4:
-                                                put_card_list[4] = card_list[i5]
-                                                card_index_list[4] = i5
-                                                put_len = 5
-                                                if  1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
-                                                    cpass = 0
-                                                    return put_card_list, card_index_list, put_len, cpass
+            put_card_list, card_index_list, put_len, cpass = full_house(card_list, card_len, compare_card, org_card_list, org_card_len)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass
+            #straight 
+            put_card_list, card_index_list, put_len, cpass = straight(card_list, card_len, compare_card, org_card_list, org_card_len)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass
             #end straight
             
             # four kind
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            other_small_index = 0    
-            put_len           = 0
-            four_kind_n       = 0
-            
-            if card_len > 5:
-                for i in range(0, card_len-3):
-                    if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4 == card_list[i+3]/4:
-                        put_card_list[0] = card_list[i]
-                        put_card_list[1] = card_list[i+1]
-                        put_card_list[2] = card_list[i+2]
-                        put_card_list[3] = card_list[i+3]
-                        card_index_list[:4] = [i, i+1, i+2, i+3]
-                        four_kind_n = card_list[i+3]                    
-                        other_small_index = four_kind_small_card(four_kind_n, card_list, card_len)
-                        put_card_list[4] = card_list[other_small_index]
-                        card_index_list[4] = other_small_index
-                        put_len = 5
-                        if  1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
-                            cpass = 0
-                            return put_card_list, card_index_list, put_len, cpass
+            put_card_list, card_index_list, put_len, cpass = four_kind(card_list, card_len, compare_card, org_card_list, org_card_len)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass
             #end four kind
             
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            put_len         = 0
-            for i in range(0, card_len-4):
-                put_card_list[0] = card_list[i]
-                card_index_list[0]  = i
-                put_len = 1
-                for j in range(i+1, card_len):
-                    if put_card_list[put_len-1]/4 + 1 < card_list[j]/4:
-                        break
-                    if put_card_list[put_len-1]/4 + 1 == card_list[j]/4 and put_card_list[put_len-1]%4 == card_list[j]%4:
-                        put_card_list[put_len] = card_list[j]
-                        card_index_list[put_len] = j
-                        put_len += 1
-                    if 5 == put_len:
-                        if  1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
-                            cpass = 0
-                            return put_card_list, card_index_list, put_len, cpass
-                        break
+            put_card_list, card_index_list, put_len, cpass = straight_flush(card_list, card_len, compare_card, org_card_list, org_card_len)
+            # return put_card_list, card_index_list, put_len, cpass
+            
         elif 2 == org_card_len:
             #pair
             put_card_list   = [0] * 5
@@ -1048,114 +919,25 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
             #end pair
             
             # four kind
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            other_small_index = 0    
-            put_len           = 0
-            four_kind_n       = 0
-            
-            if card_len > 5:
-                for i in range(0, card_len-3):
-                    if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4 == card_list[i+3]/4:
-                        put_card_list[0] = card_list[i]
-                        put_card_list[1] = card_list[i+1]
-                        put_card_list[2] = card_list[i+2]
-                        put_card_list[3] = card_list[i+3]
-                        card_index_list[:4] = [i, i+1, i+2, i+3]
-                        four_kind_n = card_list[i+3]                    
-                        other_small_index = four_kind_small_card(four_kind_n, card_list, card_len)
-                        put_card_list[4] = card_list[other_small_index]
-                        card_index_list[4] = other_small_index
-                        put_len = 5
-                        if  1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
-                            cpass = 0
-                            return put_card_list, card_index_list, put_len, cpass
+            put_card_list, card_index_list, put_len, cpass = four_kind(card_list, card_len, compare_card, org_card_list, org_card_len)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass
             #end four kind
             
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            put_len         = 0
-            for i in range(0, card_len-4):
-                put_card_list[0] = card_list[i]
-                card_index_list[0]  = i
-                put_len = 1
-                for j in range(i+1, card_len):
-                    if put_card_list[put_len-1]/4 + 1 < card_list[j]/4:
-                        break
-                    if put_card_list[put_len-1]/4 + 1 == card_list[j]/4 and put_card_list[put_len-1]%4 == card_list[j]%4:
-                        put_card_list[put_len] = card_list[j]
-                        card_index_list[put_len] = j
-                        put_len += 1
-                    if 5 == put_len:
-                        if  1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
-                            cpass = 0
-                            return put_card_list, card_index_list, put_len, cpass
-                        break
+            put_card_list, card_index_list, put_len, cpass = straight_flush(card_list, card_len, compare_card, org_card_list, org_card_len)
+            #return put_card_list, card_index_list, put_len, cpass
+            
         else: #org_card_len = 1
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            put_len         = 0
-            small_card = card_list[0]
-            small_card_index = 0
-            for i in range(0, card_len):
-                if one_card([small_card], 1) > one_card([card_list[i]], 1):
-                    small_card = card_list[i]
-                    small_card_index = i
-            for i in range(0, card_len):
-                put_card_list[0]   = small_card 
-                card_index_list[0] = small_card_index
-                put_len            = 1
-                if 1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
-                    cpass = 0
-                    return put_card_list, card_index_list, put_len, cpass
-                small_card_index += 1
-                small_card_index %= card_len
-                small_card = card_list[small_card_index]
+            put_card_list, card_index_list, put_len, cpass = one(card_list, card_len, compare_card, org_card_list, org_card_len)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass
             
             # four kind
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            other_small_index = 0    
-            put_len           = 0
-            four_kind_n       = 0
-            
-            if card_len > 5:
-                for i in range(0, card_len-3):
-                    if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4 == card_list[i+3]/4:
-                        put_card_list[0] = card_list[i]
-                        put_card_list[1] = card_list[i+1]
-                        put_card_list[2] = card_list[i+2]
-                        put_card_list[3] = card_list[i+3]
-                        card_index_list[:4] = [i, i+1, i+2, i+3]
-                        four_kind_n = card_list[i+3]                    
-                        other_small_index = four_kind_small_card(four_kind_n, card_list, card_len)
-                        put_card_list[4] = card_list[other_small_index]
-                        card_index_list[4] = other_small_index
-                        put_len = 5
-                        if  1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
-                            cpass = 0
-                            return put_card_list, card_index_list, put_len, cpass
+            put_card_list, card_index_list, put_len, cpass = four_kind(card_list, card_len, compare_card, org_card_list, org_card_len)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass
             #end four kind
-            
-            put_card_list   = [0] * 5
-            card_index_list = [0] * 5
-            put_len         = 0
-            for i in range(0, card_len-4):
-                put_card_list[0] = card_list[i]
-                card_index_list[0]  = i
-                put_len = 1
-                for j in range(i+1, card_len):
-                    if put_card_list[put_len-1]/4 + 1 < card_list[j]/4:
-                        break
-                    if put_card_list[put_len-1]/4 + 1 == card_list[j]/4 and put_card_list[put_len-1]%4 == card_list[j]%4:
-                        put_card_list[put_len] = card_list[j]
-                        card_index_list[put_len] = j
-                        put_len += 1
-                    if 5 == put_len:
-                        if  1 == compare_card(org_card_list, org_card_len, put_card_list, put_len):
-                            cpass = 0
-                            return put_card_list, card_index_list, put_len, cpass
-                        break
+            put_card_list, card_index_list, put_len, cpass = straight_flush(card_list, card_len, compare_card, org_card_list, org_card_len)
                     
     return put_card_list, card_index_list, put_len, cpass
         
