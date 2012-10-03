@@ -671,7 +671,10 @@ def full_house(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_c
     put_card_list   = [0] * 5
     card_index_list = [0] * 5
     put_len         = 0
-    for i in range(0, card_len-2):
+    small_i         = 0
+    small_i = small_one(card_list, card_len)
+    for i in range(small_i, small_i+card_len-2):
+        i = i % card_len
         if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4:
             put_card_list[0] = card_list[i]
             card_index_list[0] = i
@@ -680,7 +683,8 @@ def full_house(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_c
             put_card_list[2] = card_list[i+2]
             card_index_list[2] = i+2
             put_len = 3
-            for j in range(0, card_len-1):
+            for j in range(small_i, small_i+card_len-1):
+                j = j % card_len
                 if j == card_index_list[0] or j == card_index_list[1] or j == card_index_list[2]:
                     continue
                 elif card_list[j]/4 == card_list[j+1]/4:
