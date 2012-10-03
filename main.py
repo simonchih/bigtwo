@@ -780,7 +780,7 @@ def small_one(card_list, card_len):
     small_card = card_list[0]
     small_card_index = 0
     for i in range(0, card_len):
-        if small_card > card_list[i]:
+        if one_card([small_card], 1) > one_card([card_list[i]], 1):
             small_card = card_list[i]
             small_index = i
     return small_card_index
