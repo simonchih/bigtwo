@@ -588,12 +588,24 @@ def straight_flush(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], o
         card_index_list[0]  = i
         put_len = 1
         for j in range(i+1, card_len):
-            if put_card_list[put_len-1]/4 + 1 < card_list[j]/4:
+            if put_card_list[put_len-1]/4 + 1 < card_list[j]/4 and put_len < 4:
                 break
             if put_card_list[put_len-1]/4 + 1 == card_list[j]/4 and put_card_list[put_len-1]%4 == card_list[j]%4:
                 put_card_list[put_len] = card_list[j]
                 card_index_list[put_len] = j
                 put_len += 1
+            elif 4 == put_len and (card_list[j]/4 + 1) % 13 == put_card_list[0] and put_card_list[0]%4 == card_list[j]%4:
+                put_card_list[4] = put_card_list[3]
+                card_index_list[4] = card_index_list[3]
+                put_card_list[3] = put_card_list[2]
+                card_index_list[3] = card_index_list[2]
+                put_card_list[2] = put_card_list[1]
+                card_index_list[2] = card_index_list[1]
+                put_card_list[1] = put_card_list[0]
+                card_index_list[1] = card_index_list[0]
+                put_card_list[0] = card_list[i5]
+                card_index_list[0] = i5
+                put_len = 5
             if 5 == put_len:
                 if  func == valid_first_put_card:
                     if  1 == func(put_card_list, put_len):
@@ -735,9 +747,22 @@ def straight(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_car
                                 for i5 in range(i4+1, card_len):
                                     put_len = 4
                                     if (card_list[i5]/4 + 1) % 13 == put_card_list[0] or put_card_list[3]/4 + 1 == card_list[i5]/4:
-                                        put_card_list[4] = card_list[i5]
-                                        card_index_list[4] = i5
-                                        put_len = 5
+                                        if (card_list[i5]/4 + 1) % 13 == put_card_list[0]:
+                                            put_card_list[4] = put_card_list[3]
+                                            card_index_list[4] = card_index_list[3]
+                                            put_card_list[3] = put_card_list[2]
+                                            card_index_list[3] = card_index_list[2]
+                                            put_card_list[2] = put_card_list[1]
+                                            card_index_list[2] = card_index_list[1]
+                                            put_card_list[1] = put_card_list[0]
+                                            card_index_list[1] = card_index_list[0]
+                                            put_card_list[0] = card_list[i5]
+                                            card_index_list[0] = i5
+                                            put_len = 5
+                                        else:    
+                                            put_card_list[4] = card_list[i5]
+                                            card_index_list[4] = i5
+                                            put_len = 5
                                         if func ==  valid_first_put_card:
                                             if 1 == func(put_card_list, put_len):
                                                 cpass = 0
