@@ -77,6 +77,12 @@ def handle_put(player_card_len):
             put_card_list[put_len] = player_card_list[ci]
             put_len += 1
     
+    if 5 == put_len and 0 == put_card_list[0]/4 and 1 == put_card_list[1]/4 and 2 == put_card_list[2]/4 and 3 == put_card_list[3]/4 and 12 == put_card_list[4]/4:
+        t = put_card_list[4]
+        for i in range(4, 0, -1):
+            put_card_list[i] = put_card_list[i-1]
+        put_card_list[0] = t
+    
     if 1 == first_put:
         if 1 == valid_first_put_card(put_card_list, put_len):
             owner = 1
