@@ -588,8 +588,6 @@ def straight_flush(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], o
         card_index_list[0]  = i
         put_len = 1
         for j in range(i+1, card_len):
-            if put_card_list[put_len-1]/4 + 1 < card_list[j]/4 and put_len < 4:
-                break
             if put_card_list[put_len-1]/4 + 1 == card_list[j]/4 and put_card_list[put_len-1]%4 == card_list[j]%4:
                 put_card_list[put_len] = card_list[j]
                 card_index_list[put_len] = j
