@@ -734,9 +734,7 @@ def straight(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_car
                                 card_index_list[3] = i4
                                 for i5 in range(i4+1, card_len):
                                     put_len = 4
-                                    if put_card_list[3]/4 + 1 < card_list[i5]/4:
-                                        break
-                                    elif put_card_list[3]/4 + 1 == card_list[i5]/4:
+                                    if (card_list[i5]/4 + 1) % 13 == put_card_list[0] or put_card_list[3]/4 + 1 == card_list[i5]/4:
                                         put_card_list[4] = card_list[i5]
                                         card_index_list[4] = i5
                                         put_len = 5
