@@ -607,8 +607,8 @@ def straight_flush(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], o
                 card_index_list[2] = card_index_list[1]
                 put_card_list[1] = put_card_list[0]
                 card_index_list[1] = card_index_list[0]
-                put_card_list[0] = card_list[i5]
-                card_index_list[0] = i5
+                put_card_list[0] = card_list[j]
+                card_index_list[0] = j
                 put_len = 5
             if 5 == put_len:
                 if  func == valid_first_put_card:
@@ -823,6 +823,12 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
     card_index_list = [0] * 5
     put_len         = 0
     if 1 == fp:
+        if 1 == start3c:
+            # four kind
+            put_card_list, card_index_list, put_len, cpass = four_kind(card_list, card_len, valid_first_put_card)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass
+            #end four kind
         if card_len > 6:
             put_card_list, card_index_list, put_len, cpass = full_house(card_list, card_len, valid_first_put_card)
             if 0 == cpass:
