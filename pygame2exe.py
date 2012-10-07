@@ -48,7 +48,7 @@ class BuildExe:
         self.project_name = "BigTwo"
  
         #Project url
-        self.project_url = "about:none"
+        self.project_url = "https://sourceforge.net/projects/simpybigtwo/"
  
         #Version of program
         self.project_version = "0.0"
@@ -65,7 +65,7 @@ class BuildExe:
         self.project_description = "MyApps Description"
  
         #Icon file (None will use pygame default icon)
-        self.icon_file = "simpybigtwo_default.ico"
+        self.icon_file = "Image/simpybigtwo_default.ico"
  
         #Extra files/dirs copied to game
         self.extra_datas = []

@@ -1069,10 +1069,12 @@ def ai():
 if __name__ == "__main__":        
     SCREEN_SIZE = (1280, 720) 
     pygame.init()
-     
+    
+    pygame.display.set_icon(pygame.image.load("Image/simpybigtwo_default.png"))
     screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
     pygame.display.set_caption("Big Two")
-     
+    
+    
     background = pygame.image.load(background_image_filename).convert()
     P_1c = pygame.image.load(iP_1c).convert()
     P_1d = pygame.image.load(iP_1d).convert()
