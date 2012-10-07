@@ -65,7 +65,7 @@ class BuildExe:
         self.project_description = "MyApps Description"
  
         #Icon file (None will use pygame default icon)
-        self.icon_file = None
+        self.icon_file = "simpybigtwo_default.ico"
  
         #Extra files/dirs copied to game
         self.extra_datas = []
