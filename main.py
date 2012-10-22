@@ -1,3 +1,9 @@
+import random, os
+import time 
+import pygame
+from pygame.locals import *
+from sys import exit
+
 background_image_filename = 'Image/Nostalgy.gif'
 iP_1c = 'Image/01c.gif'
 iP_1d = 'Image/01d.gif'
@@ -53,12 +59,134 @@ iP_13h = 'Image/13h.gif'
 iP_13s = 'Image/13s.gif'
 iP_pass = 'Image/pass.jpg'
 iBack_Card = 'Image/back101.gif'
- 
-import random, os
-import time 
-import pygame
-from pygame.locals import *
-from sys import exit
+
+SCREEN_SIZE = (1280, 720) 
+pygame.init()
+
+pygame.display.set_icon(pygame.image.load("Image/simpybigtwo_default.png"))
+screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
+pygame.display.set_caption("Big Two")
+
+background = pygame.image.load(background_image_filename).convert()
+P_1c = pygame.image.load(iP_1c).convert()
+P_1d = pygame.image.load(iP_1d).convert()
+P_1h = pygame.image.load(iP_1h).convert()
+P_1s = pygame.image.load(iP_1s).convert()
+P_2c = pygame.image.load(iP_2c).convert()
+P_2d = pygame.image.load(iP_2d).convert()
+P_2h = pygame.image.load(iP_2h).convert()
+P_2s = pygame.image.load(iP_2s).convert()
+P_3c = pygame.image.load(iP_3c).convert()
+P_3d = pygame.image.load(iP_3d).convert()
+P_3h = pygame.image.load(iP_3h).convert()
+P_3s = pygame.image.load(iP_3s).convert()
+P_4c = pygame.image.load(iP_4c).convert()
+P_4d = pygame.image.load(iP_4d).convert()
+P_4h = pygame.image.load(iP_4h).convert()
+P_4s = pygame.image.load(iP_4s).convert()
+P_5c = pygame.image.load(iP_5c).convert()
+P_5d = pygame.image.load(iP_5d).convert()
+P_5h = pygame.image.load(iP_5h).convert()
+P_5s = pygame.image.load(iP_5s).convert()
+P_6c = pygame.image.load(iP_6c).convert()
+P_6d = pygame.image.load(iP_6d).convert()
+P_6h = pygame.image.load(iP_6h).convert()
+P_6s = pygame.image.load(iP_6s).convert()
+P_7c = pygame.image.load(iP_7c).convert()
+P_7d = pygame.image.load(iP_7d).convert()
+P_7h = pygame.image.load(iP_7h).convert()
+P_7s = pygame.image.load(iP_7s).convert()
+P_8c = pygame.image.load(iP_8c).convert()
+P_8d = pygame.image.load(iP_8d).convert()
+P_8h = pygame.image.load(iP_8h).convert()
+P_8s = pygame.image.load(iP_8s).convert()
+P_9c = pygame.image.load(iP_9c).convert()
+P_9d = pygame.image.load(iP_9d).convert()
+P_9h = pygame.image.load(iP_9h).convert()
+P_9s = pygame.image.load(iP_9s).convert()
+P_10c = pygame.image.load(iP_10c).convert()
+P_10d = pygame.image.load(iP_10d).convert()
+P_10h = pygame.image.load(iP_10h).convert()
+P_10s = pygame.image.load(iP_10s).convert()
+P_11c = pygame.image.load(iP_11c).convert()
+P_11d = pygame.image.load(iP_11d).convert()
+P_11h = pygame.image.load(iP_11h).convert()
+P_11s = pygame.image.load(iP_11s).convert() 
+P_12c = pygame.image.load(iP_12c).convert()
+P_12d = pygame.image.load(iP_12d).convert()
+P_12h = pygame.image.load(iP_12h).convert()
+P_12s = pygame.image.load(iP_12s).convert() 
+P_13c = pygame.image.load(iP_13c).convert()
+P_13d = pygame.image.load(iP_13d).convert()
+P_13h = pygame.image.load(iP_13h).convert()
+P_13s = pygame.image.load(iP_13s).convert() 
+Back_Card = pygame.image.load(iBack_Card).convert()
+Back_Card90 = pygame.transform.rotate(Back_Card , 90)
+Back_Cardn90 = pygame.transform.rotate(Back_Card , -90)
+P_pass = pygame.image.load(iP_pass).convert()
+
+num_of_card     = 13
+p2_num_of_card  = 13
+p3_num_of_card  = 13
+p4_num_of_card  = 13
+start_turn = 1
+
+card_clicked_list    = [0] * 13
+p2_card_clicked_list = [0] * 13
+p3_card_clicked_list = [0] * 13
+p4_card_clicked_list = [0] * 13
+player_card_list  = [0] * 13
+player_card_rect  = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
+p2_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
+p3_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
+p4_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
+desktop_card_list = [0] * 5
+desktop_card_rect = [[0,0], [0,0], [0,0], [0,0], [0,0]]
+p2_card_list     = [0] * 13
+p3_card_list     = [0] * 13
+p4_card_list     = [0] * 13
+all_card_list    = [0] * 52
+
+org_player_card_x = SCREEN_SIZE[0]/2-4*P_1c.get_width()
+player_card_x     = SCREEN_SIZE[0]/2-4*P_1c.get_width()
+player_card_y     = 500
+org_p2_card_y = 50 + P_1c.get_height()
+p2_card_x     = SCREEN_SIZE[0]-5*Back_Card90.get_width()/2-10
+p2_card_y     = 50 + P_1c.get_height()
+org_p3_card_x = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
+p3_card_x     = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
+p3_card_y     = 50
+org_p4_card_y = 50 + P_1c.get_height() 
+p4_card_x     = Back_Cardn90.get_width()
+p4_card_y     = 50 + P_1c.get_height()
+org_display_card_x = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
+display_card_x     = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
+display_card_y     = 280
+
+click_move_y =  30
+put_card_alreay = 0
+first_put       = 1
+turn_id = 1
+clicked = 0
+start3c = 1
+
+num_of_card     = 13
+p2_num_of_card  = 13
+p3_num_of_card  = 13
+p4_num_of_card  = 13
+num_of_desktop_card = 0
+
+count_pass = 0
+p_pass  = 0
+p2_pass = 0
+p3_pass = 0
+p4_pass = 0
+
+start_turn_id = turn_id
+owner         = start_turn_id
+screen_width, screen_height = SCREEN_SIZE
+
+winner = 1
 
 def handle_put(player_card_len):
     global first_put
@@ -1069,7 +1197,7 @@ def ai():
     else:
         return 0
 
-def main(loop_num = -1, rule = "Taiwan_China"):
+def main(loop_num = -1):
 
     global num_of_card     
     global p2_num_of_card  
@@ -1323,133 +1451,5 @@ def main(loop_num = -1, rule = "Taiwan_China"):
     exit()
 		
 if __name__ == "__main__":
-    SCREEN_SIZE = (1280, 720) 
-    pygame.init()
-    
-    pygame.display.set_icon(pygame.image.load("Image/simpybigtwo_default.png"))
-    screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)#SCREEN_SIZE, FULLSCREEN, 32)
-    pygame.display.set_caption("Big Two")
-    
-    background = pygame.image.load(background_image_filename).convert()
-    P_1c = pygame.image.load(iP_1c).convert()
-    P_1d = pygame.image.load(iP_1d).convert()
-    P_1h = pygame.image.load(iP_1h).convert()
-    P_1s = pygame.image.load(iP_1s).convert()
-    P_2c = pygame.image.load(iP_2c).convert()
-    P_2d = pygame.image.load(iP_2d).convert()
-    P_2h = pygame.image.load(iP_2h).convert()
-    P_2s = pygame.image.load(iP_2s).convert()
-    P_3c = pygame.image.load(iP_3c).convert()
-    P_3d = pygame.image.load(iP_3d).convert()
-    P_3h = pygame.image.load(iP_3h).convert()
-    P_3s = pygame.image.load(iP_3s).convert()
-    P_4c = pygame.image.load(iP_4c).convert()
-    P_4d = pygame.image.load(iP_4d).convert()
-    P_4h = pygame.image.load(iP_4h).convert()
-    P_4s = pygame.image.load(iP_4s).convert()
-    P_5c = pygame.image.load(iP_5c).convert()
-    P_5d = pygame.image.load(iP_5d).convert()
-    P_5h = pygame.image.load(iP_5h).convert()
-    P_5s = pygame.image.load(iP_5s).convert()
-    P_6c = pygame.image.load(iP_6c).convert()
-    P_6d = pygame.image.load(iP_6d).convert()
-    P_6h = pygame.image.load(iP_6h).convert()
-    P_6s = pygame.image.load(iP_6s).convert()
-    P_7c = pygame.image.load(iP_7c).convert()
-    P_7d = pygame.image.load(iP_7d).convert()
-    P_7h = pygame.image.load(iP_7h).convert()
-    P_7s = pygame.image.load(iP_7s).convert()
-    P_8c = pygame.image.load(iP_8c).convert()
-    P_8d = pygame.image.load(iP_8d).convert()
-    P_8h = pygame.image.load(iP_8h).convert()
-    P_8s = pygame.image.load(iP_8s).convert()
-    P_9c = pygame.image.load(iP_9c).convert()
-    P_9d = pygame.image.load(iP_9d).convert()
-    P_9h = pygame.image.load(iP_9h).convert()
-    P_9s = pygame.image.load(iP_9s).convert()
-    P_10c = pygame.image.load(iP_10c).convert()
-    P_10d = pygame.image.load(iP_10d).convert()
-    P_10h = pygame.image.load(iP_10h).convert()
-    P_10s = pygame.image.load(iP_10s).convert()
-    P_11c = pygame.image.load(iP_11c).convert()
-    P_11d = pygame.image.load(iP_11d).convert()
-    P_11h = pygame.image.load(iP_11h).convert()
-    P_11s = pygame.image.load(iP_11s).convert() 
-    P_12c = pygame.image.load(iP_12c).convert()
-    P_12d = pygame.image.load(iP_12d).convert()
-    P_12h = pygame.image.load(iP_12h).convert()
-    P_12s = pygame.image.load(iP_12s).convert() 
-    P_13c = pygame.image.load(iP_13c).convert()
-    P_13d = pygame.image.load(iP_13d).convert()
-    P_13h = pygame.image.load(iP_13h).convert()
-    P_13s = pygame.image.load(iP_13s).convert() 
-    Back_Card = pygame.image.load(iBack_Card).convert()
-    Back_Card90 = pygame.transform.rotate(Back_Card , 90)
-    Back_Cardn90 = pygame.transform.rotate(Back_Card , -90)
-    P_pass = pygame.image.load(iP_pass).convert()
-    
-    num_of_card     = 13
-    p2_num_of_card  = 13
-    p3_num_of_card  = 13
-    p4_num_of_card  = 13
-    start_turn = 1
-    
-    card_clicked_list    = [0] * 13
-    p2_card_clicked_list = [0] * 13
-    p3_card_clicked_list = [0] * 13
-    p4_card_clicked_list = [0] * 13
-    player_card_list  = [0] * 13
-    player_card_rect  = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
-    p2_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
-    p3_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
-    p4_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
-    desktop_card_list = [0] * 5
-    desktop_card_rect = [[0,0], [0,0], [0,0], [0,0], [0,0]]
-    p2_card_list     = [0] * 13
-    p3_card_list     = [0] * 13
-    p4_card_list     = [0] * 13
-    all_card_list    = [0] * 52
-    
-    org_player_card_x = SCREEN_SIZE[0]/2-4*P_1c.get_width()
-    player_card_x     = SCREEN_SIZE[0]/2-4*P_1c.get_width()
-    player_card_y     = 500
-    org_p2_card_y = 50 + P_1c.get_height()
-    p2_card_x     = SCREEN_SIZE[0]-5*Back_Card90.get_width()/2-10
-    p2_card_y     = 50 + P_1c.get_height()
-    org_p3_card_x = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
-    p3_card_x     = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
-    p3_card_y     = 50
-    org_p4_card_y = 50 + P_1c.get_height() 
-    p4_card_x     = Back_Cardn90.get_width()
-    p4_card_y     = 50 + P_1c.get_height()
-    org_display_card_x = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
-    display_card_x     = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
-    display_card_y     = 280
-    
-    click_move_y =  30
-    put_card_alreay = 0
-    first_put       = 1
-    turn_id = 1
-    clicked = 0
-    start3c = 1
-    
-    num_of_card     = 13
-    p2_num_of_card  = 13
-    p3_num_of_card  = 13
-    p4_num_of_card  = 13
-    num_of_desktop_card = 0
-    
-    count_pass = 0
-    p_pass  = 0
-    p2_pass = 0
-    p3_pass = 0
-    p4_pass = 0
-    
-    start_turn_id = turn_id
-    owner         = start_turn_id
-    screen_width, screen_height = SCREEN_SIZE
-    
-    winner = 1
-    
     main()
     
