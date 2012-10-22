@@ -826,7 +826,10 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
         if 1 == start3c:
             # four kind
             put_card_list, card_index_list, put_len, cpass = four_kind(card_list, card_len, valid_first_put_card)
-            if 0 == cpass:
+            num = [0] * 13
+            for a in put_card_list:
+                num[a/4] += 1
+            if 0 == cpass and 4 == num[1]:
                 return put_card_list, card_index_list, put_len, cpass
             #end four kind
         if card_len > 6:
