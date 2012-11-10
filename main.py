@@ -125,6 +125,8 @@ Back_Card90 = pygame.transform.rotate(Back_Card , 90)
 Back_Cardn90 = pygame.transform.rotate(Back_Card , -90)
 P_pass = pygame.image.load(iP_pass).convert()
 
+rule = "Taiwan"
+
 num_of_card     = 13
 p2_num_of_card  = 13
 p3_num_of_card  = 13
@@ -493,6 +495,17 @@ def handle_click_card( mouse_x, mouse_y):
                 if player_card_y-click_move_y <= mouse_y < player_card_y+P_1c.get_height()-click_move_y:
                     move_clicked_card([0,1], ii)
                     card_clicked_list[ii] = 0
+
+def straight_taiwan_big(card_list, card_num):
+    num_card = [0] * 13
+    for i in range(0, card_num):
+        num_card[card_list[i]/4] += 1
+        if 3 == card_list[i]/4:
+            sc = card_list[i]
+    if 1 == num_card[0] and 1 == num_card[1] and 1 == num_card[2] and 1 == num_card[3] and 1 == num_card[12]:
+        return sc
+    else:
+        return one_card(card_list, card_num)
                     
 def one_card(card_list, card_num):
     big_card_score = 0
@@ -639,10 +652,16 @@ def compare_card( org_card_list, org_len, put_card_list, put_len):
                 #print 'Super Card'
                 if five_card(org_card_list) < 9000:
                     return 1
-                elif five_card(org_card_list)+one_card(org_card_list, 5) < five_card(put_card_list)+one_card(put_card_list, 5):
-                    return 1
-                else:
-                    return -1
+                elif rule == "Taiwan_China":
+                    if five_card(org_card_list)+one_card(org_card_list, 5) < five_card(put_card_list)+one_card(put_card_list, 5):
+                        return 1
+                    else:
+                        return -1
+                elif rule == "Taiwan":
+                    if five_card(org_card_list)+straight_taiwan_big(org_card_list, 5) < five_card(put_card_list)+straight_taiwan_big(put_card_list, 5):
+                        return 1
+                    else:
+                        return -1
             elif five_card(put_card_list) == 8000:
                 #print 'Super Card2'
                 if 9000 == five_card(org_card_list):
@@ -662,10 +681,16 @@ def compare_card( org_card_list, org_len, put_card_list, put_len):
                     return -1
             elif five_card(org_card_list) == 5000:
                 if 5000 == five_card(put_card_list):
-                    if five_card(org_card_list)+one_card(org_card_list, 5) < five_card(put_card_list)+one_card(put_card_list, 5):
-                        return 1
-                    else:
-                        return -1
+                    if rule == "Taiwan_China":
+                        if five_card(org_card_list)+one_card(org_card_list, 5) < five_card(put_card_list)+one_card(put_card_list, 5):
+                            return 1
+                        else:
+                            return -1
+                    elif rule == "Taiwan":
+                        if five_card(org_card_list)+straight_taiwan_big(org_card_list, 5) < five_card(put_card_list)+straight_taiwan_big(org_card_list, 5):
+                            return 1
+                        else:
+                            return -1
                 else:
                     return -1
             else:
