@@ -687,7 +687,7 @@ def compare_card( org_card_list, org_len, put_card_list, put_len):
                         else:
                             return -1
                     elif rule == "Taiwan":
-                        if five_card(org_card_list)+straight_taiwan_big(org_card_list, 5) < five_card(put_card_list)+straight_taiwan_big(org_card_list, 5):
+                        if five_card(org_card_list)+straight_taiwan_big(org_card_list, 5) < five_card(put_card_list)+straight_taiwan_big(put_card_list, 5):
                             return 1
                         else:
                             return -1
