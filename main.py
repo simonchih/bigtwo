@@ -1350,7 +1350,6 @@ def main(loop_num = -1):
             p3_card_list = ini_random_cards(p3_card_list, 3)
             p2_card_list = ini_random_cards(p2_card_list, 2)
             player_card_list = ini_random_cards(player_card_list, 1)
-            player_card_list.sort()
             p2_card_list.sort()
             p3_card_list.sort()
             p4_card_list.sort()
@@ -1378,6 +1377,11 @@ def main(loop_num = -1):
                 desktop_card_rect[i][1] = display_card_y
 
             start_turn = 0
+			
+            display_all()
+            pygame.display.update()
+            time.sleep(1)
+            player_card_list.sort()
         
         #print 'turn_id=%d, first_put=%d, owner=%d' % (turn_id, first_put, owner)
         #for i in range(0, num_of_desktop_card):
