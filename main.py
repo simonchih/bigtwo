@@ -470,31 +470,20 @@ def handle_click_card( mouse_x, mouse_y):
     global card_clicked_list
     #global num_of_card
     
-    for i in range(0, num_of_card):
-        if player_card_x + i * P_1c.get_width()/2 <= mouse_x < player_card_x + (i+1) * P_1c.get_width()/2:
+    for i in range(num_of_card-1, -1, -1):
+        if player_card_x + i * P_1c.get_width()/2 <= mouse_x < player_card_x + i * P_1c.get_width()/2 + P_1c.get_width():
             if 0 == card_clicked_list[i]:
                 #unclicked the click card
                 if player_card_y <= mouse_y < player_card_y+P_1c.get_height():
                     move_clicked_card([0,-1], i)
                     card_clicked_list[i] = 1
+                    break
             elif 1 == card_clicked_list[i]:
                 #clicked then unclick card
                 if player_card_y-click_move_y <= mouse_y < player_card_y+P_1c.get_height()-click_move_y:
                     move_clicked_card([0,1], i)
                     card_clicked_list[i] = 0
-    ii = i
-    i += 1
-    if player_card_x + i * P_1c.get_width()/2 <= mouse_x < player_card_x + (i+1) * P_1c.get_width()/2:
-            if 0 == card_clicked_list[ii]:
-                #unclicked the click card
-                if player_card_y <= mouse_y < player_card_y+P_1c.get_height():
-                    move_clicked_card([0,-1], ii)
-                    card_clicked_list[ii] = 1
-            elif 1 == card_clicked_list[ii]:
-                #clicked then unclick card
-                if player_card_y-click_move_y <= mouse_y < player_card_y+P_1c.get_height()-click_move_y:
-                    move_clicked_card([0,1], ii)
-                    card_clicked_list[ii] = 0
+                    break
 
 def straight_taiwan_big(card_list, card_num):
     num_card = [0] * 13
