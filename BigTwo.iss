@@ -5,7 +5,7 @@
 
 [Setup]
 AppName=Simpy Big Two
-AppVersion=0.3.3
+AppVersion=0.3.4
 DefaultDirName={pf}\Simpy Big Two
 DefaultGroupName=Simpy Big Two
 UninstallDisplayIcon={app}\main.exe
@@ -14,10 +14,10 @@ SolidCompression=yes
 OutputDir=E:\simpybigtwo
 
 [Files]
-Source: "E:\simpybigtwo\simpybigtwo_033\main.exe"; DestDir: "{app}"
-Source: "E:\simpybigtwo\simpybigtwo_033\FreeSansBold.ttf"; DestDir: "{app}"
-Source: "E:\simpybigtwo\simpybigtwo_033\readme.txt"; DestDir: "{app}"; Flags: isreadme
-Source: "E:\simpybigtwo\simpybigtwo_033\Image\*.*"; DestDir: "{app}\Image"; Flags: ignoreversion recursesubdirs
+Source: "E:\simpybigtwo\simpybigtwo_034\main.exe"; DestDir: "{app}"
+Source: "E:\simpybigtwo\simpybigtwo_034\FreeSansBold.ttf"; DestDir: "{app}"
+Source: "E:\simpybigtwo\simpybigtwo_034\readme.txt"; DestDir: "{app}"; Flags: isreadme
+Source: "E:\simpybigtwo\simpybigtwo_034\Image\*.*"; DestDir: "{app}\Image"; Flags: ignoreversion recursesubdirs
 
 [Icons]
 Name: "{group}\Simpy Big Two"; Filename: "{app}\main.exe"; IconFilename: "{app}\Image\simpybigtwo_default.ico"
