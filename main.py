@@ -142,8 +142,8 @@ player_card_rect  = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,
 p2_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
 p3_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
 p4_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
-desktop_card_list = [0] * 5
-desktop_card_rect = [[0,0], [0,0], [0,0], [0,0], [0,0]]
+desktop_card_list = [0] * 13
+desktop_card_rect = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
 p2_card_list     = [0] * 13
 p3_card_list     = [0] * 13
 p4_card_list     = [0] * 13
@@ -196,7 +196,6 @@ def handle_put(player_card_len):
     global desktop_card_list
     global num_of_desktop_card
     global player_card_list
-    global start3c
     global owner
     put_card_list = [0]*13
     put_len = 0
@@ -272,10 +271,15 @@ def display_all():
         p3_card_x = org_p3_card_x + (13-p3_num_of_card)*Back_Card.get_width()/4
         for x in range(0, p3_num_of_card):
             p3_card_rect[x][0] = p3_card_x + x*Back_Card.get_width()/2
-        
-        display_card_x = org_display_card_x - num_of_desktop_card*P_1c.get_width()/2
-        for x in range(0, num_of_desktop_card):
-            desktop_card_rect[x][0] = display_card_x + x*P_1c.get_width()
+                
+        if 13 == num_of_desktop_card:
+            display_card_x = org_player_card_x
+            for x in range(0, num_of_desktop_card):
+                desktop_card_rect[x][0] = display_card_x + x*P_1c.get_width()/2
+        else:
+            display_card_x = org_display_card_x - num_of_desktop_card*P_1c.get_width()/2
+            for x in range(0, num_of_desktop_card):
+                desktop_card_rect[x][0] = display_card_x + x*P_1c.get_width()
     screen.blit(write("Left Button of Mouse"),(screen_width -250,screen_height - 200))
     screen.blit(write("=> Select Cards"), (screen_width -250,screen_height - 175))
     screen.blit(write("Right Button of Mouse"),(screen_width -250,screen_height - 150))
@@ -286,7 +290,6 @@ def display_all():
     display_p3_num_of_cards(p3_card_list, p3_num_of_card)
     display_p4_num_of_cards(p4_card_list, p4_num_of_card)
     display_desktop_cards(desktop_card_list, num_of_desktop_card)
-    
 
 def display_desktop_cards(list, num):
     for x in range(0, num):
@@ -568,6 +571,16 @@ def five_card(card_list):
     else:
         return 0
 
+def thirteen_card(card_list):
+    #precondition: sort card
+    c = card_list
+    if c[0]%4 == c[1]%4 == c[2]%4 == c[3]%4 == c[4]%4 == c[5]%4 == c[6]%4 == c[7]%4 == c[8]%4 == c[9]%4 == c[10]%4 == c[11]%4 == c[12]%4 and 0 == c[0]/4 and 1 == c[1]/4 and 2 == c[2]/4 and 3 == c[3]/4 and 4 == c[4]/4 and 5 == c[5]/4 and 6 == c[6]/4 and 7 == c[7]/4 and 8 == c[8]/4 and 9 == c[9]/4 and 10 == c[10]/4 and 11 == c[11]/4 and 12 == c[12]/4:
+        return 11000
+    elif 0 == c[0]/4 and 1 == c[1]/4 and 2 == c[2]/4 and 3 == c[3]/4 and 4 == c[4]/4 and 5 == c[5]/4 and 6 == c[6]/4 and 7 == c[7]/4 and 8 == c[8]/4 and 9 == c[9]/4 and 10 == c[10]/4 and 11 == c[11]/4 and 12 == c[12]/4:
+        return 10000
+    else:
+        return 0
+        
 def fk_big(list):
     c4 = [0] * 5
     cother = [0] * 5
@@ -685,9 +698,34 @@ def compare_card( org_card_list, org_len, put_card_list, put_len):
             else:
             # It seems org card is super card
                 return -1
+        elif 13 == org_len:
+            if thirteen_card(put_card_list) == 11000:
+                if thirteen_card(org_card_list) < 11000:
+                    return 1
+                elif thirteen_card(org_card_list) == 11000:
+                    if one_card(org_card_list, 13) < one_card(put_card_list, 13):
+                        return 1
+                    else:
+                        return -1
+                else:
+                    return -1
+            elif thirteen_card(put_card_list) == 10000:
+                if thirteen_card(org_card_list) < 10000:
+                    return 1
+                if thirteen_card(org_card_list) == 10000:
+                    if one_card(org_card_list, 13) < one_card(put_card_list, 13):
+                        return 1
+                    else:
+                        return -1
+                else:
+                    return -1
+            else:
+                return -1
         else:#impossible situation
             return -1
-    elif 5 == put_len and five_card(put_card_list) > 7000:
+    elif 13 == put_len and thirteen_card(put_card_list) > 9000:
+        return 1
+    elif org_len < 13 and 5 == put_len and five_card(put_card_list) > 7000:
         return 1
         #print 'Super Card'
     else:
@@ -723,9 +761,37 @@ def valid_first_put_card(put_card_list, put_len):
             return 1
         else:
             return -1
+    elif 13 == put_len:
+        if thirteen_card(put_card_list) > 0:
+            if 1 == start3c:
+                start3c = 0
+            return 1
+        else:
+            return -1
     else:
         return -1
 
+def dragon(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], org_card_len = 0):        
+    cpass = 1
+    put_card_list   = [0] * 13
+    card_index_list = [0] * 13
+    put_len         = 0
+    if 13 == card_len:
+        #precondition card_list is sort
+        put_card_list = list(card_list)
+        card_index_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        put_len = 13
+    if 13 == put_len:
+        if  func == valid_first_put_card:
+            if  1 == func(put_card_list, put_len):
+                cpass = 0
+                return put_card_list, card_index_list, put_len, cpass
+        elif func == compare_card:
+            if 1 == func(org_card_list, org_card_len, put_card_list, put_len):
+                cpass = 0
+                return put_card_list, card_index_list, put_len, cpass
+    return put_card_list, card_index_list, put_len, cpass
+    
 def straight_flush(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
     cpass = 1
     put_card_list   = [0] * 5
@@ -961,11 +1027,16 @@ def small_one(card_list, card_len):
 #return put_card_list, card_index_list, put_len, cpass
 def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
     cpass = 1
-    put_card_list   = [0] * 5
-    card_index_list = [0] * 5
+    put_card_list   = [0] * 13
+    card_index_list = [0] * 13
     put_len         = 0
     if 1 == fp:
         if 1 == start3c:
+            #dragon
+            put_card_list, card_index_list, put_len, cpass = dragon(card_list, card_len, valid_first_put_card)
+            if 0 == cpass and 4 == put_card_list[1]:
+                return put_card_list, card_index_list, put_len, cpass   
+            #end dragon
             # four kind
             put_card_list, card_index_list, put_len, cpass = four_kind(card_list, card_len, valid_first_put_card)
             num = [0] * 13
@@ -974,6 +1045,13 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
             if 0 == cpass and 4 == num[1]:
                 return put_card_list, card_index_list, put_len, cpass
             #end four kind
+        
+        if 13 == card_len:
+            #dragon
+            put_card_list, card_index_list, put_len, cpass = dragon(card_list, card_len, valid_first_put_card)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass   
+            #end dragon
         if card_len > 6:
             put_card_list, card_index_list, put_len, cpass = full_house(card_list, card_len, valid_first_put_card)
             if 0 == cpass:
@@ -1026,6 +1104,11 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
         else:
             put_card_list, card_index_list, put_len, cpass = one(card_list, card_len, valid_first_put_card)
     else:
+        if 13 == card_len:
+            # four kind
+            put_card_list, card_index_list, put_len, cpass = dragon(card_list, card_len, compare_card, org_card_list, org_card_len)
+            if 0 == cpass:
+                return put_card_list, card_index_list, put_len, cpass
         if org_card_len == 5:
             #cpass == 1
             put_card_list, card_index_list, put_len, cpass = full_house(card_list, card_len, compare_card, org_card_list, org_card_len)
@@ -1292,8 +1375,8 @@ def main(loop_num = -1):
             p2_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
             p3_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
             p4_card_rect      = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
-            desktop_card_list = [0] * 5
-            desktop_card_rect = [[0,0], [0,0], [0,0], [0,0], [0,0]]
+            desktop_card_list = [0] * 13
+            desktop_card_rect = [[0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0]]
             p2_card_list     = [0] * 13
             p3_card_list     = [0] * 13
             p4_card_list     = [0] * 13
@@ -1339,6 +1422,19 @@ def main(loop_num = -1):
             p3_card_list = ini_random_cards(p3_card_list, 3)
             p2_card_list = ini_random_cards(p2_card_list, 2)
             player_card_list = ini_random_cards(player_card_list, 1)
+            #test dragon
+            #k = 0
+            #if 4 == turn_id:
+            #    p4_card_list[0] = 0
+            #    p4_card_list[1] = 4
+            #else:
+            #    p4_card_list[0] = 1
+            #    p4_card_list[1] = 5
+            #    k = 1
+            #for i in range(12, 1, -1):
+            #    m = i*4 + k
+            #    p4_card_list[i] = m
+            #end test dragon
             p2_card_list.sort()
             p3_card_list.sort()
             p4_card_list.sort()
@@ -1362,13 +1458,14 @@ def main(loop_num = -1):
                 #print (num_to_cards_rect(player_card_list[i])[0], num_to_cards_rect(player_card_list[i])[1])
                 #print (player_card_rect[i][0], player_card_rect[i][1])
 
-            for i in range(0,5):
+            for i in range(0,13):
                 desktop_card_rect[i][1] = display_card_y
 
             start_turn = 0
 			
             display_all()
             pygame.display.update()
+            
             time.sleep(1)
             player_card_list.sort()
         
@@ -1412,6 +1509,12 @@ def main(loop_num = -1):
                     
         if 1 == turn_id and 1 == p_pass:
             turn_id = 2
+            
+        if num_of_card != 0 and p2_num_of_card != 0 and p3_num_of_card != 0 and p4_num_of_card != 0:
+            if 1 == ai(): 
+                put_card_alreay = 1 
+        
+        display_all()
         
         if 0 == num_of_card:
             winner = 1
@@ -1433,12 +1536,6 @@ def main(loop_num = -1):
             start_turn = 1
             if loop_num > 0:
                 loop_number -= 1
-            
-        display_all()
-        
-        if num_of_card != 0 and p2_num_of_card != 0 and p3_num_of_card != 0 and p4_num_of_card != 0:
-            if 1 == ai(): 
-                put_card_alreay = 1 
         
         if 1 == p_pass:
             #screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 550))
@@ -1464,8 +1561,10 @@ def main(loop_num = -1):
             turn_id = owner
             pygame.display.update()
             time.sleep(1)
+        
         pygame.display.update()
-    
+        if 0 == num_of_card or 0 == p2_num_of_card or 0 == p3_num_of_card or 0 == p4_num_of_card:
+            time.sleep(4)
     exit()
 		
 if __name__ == "__main__":
