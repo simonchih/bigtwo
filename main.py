@@ -1224,7 +1224,7 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
             
         else: #org_card_len = 1
             if 1 == next_turn_num_of_card(turn_id):
-                put_card_list, card_index_list, put_len, cpass = one_big(card_list, card_len, valid_first_put_card)
+                put_card_list, card_index_list, put_len, cpass = one_big(card_list, card_len, compare_card, org_card_list, org_card_len)
                 if 0 == cpass:
                     return put_card_list, card_index_list, put_len, cpass
                     
