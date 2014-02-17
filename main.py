@@ -889,6 +889,32 @@ def one(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_card_len
         small_card_index %= card_len
         small_card = card_list[small_card_index]
     return put_card_list, card_index_list, put_len, cpass
+
+def one_big(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
+    cpass = 1
+    put_card_list   = [0] * 5
+    card_index_list = [0] * 5
+    put_len         = 0
+    big_card = card_list[0]
+    big_card_index = 0
+    for i in range(0, card_len):
+        if one_card([big_card], 1) < one_card([card_list[i]], 1):
+            big_card = card_list[i]
+            big_card_index = i
+            
+    put_card_list[0]   = big_card 
+    card_index_list[0] = big_card_index
+    put_len            = 1
+    if func == valid_first_put_card:
+        if 1 == func(put_card_list, put_len):
+            cpass = 0
+            return put_card_list, card_index_list, put_len, cpass
+    elif func == compare_card:
+        if 1 == func(org_card_list, org_card_len, put_card_list, put_len):
+            cpass = 0
+            return put_card_list, card_index_list, put_len, cpass
+
+    return put_card_list, card_index_list, put_len, cpass
     
 def full_house(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
     cpass = 1
@@ -1023,9 +1049,44 @@ def small_one(card_list, card_len):
             small_card = card_list[i]
             small_card_index = i
     return small_card_index
-    
+
+def next_turn_num_of_card(t_id):
+    next_turn = 1+(t_id%4)
+    while next_turn != t_id:
+        if 1 == next_turn:
+            if 0 == p_pass:
+                break
+            else:
+                next_turn = 2
+        elif 2 == next_turn:
+            if 0 == p2_pass:
+                break
+            else:
+                next_turn = 3
+        elif 3 == next_turn:
+            if 0 == p3_pass:
+                break
+            else:
+                next_turn = 4
+        #elif 4 == next_turn:
+        else:
+            if 0 == p4_pass:
+                break
+            else:
+                next_turn = 1
+    if 1 == next_turn:
+        return num_of_card
+    elif 2 == next_turn:
+        return p2_num_of_card
+    elif 3 == next_turn:
+        return p3_num_of_card
+    else:
+        return p4_num_of_card
+        
 #return put_card_list, card_index_list, put_len, cpass
 def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_card_len = 0):
+    global turn_id
+    
     cpass = 1
     put_card_list   = [0] * 13
     card_index_list = [0] * 13
@@ -1067,6 +1128,11 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
             if 0 == cpass:
                 return put_card_list, card_index_list, put_len, cpass    
             #end pair
+            if 1 == next_turn_num_of_card(turn_id):
+                put_card_list, card_index_list, put_len, cpass = one_big(card_list, card_len, valid_first_put_card)
+                if 0 == cpass:
+                    return put_card_list, card_index_list, put_len, cpass
+            
             put_card_list, card_index_list, put_len, cpass = one(card_list, card_len, valid_first_put_card)
             
         elif 6 == card_len or 5 == card_len:
@@ -1091,6 +1157,11 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
             if 0 == cpass:
                 return put_card_list, card_index_list, put_len, cpass
             #end pair
+            if 1 == next_turn_num_of_card(turn_id):
+                put_card_list, card_index_list, put_len, cpass = one_big(card_list, card_len, valid_first_put_card)
+                if 0 == cpass:
+                    return put_card_list, card_index_list, put_len, cpass
+            
             put_card_list, card_index_list, put_len, cpass = one(card_list, card_len, valid_first_put_card)
             
         elif card_len >= 2:
@@ -1099,9 +1170,15 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
             if 0 == cpass:
                 return put_card_list, card_index_list, put_len, cpass
             #end pair
+            if 1 == next_turn_num_of_card(turn_id):
+                put_card_list, card_index_list, put_len, cpass = one_big(card_list, card_len, valid_first_put_card)
+                if 0 == cpass:
+                    return put_card_list, card_index_list, put_len, cpass
+                    
             put_card_list, card_index_list, put_len, cpass = one(card_list, card_len, valid_first_put_card)
             
         else:
+        #last one card
             put_card_list, card_index_list, put_len, cpass = one(card_list, card_len, valid_first_put_card)
     else:
         if 13 == card_len:
@@ -1146,6 +1223,11 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
             #return put_card_list, card_index_list, put_len, cpass
             
         else: #org_card_len = 1
+            if 1 == next_turn_num_of_card(turn_id):
+                put_card_list, card_index_list, put_len, cpass = one_big(card_list, card_len, valid_first_put_card)
+                if 0 == cpass:
+                    return put_card_list, card_index_list, put_len, cpass
+                    
             put_card_list, card_index_list, put_len, cpass = one(card_list, card_len, compare_card, org_card_list, org_card_len)
             if 0 == cpass:
                 return put_card_list, card_index_list, put_len, cpass
@@ -1295,11 +1377,7 @@ def ai():
         return 0
 
 def main(loop_num = -1):
-
-    global num_of_card     
-    global p2_num_of_card  
-    global p3_num_of_card  
-    global p4_num_of_card  
+  
     global start_turn 
 
     global card_clicked_list    
