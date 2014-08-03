@@ -5,7 +5,7 @@
 
 [Setup]
 AppName=Simpy Big Two
-AppVersion=0.3.5b
+AppVersion=0.3.5c
 DefaultDirName={pf}\Simpy Big Two
 DefaultGroupName=Simpy Big Two
 UninstallDisplayIcon={app}\main.exe
