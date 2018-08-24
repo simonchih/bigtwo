@@ -2,7 +2,7 @@ Image source: PySol cardset
 http://sourceforge.net/projects/pysolfc/?source=directory
 
 Intall on Linux:
-1. Install Python 2.7.x (e.g. 2.7.5)
+1. Install Python 3.6+ (e.g. 3.6.4)
 2. Install Pygame
 3. Run main.py
 

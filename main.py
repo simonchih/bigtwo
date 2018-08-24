@@ -149,20 +149,20 @@ p3_card_list     = [0] * 13
 p4_card_list     = [0] * 13
 all_card_list    = [0] * 52
 
-org_player_card_x = SCREEN_SIZE[0]/2-4*P_1c.get_width()
-player_card_x     = SCREEN_SIZE[0]/2-4*P_1c.get_width()
+org_player_card_x = SCREEN_SIZE[0]//2-4*P_1c.get_width()
+player_card_x     = SCREEN_SIZE[0]//2-4*P_1c.get_width()
 player_card_y     = 500
 org_p2_card_y = 50 + P_1c.get_height()
-p2_card_x     = SCREEN_SIZE[0]-5*Back_Card90.get_width()/2-10
+p2_card_x     = SCREEN_SIZE[0]-5*Back_Card90.get_width()//2-10
 p2_card_y     = 50 + P_1c.get_height()
-org_p3_card_x = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
-p3_card_x     = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
+org_p3_card_x = SCREEN_SIZE[0]//2-4*Back_Card.get_width()
+p3_card_x     = SCREEN_SIZE[0]//2-4*Back_Card.get_width()
 p3_card_y     = 50
 org_p4_card_y = 50 + P_1c.get_height() 
 p4_card_x     = Back_Cardn90.get_width()
 p4_card_y     = 50 + P_1c.get_height()
-org_display_card_x = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
-display_card_x     = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
+org_display_card_x = SCREEN_SIZE[0]//2 - P_1c.get_width()//2
+display_card_x     = SCREEN_SIZE[0]//2 - P_1c.get_width()//2
 display_card_y     = 280
 
 click_move_y =  30
@@ -206,7 +206,7 @@ def handle_put(player_card_len):
             put_card_list[put_len] = player_card_list[ci]
             put_len += 1
     
-    if 5 == put_len and 0 == put_card_list[0]/4 and 1 == put_card_list[1]/4 and 2 == put_card_list[2]/4 and 3 == put_card_list[3]/4 and 12 == put_card_list[4]/4:
+    if 5 == put_len and 0 == put_card_list[0]//4 and 1 == put_card_list[1]//4 and 2 == put_card_list[2]//4 and 3 == put_card_list[3]//4 and 12 == put_card_list[4]//4:
         t = put_card_list[4]
         for i in range(4, 0, -1):
             put_card_list[i] = put_card_list[i-1]
@@ -264,20 +264,20 @@ def display_all():
     if 1 == put_card_alreay:              
         put_card_alreay = 0
         
-        player_card_x = org_player_card_x+(13-num_of_card)*P_1c.get_width()/4 
+        player_card_x = org_player_card_x+(13-num_of_card)*P_1c.get_width()//4 
         for x in range(0, num_of_card):
-            player_card_rect[x][0] = player_card_x+x*P_1c.get_width()/2
+            player_card_rect[x][0] = player_card_x+x*P_1c.get_width()//2
             
-        p3_card_x = org_p3_card_x + (13-p3_num_of_card)*Back_Card.get_width()/4
+        p3_card_x = org_p3_card_x + (13-p3_num_of_card)*Back_Card.get_width()//4
         for x in range(0, p3_num_of_card):
-            p3_card_rect[x][0] = p3_card_x + x*Back_Card.get_width()/2
+            p3_card_rect[x][0] = p3_card_x + x*Back_Card.get_width()//2
                 
         if 13 == num_of_desktop_card:
             display_card_x = org_player_card_x
             for x in range(0, num_of_desktop_card):
-                desktop_card_rect[x][0] = display_card_x + x*P_1c.get_width()/2
+                desktop_card_rect[x][0] = display_card_x + x*P_1c.get_width()//2
         else:
-            display_card_x = org_display_card_x - num_of_desktop_card*P_1c.get_width()/2
+            display_card_x = org_display_card_x - num_of_desktop_card*P_1c.get_width()//2
             for x in range(0, num_of_desktop_card):
                 desktop_card_rect[x][0] = display_card_x + x*P_1c.get_width()
     screen.blit(write("Left Button of Mouse"),(screen_width -250,screen_height - 200))
@@ -474,7 +474,7 @@ def handle_click_card( mouse_x, mouse_y):
     #global num_of_card
     
     for i in range(num_of_card-1, -1, -1):
-        if player_card_x + i * P_1c.get_width()/2 <= mouse_x < player_card_x + i * P_1c.get_width()/2 + P_1c.get_width():
+        if player_card_x + i * P_1c.get_width()//2 <= mouse_x < player_card_x + i * P_1c.get_width()//2 + P_1c.get_width():
             if 0 == card_clicked_list[i]:
                 #unclicked the click card
                 if player_card_y <= mouse_y < player_card_y+P_1c.get_height():
@@ -491,8 +491,8 @@ def handle_click_card( mouse_x, mouse_y):
 def straight_taiwan_big(card_list, card_num):
     num_card = [0] * 13
     for i in range(0, card_num):
-        num_card[card_list[i]/4] += 1
-        if 3 == card_list[i]/4:
+        num_card[card_list[i]//4] += 1
+        if 3 == card_list[i]//4:
             sc = card_list[i]
     if 1 == num_card[0] and 1 == num_card[1] and 1 == num_card[2] and 1 == num_card[3] and 1 == num_card[12]:
         return sc
@@ -518,7 +518,7 @@ def one_card(card_list, card_num):
     return big_card_score
 
 def two_card(card_list):
-    if card_list[0]/4 != card_list[1]/4:
+    if card_list[0]//4 != card_list[1]//4:
         return 0
     else:
         return one_card(card_list, 2)
@@ -534,7 +534,7 @@ def five_card(card_list):
     two_num  =  0
     #check sequence number and same color
     for i in range(0, 5):
-        card_number[card_list[i]/4] += 1
+        card_number[card_list[i]//4] += 1
         if 0 == first:
             color = card_list[i]%4
             first = 1
@@ -562,7 +562,7 @@ def five_card(card_list):
     if 5 == seq and  5 == same_color_num:
         return 9000
     #check 4 color in same number
-    elif card_number[card_list[0]/4] == 4 or card_number[card_list[1]/4] == 4:
+    elif card_number[card_list[0]//4] == 4 or card_number[card_list[1]//4] == 4:
         return 8000
     elif 1 == three_num and 1 == two_num:
         return 6000
@@ -574,9 +574,9 @@ def five_card(card_list):
 def thirteen_card(card_list):
     #precondition: sort card
     c = card_list
-    if c[0]%4 == c[1]%4 == c[2]%4 == c[3]%4 == c[4]%4 == c[5]%4 == c[6]%4 == c[7]%4 == c[8]%4 == c[9]%4 == c[10]%4 == c[11]%4 == c[12]%4 and 0 == c[0]/4 and 1 == c[1]/4 and 2 == c[2]/4 and 3 == c[3]/4 and 4 == c[4]/4 and 5 == c[5]/4 and 6 == c[6]/4 and 7 == c[7]/4 and 8 == c[8]/4 and 9 == c[9]/4 and 10 == c[10]/4 and 11 == c[11]/4 and 12 == c[12]/4:
+    if c[0]%4 == c[1]%4 == c[2]%4 == c[3]%4 == c[4]%4 == c[5]%4 == c[6]%4 == c[7]%4 == c[8]%4 == c[9]%4 == c[10]%4 == c[11]%4 == c[12]%4 and 0 == c[0]//4 and 1 == c[1]//4 and 2 == c[2]//4 and 3 == c[3]//4 and 4 == c[4]//4 and 5 == c[5]//4 and 6 == c[6]//4 and 7 == c[7]//4 and 8 == c[8]//4 and 9 == c[9]//4 and 10 == c[10]//4 and 11 == c[11]//4 and 12 == c[12]//4:
         return 11000
-    elif 0 == c[0]/4 and 1 == c[1]/4 and 2 == c[2]/4 and 3 == c[3]/4 and 4 == c[4]/4 and 5 == c[5]/4 and 6 == c[6]/4 and 7 == c[7]/4 and 8 == c[8]/4 and 9 == c[9]/4 and 10 == c[10]/4 and 11 == c[11]/4 and 12 == c[12]/4:
+    elif 0 == c[0]//4 and 1 == c[1]//4 and 2 == c[2]//4 and 3 == c[3]//4 and 4 == c[4]//4 and 5 == c[5]//4 and 6 == c[6]//4 and 7 == c[7]//4 and 8 == c[8]//4 and 9 == c[9]//4 and 10 == c[10]//4 and 11 == c[11]//4 and 12 == c[12]//4:
         return 10000
     else:
         return 0
@@ -589,10 +589,10 @@ def fk_big(list):
     j = 1
     jj = 1
     for i in range(0, 5):
-        if c4[0]/4 == list[i]/4 and i!=0:
+        if c4[0]//4 == list[i]//4 and i!=0:
             c4[j] = list[i]
             j += 1
-        elif cother[0]/4 == list[i]/4 and i!=1:
+        elif cother[0]//4 == list[i]//4 and i!=1:
             cother[jj] = list[i]
             jj += 1
     if 4 == j:
@@ -607,7 +607,7 @@ def full_house_big(list):
     j = 1
     jj = 0
     for i in range(1, 5):
-        if c3[0]/4 == list[i]/4:
+        if c3[0]//4 == list[i]//4:
             c3[j] = list[i]
             j += 1
         else:
@@ -623,7 +623,7 @@ def four_kind_small_card(four_kind_card, list, list_len):
     small_index_card = 0
     first            = 1
     for i in range(0, list_len):
-        if list[i]/4 == four_kind_card/4:
+        if list[i]//4 == four_kind_card//4:
             continue
         elif 1 == first:
             small_card = list[i]
@@ -802,11 +802,11 @@ def straight_flush(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], o
         card_index_list[0]  = i
         put_len = 1
         for j in range(i+1, card_len):
-            if put_card_list[put_len-1]/4 + 1 == card_list[j]/4 and put_card_list[put_len-1]%4 == card_list[j]%4:
+            if put_card_list[put_len-1]//4 + 1 == card_list[j]//4 and put_card_list[put_len-1]%4 == card_list[j]%4:
                 put_card_list[put_len] = card_list[j]
                 card_index_list[put_len] = j
                 put_len += 1
-            elif 4 == put_len and (card_list[j]/4 + 1) % 13 == put_card_list[0] and put_card_list[0]%4 == card_list[j]%4:
+            elif 4 == put_len and (card_list[j]//4 + 1) % 13 == put_card_list[0] and put_card_list[0]%4 == card_list[j]%4:
                 put_card_list[4] = put_card_list[3]
                 card_index_list[4] = card_index_list[3]
                 put_card_list[3] = put_card_list[2]
@@ -840,7 +840,7 @@ def four_kind(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_ca
     
     if card_len > 5:
         for i in range(0, card_len-3):
-            if card_list[i]/4 == card_list[i+1]/4 == card_list[i+2]/4 == card_list[i+3]/4:
+            if card_list[i]//4 == card_list[i+1]//4 == card_list[i+2]//4 == card_list[i+3]//4:
                 put_card_list[0] = card_list[i]
                 put_card_list[1] = card_list[i+1]
                 put_card_list[2] = card_list[i+2]
@@ -925,7 +925,7 @@ def full_house(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_c
     small_i = small_one(card_list, card_len)
     for i in range(small_i, small_i+card_len-2):
         i = i % card_len
-        if card_list[i]/4 == card_list[(i+1)%card_len]/4 == card_list[(i+2)%card_len]/4:
+        if card_list[i]//4 == card_list[(i+1)%card_len]//4 == card_list[(i+2)%card_len]//4:
             put_card_list[0] = card_list[i]
             card_index_list[0] = i
             put_card_list[1] = card_list[i+1]
@@ -937,7 +937,7 @@ def full_house(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_c
                 j = j % card_len
                 if j == card_index_list[0] or j == card_index_list[1] or j == card_index_list[2]:
                     continue
-                elif card_list[j]/4 == card_list[(j+1)% card_len]/4:
+                elif card_list[j]//4 == card_list[(j+1)% card_len]//4:
                     put_card_list[3] = card_list[j]
                     card_index_list[3] = j
                     put_card_list[4] = card_list[j+1]
@@ -963,29 +963,29 @@ def straight(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_car
         card_index_list[0] = i
         for i2 in range(i+1, card_len-3):
             put_len = 1
-            if put_card_list[0]/4 + 1 < card_list[i2]/4:
+            if put_card_list[0]//4 + 1 < card_list[i2]//4:
                 break
-            elif put_card_list[0]/4 + 1 == card_list[i2]/4:
+            elif put_card_list[0]//4 + 1 == card_list[i2]//4:
                 put_card_list[1] = card_list[i2]
                 card_index_list[1] = i2
                 for i3 in range(i2+1, card_len-2):
                     put_len = 2
-                    if put_card_list[1]/4 + 1 < card_list[i3]/4:
+                    if put_card_list[1]//4 + 1 < card_list[i3]//4:
                         break
-                    elif put_card_list[1]/4 + 1 == card_list[i3]/4:
+                    elif put_card_list[1]//4 + 1 == card_list[i3]//4:
                         put_card_list[2] = card_list[i3]
                         card_index_list[2] = i3                                
                         for i4 in range(i3+1, card_len-1):
                             put_len = 3
-                            if put_card_list[2]/4 + 1 < card_list[i4]/4:
+                            if put_card_list[2]//4 + 1 < card_list[i4]//4:
                                 break
-                            elif put_card_list[2]/4 + 1 == card_list[i4]/4:
+                            elif put_card_list[2]//4 + 1 == card_list[i4]//4:
                                 put_card_list[3] = card_list[i4]
                                 card_index_list[3] = i4
                                 for i5 in range(i4+1, card_len):
                                     put_len = 4
-                                    if (card_list[i5]/4 + 1) % 13 == put_card_list[0] or put_card_list[3]/4 + 1 == card_list[i5]/4:
-                                        if (card_list[i5]/4 + 1) % 13 == put_card_list[0]:
+                                    if (card_list[i5]//4 + 1) % 13 == put_card_list[0] or put_card_list[3]//4 + 1 == card_list[i5]//4:
+                                        if (card_list[i5]//4 + 1) % 13 == put_card_list[0]:
                                             put_card_list[4] = put_card_list[3]
                                             card_index_list[4] = card_index_list[3]
                                             put_card_list[3] = put_card_list[2]
@@ -1025,7 +1025,7 @@ def pair(card_list, card_len, func, org_card_list = [0, 0, 0, 0, 0], org_card_le
         for j in range(i+1, small_i+card_len):
             i = i%card_len
             j = j%card_len
-            if card_list[i]/4 == card_list[j]/4:
+            if card_list[i]//4 == card_list[j]//4:
                 put_card_list[0] = card_list[i]
                 card_index_list[0] = i
                 put_card_list[1] = card_list[j]
@@ -1102,7 +1102,7 @@ def strategy(card_list, card_len, fp = 1, org_card_list = [0, 0, 0, 0, 0], org_c
             put_card_list, card_index_list, put_len, cpass = four_kind(card_list, card_len, valid_first_put_card)
             num = [0] * 13
             for a in put_card_list:
-                num[a/4] += 1
+                num[a//4] += 1
             if 0 == cpass and 4 == num[1]:
                 return put_card_list, card_index_list, put_len, cpass
             #end four kind
@@ -1460,20 +1460,20 @@ def main(loop_num = -1):
             p4_card_list     = [0] * 13
             all_card_list    = [0] * 52
 
-            org_player_card_x = SCREEN_SIZE[0]/2-4*P_1c.get_width()
-            player_card_x     = SCREEN_SIZE[0]/2-4*P_1c.get_width()
+            org_player_card_x = SCREEN_SIZE[0]//2-4*P_1c.get_width()
+            player_card_x     = SCREEN_SIZE[0]//2-4*P_1c.get_width()
             player_card_y     = 500
             org_p2_card_y = 50 + P_1c.get_height()
-            p2_card_x     = SCREEN_SIZE[0]-5*Back_Card90.get_width()/2-10
+            p2_card_x     = SCREEN_SIZE[0]-5*Back_Card90.get_width()//2-10
             p2_card_y     = 50 + P_1c.get_height()
-            org_p3_card_x = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
-            p3_card_x     = SCREEN_SIZE[0]/2-4*Back_Card.get_width()
+            org_p3_card_x = SCREEN_SIZE[0]//2-4*Back_Card.get_width()
+            p3_card_x     = SCREEN_SIZE[0]//2-4*Back_Card.get_width()
             p3_card_y     = 50
             org_p4_card_y = 50 + P_1c.get_height() 
             p4_card_x     = Back_Cardn90.get_width()
             p4_card_y     = 50 + P_1c.get_height()
-            org_display_card_x = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
-            display_card_x     = SCREEN_SIZE[0]/2 - P_1c.get_width()/2
+            org_display_card_x = SCREEN_SIZE[0]//2 - P_1c.get_width()//2
+            display_card_x     = SCREEN_SIZE[0]//2 - P_1c.get_width()//2
             display_card_y     = 280
 
             click_move_y =  30
@@ -1526,12 +1526,12 @@ def main(loop_num = -1):
              
             for i in range(0, 13): 
                 player_card_rect[i][1] = player_card_y
-                player_card_rect[i][0] = player_card_x+i*P_1c.get_width()/2
-                p2_card_rect[i][1]     = p2_card_y+i*Back_Card90.get_height()/4
+                player_card_rect[i][0] = player_card_x+i*P_1c.get_width()//2
+                p2_card_rect[i][1]     = p2_card_y+i*Back_Card90.get_height()//4
                 p2_card_rect[i][0]     = p2_card_x
                 p3_card_rect[i][1]     = p3_card_y
-                p3_card_rect[i][0]     = p3_card_x+i*Back_Card.get_width()/2
-                p4_card_rect[i][1]     = p4_card_y+i*Back_Cardn90.get_height()/4
+                p3_card_rect[i][0]     = p3_card_x+i*Back_Card.get_width()//2
+                p4_card_rect[i][1]     = p4_card_y+i*Back_Cardn90.get_height()//4
                 p4_card_rect[i][0]     = p4_card_x
                 #print (num_to_cards_rect(player_card_list[i])[0], num_to_cards_rect(player_card_list[i])[1])
                 #print (player_card_rect[i][0], player_card_rect[i][1])
@@ -1617,16 +1617,16 @@ def main(loop_num = -1):
         
         if 1 == p_pass:
             #screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 550))
-            screen.blit(P_pass, (screen_width/2-50, 550))            
+            screen.blit(P_pass, (screen_width//2-50, 550))            
         if 1 == p2_pass:
             #screen.blit(write("Pass", (0, 0, 255)), (p2_card_x+40, screen_height/2-65))
-            screen.blit(P_pass, (p2_card_x+40, screen_height/2-65))
+            screen.blit(P_pass, (p2_card_x+40, screen_height//2-65))
         if 1 == p3_pass:
             #screen.blit(write("Pass", (0, 0, 255)), (screen_width/2-50, 100))
-            screen.blit(P_pass, (screen_width/2-50, 100))
+            screen.blit(P_pass, (screen_width//2-50, 100))
         if 1 == p4_pass:
             #screen.blit(write("Pass", (0, 0, 255)), (p4_card_x+40, screen_height/2-65))
-            screen.blit(P_pass, (p4_card_x+40, screen_height/2-65))
+            screen.blit(P_pass, (p4_card_x+40, screen_height//2-65))
         
         if 3 == count_pass:
             count_pass = 0
