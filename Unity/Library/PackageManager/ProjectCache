@@ -1,0 +1,680 @@
+m_ProjectFiles:
+  m_ManifestFileStatus:
+    m_FilePath: /Users/fit0721/Documents/GitHub/bigtwo/Unity/Packages/manifest.json
+    m_PathExists: 1
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 639063695150000000
+    m_Hash: 2047667049
+  m_LockFileStatus:
+    m_FilePath: /Users/fit0721/Documents/GitHub/bigtwo/Unity/Packages/packages-lock.json
+    m_PathExists: 1
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 639063695360000000
+    m_Hash: 2316632543
+m_EmbeddedPackageManifests:
+  m_ManifestsStatus: {}
+m_LocalPackages:
+  m_LocalFileStatus: []
+m_ProjectPath: /Users/fit0721/Documents/GitHub/bigtwo/Unity/Packages
+m_EditorVersion: 6000.3.2f1 (a9779f353c9b)
+m_ResolvedPackages:
+- packageId: com.unity.modules.imageconversion@1.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0
+  source: 2
+  resolvedPath: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.imageconversion
+  assetPath: Packages/com.unity.modules.imageconversion
+  name: com.unity.modules.imageconversion
+  displayName: Image Conversion
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: module
+  description: 'The ImageConversion module implements the ImageConversion class which
+    provides helper methods for converting image data. Scripting API: https://docs.unity3d.com/ScriptReference/UnityEngine.ImageConversionModule.html'
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: 
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.0
+    minimumUnityVersion: 
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.modules.imgui@1.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0
+  source: 2
+  resolvedPath: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.imgui
+  assetPath: Packages/com.unity.modules.imgui
+  name: com.unity.modules.imgui
+  displayName: IMGUI
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: module
+  description: 'The IMGUI module provides Unity''s immediate mode GUI solution for
+    creating in-game and editor user interfaces. Scripting API: https://docs.unity3d.com/ScriptReference/UnityEngine.IMGUIModule.html'
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: 
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.0
+    minimumUnityVersion: 
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.modules.uielements@1.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0
+  source: 2
+  resolvedPath: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.uielements
+  assetPath: Packages/com.unity.modules.uielements
+  name: com.unity.modules.uielements
+  displayName: UIElements
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: module
+  description: 'The UIElements module implements the UIElements retained mode UI
+    framework. Scripting API: https://docs.unity3d.com/ScriptReference/UnityEngine.UIElementsModule.html'
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies:
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.hierarchycore
+    version: 1.0.0
+  - name: com.unity.modules.physics
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.hierarchycore
+    version: 1.0.0
+  - name: com.unity.modules.physics
+    version: 1.0.0
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: 
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.0
+    minimumUnityVersion: 
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.ugui@2.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 2.0.0
+  source: 2
+  resolvedPath: /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/PackageCache/com.unity.ugui@52e65280e89e
+  assetPath: Packages/com.unity.ugui
+  name: com.unity.ugui
+  displayName: Unity UI
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: "Unity UI is a set of tools for developing user interfaces for games
+    and applications. It is a GameObject-based UI system that uses Components and
+    the Game View to arrange, position, and style user interfaces. \u200B You cannot
+    use Unity UI to create or change user interfaces in the Unity Editor."
+  errors: []
+  versions:
+    all:
+    - 2.0.0
+    compatible:
+    - 2.0.0
+    recommended: 2.0.0
+    deprecated: []
+  dependencies:
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  keywords:
+  - UI
+  - ugui
+  - Unity UI
+  - Canvas
+  - TextMeshPro
+  - TextMesh Pro
+  - Text
+  - TMP
+  - SDF
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 2.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: 52e65280e89ee09a5b287dc793f9464bcd213b41
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 2.0.0
+    minimumUnityVersion: 2019.2
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.modules.ui@1.0.0
+  testable: 0
+  isDirectDependency: 0
+  version: 1.0.0
+  source: 2
+  resolvedPath: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.ui
+  assetPath: Packages/com.unity.modules.ui
+  name: com.unity.modules.ui
+  displayName: UI
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: module
+  description: 'The UI module implements basic components required for Unity''s UI
+    system Scripting API: https://docs.unity3d.com/ScriptReference/UnityEngine.UIModule.html'
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: 
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.0
+    minimumUnityVersion: 
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.modules.jsonserialize@1.0.0
+  testable: 0
+  isDirectDependency: 0
+  version: 1.0.0
+  source: 2
+  resolvedPath: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.jsonserialize
+  assetPath: Packages/com.unity.modules.jsonserialize
+  name: com.unity.modules.jsonserialize
+  displayName: JSONSerialize
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: module
+  description: 'The JSONSerialize module provides the JsonUtility class which lets
+    you serialize Unity Objects to JSON format. Scripting API: https://docs.unity3d.com/ScriptReference/UnityEngine.JSONSerializeModule.html'
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: 
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.0
+    minimumUnityVersion: 
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.modules.hierarchycore@1.0.0
+  testable: 0
+  isDirectDependency: 0
+  version: 1.0.0
+  source: 2
+  resolvedPath: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.hierarchycore
+  assetPath: Packages/com.unity.modules.hierarchycore
+  name: com.unity.modules.hierarchycore
+  displayName: Hierarchy Core
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: module
+  description: 'Module that contains a high-performance hierarchy container. Scripting
+    API: https://docs.unity3d.com/ScriptReference/UnityEngine.HierarchyCoreModule.html'
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 0
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: 
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.0
+    minimumUnityVersion: 
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.modules.physics@1.0.0
+  testable: 0
+  isDirectDependency: 0
+  version: 1.0.0
+  source: 2
+  resolvedPath: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.physics
+  assetPath: Packages/com.unity.modules.physics
+  name: com.unity.modules.physics
+  displayName: Physics
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: module
+  description: 'The Physics module implements 3D physics in Unity. Scripting API:
+    https://docs.unity3d.com/ScriptReference/UnityEngine.PhysicsModule.html'
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: 
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.0
+    minimumUnityVersion: 
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+m_BuiltInPackagesHash: 46fb22065bf3d297b1be7dce9a081c0af7d241f8
