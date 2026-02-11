@@ -159,6 +159,14 @@ public sealed class BigTwoGame : MonoBehaviour
             return;
         }
 
+        // A player who passed cannot play again until the trick resets.
+        if (_turnId == 1 && _passFlags[1])
+        {
+            _turnId = NextActivePlayer(1);
+            _nextAiActionAt = _turnId == 1 ? 0f : Time.time + 0.25f;
+            return;
+        }
+
         if (_turnId != 1 && Time.time >= _nextAiActionAt)
         {
             ExecuteAiTurn(_turnId);
@@ -338,7 +346,7 @@ public sealed class BigTwoGame : MonoBehaviour
             DrawCard(card, rect);
         }
 
-        if (_turnId == 1 && _winner == 0)
+        if (_turnId == 1 && _winner == 0 && !_passFlags[1])
         {
             Event evt = Event.current;
             if (evt.type == EventType.MouseDown && evt.button == 0)
@@ -370,7 +378,7 @@ public sealed class BigTwoGame : MonoBehaviour
 
         if (_winner == 0)
         {
-            GUI.enabled = _turnId == 1;
+            GUI.enabled = _turnId == 1 && !_passFlags[1];
             if (GUI.Button(new Rect(panel.x + 20f, panel.y + 52f, panel.width - 40f, 42f), "Play", _buttonStyle))
             {
                 HandleHumanPlay();
@@ -692,6 +700,12 @@ public sealed class BigTwoGame : MonoBehaviour
             return;
         }
 
+        if (_passFlags[1])
+        {
+            ShowStatus("You already passed this trick.");
+            return;
+        }
+
         List<int> putCards = _hands[1].Where(card => _selectedCards.Contains(card)).ToList();
         putCards.Sort();
 
@@ -699,7 +713,7 @@ public sealed class BigTwoGame : MonoBehaviour
         {
             if (_owner == 1 && !_firstPut)
             {
-                _turnId = 2;
+                _turnId = NextActivePlayer(1);
                 _nextAiActionAt = Time.time + 0.5f;
                 return;
             }
@@ -709,7 +723,7 @@ public sealed class BigTwoGame : MonoBehaviour
                 _passFlags[1] = true;
                 _countPass += 1;
                 _selectedCards.Clear();
-                _turnId = 2;
+                _turnId = NextActivePlayer(1);
                 ResolvePassReset();
                 if (_turnId != 1)
                 {
@@ -747,6 +761,12 @@ public sealed class BigTwoGame : MonoBehaviour
             return;
         }
 
+        if (_passFlags[1])
+        {
+            ShowStatus("You already passed this trick.");
+            return;
+        }
+
         if (_selectedCards.Count > 0)
         {
             HandleHumanPlay();
@@ -755,7 +775,7 @@ public sealed class BigTwoGame : MonoBehaviour
 
         if (_owner == 1 && !_firstPut)
         {
-            _turnId = 2;
+            _turnId = NextActivePlayer(1);
             _nextAiActionAt = Time.time + 0.6f;
             return;
         }
@@ -768,7 +788,7 @@ public sealed class BigTwoGame : MonoBehaviour
 
         _passFlags[1] = true;
         _countPass += 1;
-        _turnId = 2;
+        _turnId = NextActivePlayer(1);
         ResolvePassReset();
 
         if (_turnId != 1)
@@ -786,7 +806,7 @@ public sealed class BigTwoGame : MonoBehaviour
 
         if (_passFlags[aiPlayer])
         {
-            _turnId = NextPlayer(aiPlayer);
+            _turnId = NextActivePlayer(aiPlayer);
             _nextAiActionAt = _turnId == 1 ? 0f : Time.time + 0.6f;
             return;
         }
@@ -812,7 +832,7 @@ public sealed class BigTwoGame : MonoBehaviour
 
         if (_owner == aiPlayer)
         {
-            _turnId = NextPlayer(aiPlayer);
+            _turnId = NextActivePlayer(aiPlayer);
             _nextAiActionAt = _turnId == 1 ? 0f : Time.time + 0.6f;
             return;
         }
@@ -827,7 +847,7 @@ public sealed class BigTwoGame : MonoBehaviour
 
         _passFlags[aiPlayer] = true;
         _countPass += 1;
-        _turnId = NextPlayer(aiPlayer);
+        _turnId = NextActivePlayer(aiPlayer);
         ResolvePassReset();
         _nextAiActionAt = _turnId == 1 ? 0f : Time.time + 0.6f;
     }
@@ -862,7 +882,7 @@ public sealed class BigTwoGame : MonoBehaviour
             return;
         }
 
-        _turnId = NextPlayer(playerId);
+        _turnId = NextActivePlayer(playerId);
     }
 
     private void ResolvePassReset()
@@ -921,6 +941,17 @@ public sealed class BigTwoGame : MonoBehaviour
     private static int NextPlayer(int playerId)
     {
         return (playerId % 4) + 1;
+    }
+
+    private int NextActivePlayer(int playerId)
+    {
+        int next = NextPlayer(playerId);
+        while (next != playerId && _passFlags[next])
+        {
+            next = NextPlayer(next);
+        }
+
+        return next;
     }
 
     private void ShowStatus(string message, float seconds = 2.5f)
