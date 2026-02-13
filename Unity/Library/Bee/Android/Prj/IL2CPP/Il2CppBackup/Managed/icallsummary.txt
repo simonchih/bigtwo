@@ -283,6 +283,9 @@ UnityEngine.GUI::get_color_Injected
 UnityEngine.GUI::set_changed
 UnityEngine.GUI::set_color_Injected
 UnityEngine.GUI::set_enabled
+UnityEngine.GUIClip::GetMatrix_Injected
+UnityEngine.GUIClip::SetMatrix_Injected
+UnityEngine.GUIClip::Unclip_Vector2_Injected
 UnityEngine.GUIClip::get_visibleRect_Injected
 UnityEngine.GUILayoutUtility::Internal_GetWindowRect_Injected
 UnityEngine.GUILayoutUtility::Internal_MoveWindow_Injected
@@ -363,6 +366,7 @@ UnityEngine.Material::SetTextureImpl_Injected
 UnityEngine.Material::set_shader_Injected
 UnityEngine.Mathf::GammaToLinearSpace
 UnityEngine.Mathf::CorrelatedColorTemperatureToRGB_Injected
+UnityEngine.Matrix4x4::Internal_TRS_Injected
 UnityEngine.Mesh::Internal_Create
 UnityEngine.MonoBehaviour::Internal_IsInvokingAll_Injected
 UnityEngine.MonoBehaviour::IsInvoking_Injected

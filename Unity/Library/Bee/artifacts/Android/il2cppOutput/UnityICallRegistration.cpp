@@ -1278,6 +1278,18 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.GUIClip
 
+		//System.Void UnityEngine.GUIClip::GetMatrix_Injected(UnityEngine.Matrix4x4&)
+		void Register_UnityEngine_GUIClip_GetMatrix_Injected();
+		Register_UnityEngine_GUIClip_GetMatrix_Injected();
+
+		//System.Void UnityEngine.GUIClip::SetMatrix_Injected(UnityEngine.Matrix4x4&)
+		void Register_UnityEngine_GUIClip_SetMatrix_Injected();
+		Register_UnityEngine_GUIClip_SetMatrix_Injected();
+
+		//System.Void UnityEngine.GUIClip::Unclip_Vector2_Injected(UnityEngine.Vector2&,UnityEngine.Vector2&)
+		void Register_UnityEngine_GUIClip_Unclip_Vector2_Injected();
+		Register_UnityEngine_GUIClip_Unclip_Vector2_Injected();
+
 		//System.Void UnityEngine.GUIClip::get_visibleRect_Injected(UnityEngine.Rect&)
 		void Register_UnityEngine_GUIClip_get_visibleRect_Injected();
 		Register_UnityEngine_GUIClip_get_visibleRect_Injected();
@@ -1639,6 +1651,14 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Mathf_CorrelatedColorTemperatureToRGB_Injected();
 
 	//End Registrations for type : UnityEngine.Mathf
+
+	//Start Registrations for type : UnityEngine.Matrix4x4
+
+		//System.Void UnityEngine.Matrix4x4::Internal_TRS_Injected(UnityEngine.Vector3&,UnityEngine.Quaternion&,UnityEngine.Vector3&,UnityEngine.Matrix4x4&)
+		void Register_UnityEngine_Matrix4x4_Internal_TRS_Injected();
+		Register_UnityEngine_Matrix4x4_Internal_TRS_Injected();
+
+	//End Registrations for type : UnityEngine.Matrix4x4
 
 	//Start Registrations for type : UnityEngine.Mesh
 

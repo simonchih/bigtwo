@@ -199,6 +199,7 @@ IL2CPP_EXTERN_C RuntimeClass* Func_2_t63A057E8762189D8C22BF71360D00C1047680DFA_i
 IL2CPP_EXTERN_C RuntimeClass* Func_2_tDA1DA04EB496763AA65B8F6970F7B9647C50FCFC_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* GUIContent_t15E48D4BEB1E6B6044F7DEB5E350800F511C2ED2_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* GUIUtility_tA20863F7281628086EFC61CF90CB52D20E1FD76A_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* HashSet_1_t4A2F2B74276D0AD3ED0F873045BD61E9504ECAE2_il2cpp_TypeInfo_var;
@@ -213,6 +214,7 @@ IL2CPP_EXTERN_C RuntimeClass* List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F
 IL2CPP_EXTERN_C RuntimeClass* List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_tB9245BB1D4FD473F42A1B8E7641ACD72F355265B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* MoveValidator_tF30ACB15D144114D162A240ABE34FCF535332DDC_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var;
@@ -639,6 +641,35 @@ struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C
 struct IntPtr_t 
 {
 	void* ___m_value;
+};
+struct Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682 
+{
+	union
+	{
+		struct
+		{
+		};
+		uint8_t Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682__padding[1];
+	};
+};
+struct Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 
+{
+	float ___m00;
+	float ___m10;
+	float ___m20;
+	float ___m30;
+	float ___m01;
+	float ___m11;
+	float ___m21;
+	float ___m31;
+	float ___m02;
+	float ___m12;
+	float ___m22;
+	float ___m32;
+	float ___m03;
+	float ___m13;
+	float ___m23;
+	float ___m33;
 };
 struct OrdinalComparer_tBB06915E213A5D4C8C617ED5478E8BF30C2B2170  : public StringComparer_t6268F19CA34879176651429C0D8A3D0002BB8E06
 {
@@ -1312,6 +1343,15 @@ struct IntPtr_t_StaticFields
 {
 	intptr_t ___Zero;
 };
+struct Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_StaticFields
+{
+	float ___Epsilon;
+};
+struct Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6_StaticFields
+{
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___zeroMatrix;
+	Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___identityMatrix;
+};
 struct Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_StaticFields
 {
 	Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D ___kZero;
@@ -1918,7 +1958,7 @@ inline int32_t List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_inline
 {
 	return ((  int32_t (*) (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73*, const RuntimeMethod*))List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_gshared_inline)(__this, method);
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BigTwoGame_DrawHiddenCard_mA77884F3F418E50933A1FF8F891C114BCE16EB16 (BigTwoGame_tBFB068233F57E298C07C14C6472D45110DAC9439* __this, Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D ___0_rect, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BigTwoGame_DrawHiddenCard_mA676D83DACCBC0BE16BC64CEC83A24DFF2DE28AD (BigTwoGame_tBFB068233F57E298C07C14C6472D45110DAC9439* __this, Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D ___0_rect, float ___1_rotationDegrees, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BigTwoGame_DrawPassFlag_mF6ED29B498FB495DD0420A95266FB95DA4402040 (BigTwoGame_tBFB068233F57E298C07C14C6472D45110DAC9439* __this, int32_t ___0_playerId, Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D ___1_rect, const RuntimeMethod* method) ;
 inline int32_t List_1_get_Item_mD99081BEFA1AB3526715F489192B0F7F596C183D (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* __this, int32_t ___0_index, const RuntimeMethod* method)
 {
@@ -1955,6 +1995,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GUI_set_enabled_mF2F99A6870ACAFAEFB5E8FF
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool GUI_Button_m62135816B7F4BB45759E10E953926E4E0F24D370 (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D ___0_position, String_t* ___1_text, GUIStyle_t20BA2F9F3FE9D13AAA607EEEBE5547835A6F6580* ___2_style, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BigTwoGame_HandleHumanPlay_mB8D08B331D01B84B2FA0F0665B6F7600EA28FF56 (BigTwoGame_tBFB068233F57E298C07C14C6472D45110DAC9439* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BigTwoGame_HandleHumanPass_m215A8FCF5D9B9E5C6E379B69ABE56243283A0537 (BigTwoGame_tBFB068233F57E298C07C14C6472D45110DAC9439* __this, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Mathf_Approximately_m1DADD012A8FC82E11FB282501AE2EBBF9A77150B_inline (float ___0_a, float ___1_b, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 GUI_get_matrix_m3CA02DED0598EE32BD9E66CA533A78EFB0A246FC (const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Rect_get_center_mAA9A2E1F058B2C9F58E13CC4822F789F42975E5C_inline (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GUIUtility_RotateAroundPivot_mA1AD5027CE63F6902AE6458286C13F53C8EE441F (float ___0_angle, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_pivotPoint, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GUI_set_matrix_m7759FEC96FBCB97E02B1BA44D2EC1B3FEEFA257F (Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GUI_Box_mB47BC44807774B77DB8B2BB548D339036544ACC4 (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D ___0_position, String_t* ___1_text, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* BigTwoGame_CardLabel_mF263DA8F8159ADEAD0ACC3AC137BDFC00856A0FA (int32_t ___0_card, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_yellow_m66637FA14383E8D74F24AE256B577CE1D55D469F_inline (const RuntimeMethod* method) ;
@@ -2223,6 +2268,7 @@ inline void Action_1_Invoke_mCBAA13E9863B2958F53D13FBB8B1B51CA0011B53_inline (Ac
 	((  void (*) (Action_1_tD7F74291FAA5A362F4A5F48D4E1CF3ED51FA6A33*, Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4*, const RuntimeMethod*))Action_1_Invoke_mF2422B2DD29F74CE66F791C3F68E288EC7C3DB9E_gshared_inline)(__this, ___0_obj, method);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* DownloadHandlerTexture_GetContent_m86BC88F58305A1B21C21CE7D82658197932EFB18 (UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F* ___0_www, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline (float ___0_a, float ___1_b, const RuntimeMethod* method) ;
 inline void List_1_AddWithResize_m8CAEB07E952A55E5281640BE099D5A28299FA6E0 (List_1_tB9245BB1D4FD473F42A1B8E7641ACD72F355265B* __this, Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D ___0_item, const RuntimeMethod* method)
 {
 	((  void (*) (List_1_tB9245BB1D4FD473F42A1B8E7641ACD72F355265B*, Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D, const RuntimeMethod*))List_1_AddWithResize_m8CAEB07E952A55E5281640BE099D5A28299FA6E0_gshared)(__this, ___0_item, method);
@@ -3386,7 +3432,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BigTwoGame_DrawAiHands_m7CF958AB6A934360
 	{
 		float L_0 = ___0_cardW;
 		V_0 = ((float)il2cpp_codegen_multiply(L_0, (0.460000008f)));
-		float L_1 = ___1_cardH;
+		float L_1 = ___0_cardW;
 		V_1 = ((float)il2cpp_codegen_multiply(L_1, (0.239999995f)));
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_2 = __this->____hands;
 		NullCheck(L_2);
@@ -3428,7 +3474,7 @@ IL_003b:
 		V_3 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(((float)L_12), L_13)), (0.5f)));
 		V_4 = (170.0f);
 		V_9 = 0;
-		goto IL_0073;
+		goto IL_0078;
 	}
 
 IL_0057:
@@ -3442,12 +3488,12 @@ IL_0057:
 		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_20;
 		memset((&L_20), 0, sizeof(L_20));
 		Rect__ctor_m18C3033D135097BEE424AAA68D91C706D2647F23_inline((&L_20), ((float)il2cpp_codegen_add(L_14, ((float)il2cpp_codegen_multiply(((float)L_15), L_16)))), L_17, L_18, L_19, NULL);
-		BigTwoGame_DrawHiddenCard_mA77884F3F418E50933A1FF8F891C114BCE16EB16(__this, L_20, NULL);
+		BigTwoGame_DrawHiddenCard_mA676D83DACCBC0BE16BC64CEC83A24DFF2DE28AD(__this, L_20, (0.0f), NULL);
 		int32_t L_21 = V_9;
 		V_9 = ((int32_t)il2cpp_codegen_add(L_21, 1));
 	}
 
-IL_0073:
+IL_0078:
 	{
 		int32_t L_22 = V_9;
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_23 = __this->____hands;
@@ -3488,10 +3534,10 @@ IL_0073:
 		V_5 = ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_subtract(((float)L_38), L_39)), (28.0f)));
 		V_6 = (220.0f);
 		V_10 = 0;
-		goto IL_00fc;
+		goto IL_0106;
 	}
 
-IL_00df:
+IL_00e4:
 	{
 		float L_40 = V_5;
 		float L_41 = V_6;
@@ -3502,12 +3548,12 @@ IL_00df:
 		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_46;
 		memset((&L_46), 0, sizeof(L_46));
 		Rect__ctor_m18C3033D135097BEE424AAA68D91C706D2647F23_inline((&L_46), L_40, ((float)il2cpp_codegen_add(L_41, ((float)il2cpp_codegen_multiply(((float)L_42), L_43)))), L_44, L_45, NULL);
-		BigTwoGame_DrawHiddenCard_mA77884F3F418E50933A1FF8F891C114BCE16EB16(__this, L_46, NULL);
+		BigTwoGame_DrawHiddenCard_mA676D83DACCBC0BE16BC64CEC83A24DFF2DE28AD(__this, L_46, (90.0f), NULL);
 		int32_t L_47 = V_10;
 		V_10 = ((int32_t)il2cpp_codegen_add(L_47, 1));
 	}
 
-IL_00fc:
+IL_0106:
 	{
 		int32_t L_48 = V_10;
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_49 = __this->____hands;
@@ -3519,7 +3565,7 @@ IL_00fc:
 		L_52 = List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_inline(L_51, List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_RuntimeMethod_var);
 		if ((((int32_t)L_48) < ((int32_t)L_52)))
 		{
-			goto IL_00df;
+			goto IL_00e4;
 		}
 	}
 	{
@@ -3545,10 +3591,10 @@ IL_00fc:
 		V_7 = (28.0f);
 		V_8 = (220.0f);
 		V_11 = 0;
-		goto IL_0183;
+		goto IL_0192;
 	}
 
-IL_0166:
+IL_0170:
 	{
 		float L_64 = V_7;
 		float L_65 = V_8;
@@ -3559,12 +3605,12 @@ IL_0166:
 		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_70;
 		memset((&L_70), 0, sizeof(L_70));
 		Rect__ctor_m18C3033D135097BEE424AAA68D91C706D2647F23_inline((&L_70), L_64, ((float)il2cpp_codegen_add(L_65, ((float)il2cpp_codegen_multiply(((float)L_66), L_67)))), L_68, L_69, NULL);
-		BigTwoGame_DrawHiddenCard_mA77884F3F418E50933A1FF8F891C114BCE16EB16(__this, L_70, NULL);
+		BigTwoGame_DrawHiddenCard_mA676D83DACCBC0BE16BC64CEC83A24DFF2DE28AD(__this, L_70, (-90.0f), NULL);
 		int32_t L_71 = V_11;
 		V_11 = ((int32_t)il2cpp_codegen_add(L_71, 1));
 	}
 
-IL_0183:
+IL_0192:
 	{
 		int32_t L_72 = V_11;
 		List_1U5BU5D_t37294D7C303231F2FD83B3C398AED0937F4F3206* L_73 = __this->____hands;
@@ -3576,7 +3622,7 @@ IL_0183:
 		L_76 = List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_inline(L_75, List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_RuntimeMethod_var);
 		if ((((int32_t)L_72) < ((int32_t)L_76)))
 		{
-			goto IL_0166;
+			goto IL_0170;
 		}
 	}
 	{
@@ -4265,13 +4311,15 @@ IL_00e3:
 		return;
 	}
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BigTwoGame_DrawHiddenCard_mA77884F3F418E50933A1FF8F891C114BCE16EB16 (BigTwoGame_tBFB068233F57E298C07C14C6472D45110DAC9439* __this, Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D ___0_rect, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BigTwoGame_DrawHiddenCard_mA676D83DACCBC0BE16BC64CEC83A24DFF2DE28AD (BigTwoGame_tBFB068233F57E298C07C14C6472D45110DAC9439* __this, Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D ___0_rect, float ___1_rotationDegrees, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GUIUtility_tA20863F7281628086EFC61CF90CB52D20E1FD76A_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral4A261EB7E7319776625F5A015EA18053797E6890);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -4282,22 +4330,49 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BigTwoGame_DrawHiddenCard_mA77884F3F418E
 		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_1)
 		{
-			goto IL_001c;
+			goto IL_004e;
 		}
 	}
 	{
-		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_2 = ___0_rect;
-		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_3 = __this->____backCardTexture;
+		float L_2 = ___1_rotationDegrees;
+		bool L_3;
+		L_3 = Mathf_Approximately_m1DADD012A8FC82E11FB282501AE2EBBF9A77150B_inline(L_2, (0.0f), NULL);
+		if (!L_3)
+		{
+			goto IL_0029;
+		}
+	}
+	{
+		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_4 = ___0_rect;
+		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_5 = __this->____backCardTexture;
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
-		GUI_DrawTexture_mB96DA06923A0D6550CDBA2355A0BC11F27EEFD4F(L_2, L_3, 0, NULL);
+		GUI_DrawTexture_mB96DA06923A0D6550CDBA2355A0BC11F27EEFD4F(L_4, L_5, 0, NULL);
 		return;
 	}
 
-IL_001c:
+IL_0029:
 	{
-		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_4 = ___0_rect;
 		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
-		GUI_Box_mB47BC44807774B77DB8B2BB548D339036544ACC4(L_4, _stringLiteral4A261EB7E7319776625F5A015EA18053797E6890, NULL);
+		Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6 L_6;
+		L_6 = GUI_get_matrix_m3CA02DED0598EE32BD9E66CA533A78EFB0A246FC(NULL);
+		float L_7 = ___1_rotationDegrees;
+		il2cpp_codegen_runtime_class_init_inline(Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_il2cpp_TypeInfo_var);
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_8;
+		L_8 = Rect_get_center_mAA9A2E1F058B2C9F58E13CC4822F789F42975E5C_inline((&___0_rect), NULL);
+		il2cpp_codegen_runtime_class_init_inline(GUIUtility_tA20863F7281628086EFC61CF90CB52D20E1FD76A_il2cpp_TypeInfo_var);
+		GUIUtility_RotateAroundPivot_mA1AD5027CE63F6902AE6458286C13F53C8EE441F(L_7, L_8, NULL);
+		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_9 = ___0_rect;
+		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_10 = __this->____backCardTexture;
+		GUI_DrawTexture_mB96DA06923A0D6550CDBA2355A0BC11F27EEFD4F(L_9, L_10, 0, NULL);
+		GUI_set_matrix_m7759FEC96FBCB97E02B1BA44D2EC1B3FEEFA257F(L_6, NULL);
+		return;
+	}
+
+IL_004e:
+	{
+		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_11 = ___0_rect;
+		il2cpp_codegen_runtime_class_init_inline(GUI_tA9CDB3D69DB13D51AD83ABDB587EF95947EC2D2A_il2cpp_TypeInfo_var);
+		GUI_Box_mB47BC44807774B77DB8B2BB548D339036544ACC4(L_11, _stringLiteral4A261EB7E7319776625F5A015EA18053797E6890, NULL);
 		return;
 	}
 }
@@ -12724,6 +12799,57 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_width_m620D6755137
 		return L_0;
 	}
 }
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Mathf_Approximately_m1DADD012A8FC82E11FB282501AE2EBBF9A77150B_inline (float ___0_a, float ___1_b, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	bool V_0 = false;
+	{
+		float L_0 = ___1_b;
+		float L_1 = ___0_a;
+		float L_2;
+		L_2 = fabsf(((float)il2cpp_codegen_subtract(L_0, L_1)));
+		float L_3 = ___0_a;
+		float L_4;
+		L_4 = fabsf(L_3);
+		float L_5 = ___1_b;
+		float L_6;
+		L_6 = fabsf(L_5);
+		float L_7;
+		L_7 = Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline(L_4, L_6, NULL);
+		float L_8 = ((Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_StaticFields*)il2cpp_codegen_static_fields_for(Mathf_tE284D016E3B297B72311AAD9EB8F0E643F6A4682_il2cpp_TypeInfo_var))->___Epsilon;
+		float L_9;
+		L_9 = Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline(((float)il2cpp_codegen_multiply((9.99999997E-07f), L_7)), ((float)il2cpp_codegen_multiply(L_8, (8.0f))), NULL);
+		V_0 = (bool)((((float)L_2) < ((float)L_9))? 1 : 0);
+		goto IL_0035;
+	}
+
+IL_0035:
+	{
+		bool L_10 = V_0;
+		return L_10;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Rect_get_center_mAA9A2E1F058B2C9F58E13CC4822F789F42975E5C_inline (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* __this, const RuntimeMethod* method) 
+{
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		il2cpp_codegen_initobj((&V_0), sizeof(Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7));
+		float L_0 = __this->___m_XMin;
+		float L_1 = __this->___m_Width;
+		(&V_0)->___x = ((float)il2cpp_codegen_add(L_0, ((float)il2cpp_codegen_multiply(L_1, (0.5f)))));
+		float L_2 = __this->___m_YMin;
+		float L_3 = __this->___m_Height;
+		(&V_0)->___y = ((float)il2cpp_codegen_add(L_2, ((float)il2cpp_codegen_multiply(L_3, (0.5f)))));
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_4 = V_0;
+		return L_4;
+	}
+}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_yellow_m66637FA14383E8D74F24AE256B577CE1D55D469F_inline (const RuntimeMethod* method) 
 {
 	{
@@ -12944,4 +13070,40 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mF2422B2DD29
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_obj, reinterpret_cast<RuntimeMethod*>(__this->___method));
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline (float ___0_a, float ___1_b, const RuntimeMethod* method) 
+{
+	float V_0 = 0.0f;
+	float G_B3_0 = 0.0f;
+	{
+		float L_0 = ___0_a;
+		float L_1 = ___1_b;
+		if ((((float)L_0) > ((float)L_1)))
+		{
+			goto IL_0008;
+		}
+	}
+	{
+		float L_2 = ___1_b;
+		G_B3_0 = L_2;
+		goto IL_0009;
+	}
+
+IL_0008:
+	{
+		float L_3 = ___0_a;
+		G_B3_0 = L_3;
+	}
+
+IL_0009:
+	{
+		V_0 = G_B3_0;
+		goto IL_000c;
+	}
+
+IL_000c:
+	{
+		float L_4 = V_0;
+		return L_4;
+	}
 }

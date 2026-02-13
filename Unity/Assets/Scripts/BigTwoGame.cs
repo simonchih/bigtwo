@@ -274,7 +274,7 @@ public sealed class BigTwoGame : MonoBehaviour
     private void DrawAiHands(float cardW, float cardH)
     {
         float topSpacing = cardW * 0.46f;
-        float sideSpacing = cardH * 0.24f;
+        float sideSpacing = cardW * 0.24f;
 
         // Player 3 (top)
         float p3TotalW = _hands[3].Count > 0 ? cardW + (_hands[3].Count - 1) * topSpacing : 0f;
@@ -291,7 +291,7 @@ public sealed class BigTwoGame : MonoBehaviour
         float p2Y = 220f;
         for (int i = 0; i < _hands[2].Count; i++)
         {
-            DrawHiddenCard(new Rect(p2X, p2Y + i * sideSpacing, cardW, cardH));
+            DrawHiddenCard(new Rect(p2X, p2Y + i * sideSpacing, cardW, cardH), 90f);
         }
         GUI.Label(new Rect(p2X - 90f, p2Y - 24f, 180f, 24f), $"P2: {_hands[2].Count}", _textStyle);
 
@@ -300,7 +300,7 @@ public sealed class BigTwoGame : MonoBehaviour
         float p4Y = 220f;
         for (int i = 0; i < _hands[4].Count; i++)
         {
-            DrawHiddenCard(new Rect(p4X, p4Y + i * sideSpacing, cardW, cardH));
+            DrawHiddenCard(new Rect(p4X, p4Y + i * sideSpacing, cardW, cardH), -90f);
         }
         GUI.Label(new Rect(p4X, p4Y - 24f, 180f, 24f), $"P4: {_hands[4].Count}", _textStyle);
 
@@ -416,11 +416,21 @@ public sealed class BigTwoGame : MonoBehaviour
         }
     }
 
-    private void DrawHiddenCard(Rect rect)
+    private void DrawHiddenCard(Rect rect, float rotationDegrees = 0f)
     {
         if (_backCardTexture != null)
         {
-            GUI.DrawTexture(rect, _backCardTexture, ScaleMode.StretchToFill);
+            if (Mathf.Approximately(rotationDegrees, 0f))
+            {
+                GUI.DrawTexture(rect, _backCardTexture, ScaleMode.StretchToFill);
+            }
+            else
+            {
+                Matrix4x4 original = GUI.matrix;
+                GUIUtility.RotateAroundPivot(rotationDegrees, rect.center);
+                GUI.DrawTexture(rect, _backCardTexture, ScaleMode.StretchToFill);
+                GUI.matrix = original;
+            }
         }
         else
         {
