@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.DefaultCompany.Unity.launcher-mergeReleaseResources-19:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "com.simon.simpybigtwo.launcher-mergeReleaseResources-19:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "/Users/fit0721/.gradle/caches/8.13/transforms/aac72809cb194a002ddca35567c7ba34/transformed/appcompat-1.6.1/res/values-sw600dp-v13/values-sw600dp-v13.xml",

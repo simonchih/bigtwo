@@ -1,22 +1,22 @@
 [
     {
-        "merged": "com.DefaultCompany.Unity.launcher-release-21:/mipmap-mdpi_app_icon.png.flat",
-        "source": "com.DefaultCompany.Unity.launcher-main-22:/mipmap-mdpi/app_icon.png"
+        "merged": "com.simon.simpybigtwo.launcher-release-21:/mipmap-anydpi-v26_app_icon.xml.flat",
+        "source": "com.simon.simpybigtwo.launcher-main-22:/mipmap-anydpi-v26/app_icon.xml"
     },
     {
-        "merged": "com.DefaultCompany.Unity.launcher-release-21:/mipmap-anydpi-v26_app_icon_round.xml.flat",
-        "source": "com.DefaultCompany.Unity.launcher-main-22:/mipmap-anydpi-v26/app_icon_round.xml"
+        "merged": "com.simon.simpybigtwo.launcher-release-21:/mipmap-anydpi-v26_app_icon_round.xml.flat",
+        "source": "com.simon.simpybigtwo.launcher-main-22:/mipmap-anydpi-v26/app_icon_round.xml"
     },
     {
-        "merged": "com.DefaultCompany.Unity.launcher-release-21:/mipmap-anydpi-v26_app_icon.xml.flat",
-        "source": "com.DefaultCompany.Unity.launcher-main-22:/mipmap-anydpi-v26/app_icon.xml"
+        "merged": "com.simon.simpybigtwo.launcher-release-21:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.simon.simpybigtwo.launcher-main-22:/mipmap-mdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.DefaultCompany.Unity.launcher-release-21:/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "com.DefaultCompany.Unity.launcher-main-22:/mipmap-mdpi/ic_launcher_foreground.png"
+        "merged": "com.simon.simpybigtwo.launcher-release-21:/mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "com.simon.simpybigtwo.launcher-main-22:/mipmap-mdpi/ic_launcher_background.png"
     },
     {
-        "merged": "com.DefaultCompany.Unity.launcher-release-21:/mipmap-mdpi_ic_launcher_background.png.flat",
-        "source": "com.DefaultCompany.Unity.launcher-main-22:/mipmap-mdpi/ic_launcher_background.png"
+        "merged": "com.simon.simpybigtwo.launcher-release-21:/mipmap-mdpi_app_icon.png.flat",
+        "source": "com.simon.simpybigtwo.launcher-main-22:/mipmap-mdpi/app_icon.png"
     }
 ]

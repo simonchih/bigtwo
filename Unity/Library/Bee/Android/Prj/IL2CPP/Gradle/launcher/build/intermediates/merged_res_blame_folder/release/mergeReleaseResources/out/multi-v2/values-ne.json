@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.DefaultCompany.Unity.launcher-mergeReleaseResources-19:/values-ne/values-ne.xml",
+            "outputFile": "com.simon.simpybigtwo.launcher-mergeReleaseResources-19:/values-ne/values-ne.xml",
             "map": [
                 {
                     "source": "/Users/fit0721/.gradle/caches/8.13/transforms/be77c46ed06dff3978acddc251705f26/transformed/core-1.9.0/res/values-ne/values-ne.xml",

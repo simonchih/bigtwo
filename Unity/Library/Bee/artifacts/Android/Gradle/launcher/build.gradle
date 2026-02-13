@@ -8,7 +8,7 @@ dependencies {
 }
 
 android {
-    namespace "com.DefaultCompany.Unity"
+    namespace "com.simon.simpybigtwo"
     ndkPath "/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/NDK"
     ndkVersion "27.2.12479018"
     compileSdk 36
@@ -20,8 +20,8 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.DefaultCompany.Unity"
-        versionName "1.0"
+        applicationId "com.simon.simpybigtwo"
+        versionName "2.0"
         minSdk 25
         targetSdk 36
         versionCode 1

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.DefaultCompany.Unity"
+    package="com.simon.simpybigtwo"
     android:installLocation="preferExternal"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="2.0" >
 
     <uses-sdk
         android:minSdkVersion="25"
@@ -27,10 +27,10 @@
         android:required="false" />
 
     <permission
-        android:name="com.DefaultCompany.Unity.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.simon.simpybigtwo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.DefaultCompany.Unity.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.simon.simpybigtwo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:appCategory="game"
@@ -103,7 +103,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.DefaultCompany.Unity.androidx-startup"
+            android:authorities="com.simon.simpybigtwo.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

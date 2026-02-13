@@ -425,6 +425,7 @@
 -analyzer:"/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Editor/BigTwoPlayModeBootstrap.cs"
+"Assets/Editor/BuildAutomation.cs"
 -langversion:9.0
 /deterministic
 /optimize+

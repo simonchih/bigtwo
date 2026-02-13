@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.DefaultCompany.Unity.launcher-mergeReleaseResources-19:/values-kk/values-kk.xml",
+            "outputFile": "com.simon.simpybigtwo.launcher-mergeReleaseResources-19:/values-kk/values-kk.xml",
             "map": [
                 {
                     "source": "/Users/fit0721/.gradle/caches/8.13/transforms/aac72809cb194a002ddca35567c7ba34/transformed/appcompat-1.6.1/res/values-kk/values-kk.xml",

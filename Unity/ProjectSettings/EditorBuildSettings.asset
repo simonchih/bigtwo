@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/test_bigtwo.unity
+    guid: eb3db89c1677f4d29b7b1a577136c99d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

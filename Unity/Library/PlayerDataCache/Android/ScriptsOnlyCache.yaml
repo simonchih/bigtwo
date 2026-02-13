@@ -27,7 +27,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 20674}
+      Script: {instanceID: 20676}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -344,4 +344,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/test_bigtwo.unity
-  playerPath: /Users/fit0721/Documents/GitHub/bigtwo/Unity/BigTwo_Android.apk
+  playerPath: /Users/fit0721/Documents/GitHub/bigtwo/Unity/BigTwo_arm64.apk
