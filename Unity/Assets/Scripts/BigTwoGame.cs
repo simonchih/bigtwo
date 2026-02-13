@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Networking;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -85,9 +87,9 @@ public sealed class BigTwoGame : MonoBehaviour
             _hands[i] = new List<int>(13);
         }
 
-        LoadAssets();
+        StartCoroutine(LoadAssetsRoutine());
         StartNewRound();
-        Debug.Log($"[BigTwo] Awake complete. dataPath={Application.dataPath}, assetsLoaded={_assetsLoaded}, assetError={_assetError}");
+        Debug.Log($"[BigTwo] Awake complete. dataPath={Application.dataPath}, streamingAssetsPath={Application.streamingAssetsPath}");
     }
 
     private static void EnsureCamera()
@@ -471,7 +473,29 @@ public sealed class BigTwoGame : MonoBehaviour
         }
     }
 
-    private void LoadAssets()
+    private IEnumerator LoadAssetsRoutine()
+    {
+        _assetsLoaded = false;
+        _assetError = string.Empty;
+
+        string streamingRoot = BuildStreamingAssetUri(Application.streamingAssetsPath, "Image");
+        bool useUriLoading = Application.platform == RuntimePlatform.Android ||
+                             Application.platform == RuntimePlatform.WebGLPlayer ||
+                             Application.streamingAssetsPath.Contains("://", StringComparison.Ordinal);
+
+        if (useUriLoading)
+        {
+            yield return LoadAssetsFromStreamingAssetsUri(streamingRoot);
+        }
+        else
+        {
+            LoadAssetsFromFileSystem();
+        }
+
+        _assetsLoaded = true;
+    }
+
+    private void LoadAssetsFromFileSystem()
     {
         List<string> imageRoots = BuildImageRoots();
         string imageRoot = imageRoots.Count > 0 ? imageRoots[0] : "(none)";
@@ -485,7 +509,33 @@ public sealed class BigTwoGame : MonoBehaviour
         _backCardTexture = LoadTextureByFileName("back101.png", imageRoots);
         _passTexture = LoadTextureByFileName("pass.png", imageRoots);
         _backgroundTexture = LoadTextureByFileName("Nostalgy.png", imageRoots);
+        ValidateLoadedAssets(imageRoot);
+    }
 
+    private IEnumerator LoadAssetsFromStreamingAssetsUri(string imageRootUri)
+    {
+        Debug.Log($"[BigTwo] URI image root: {imageRootUri}");
+
+        for (int card = 0; card < 52; card++)
+        {
+            int capturedCard = card;
+            string cardUri = BuildStreamingAssetUri(imageRootUri, CardFileName(capturedCard));
+            yield return LoadTextureFromUri(cardUri, texture => _cardTextures[capturedCard] = texture);
+        }
+
+        string backUri = BuildStreamingAssetUri(imageRootUri, "back101.png");
+        string passUri = BuildStreamingAssetUri(imageRootUri, "pass.png");
+        string backgroundUri = BuildStreamingAssetUri(imageRootUri, "Nostalgy.png");
+
+        yield return LoadTextureFromUri(backUri, texture => _backCardTexture = texture);
+        yield return LoadTextureFromUri(passUri, texture => _passTexture = texture);
+        yield return LoadTextureFromUri(backgroundUri, texture => _backgroundTexture = texture);
+
+        ValidateLoadedAssets(imageRootUri);
+    }
+
+    private void ValidateLoadedAssets(string root)
+    {
         List<string> missing = new List<string>();
         if (_cardTextures.Values.Any(texture => texture == null))
         {
@@ -509,10 +559,49 @@ public sealed class BigTwoGame : MonoBehaviour
 
         if (missing.Count > 0)
         {
-            _assetError = "Missing assets: " + string.Join(", ", missing) + $" | root={imageRoot}";
+            _assetError = "Missing assets: " + string.Join(", ", missing) + $" | root={root}";
+            Debug.LogWarning($"[BigTwo] {_assetError}");
+        }
+        else
+        {
+            _assetError = string.Empty;
+        }
+    }
+
+    private static string BuildStreamingAssetUri(string root, string fileName)
+    {
+        if (string.IsNullOrWhiteSpace(root))
+        {
+            return fileName;
         }
 
-        _assetsLoaded = true;
+        string normalizedRoot = root.Replace("\\", "/");
+        string normalizedFile = fileName.Replace("\\", "/");
+        return normalizedRoot.EndsWith("/", StringComparison.Ordinal)
+            ? normalizedRoot + normalizedFile
+            : normalizedRoot + "/" + normalizedFile;
+    }
+
+    private static IEnumerator LoadTextureFromUri(string uri, Action<Texture2D> setter)
+    {
+        using UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri, false);
+        yield return request.SendWebRequest();
+
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogWarning($"[BigTwo] Failed loading texture: {uri} | {request.error}");
+            setter(null);
+            yield break;
+        }
+
+        Texture2D texture = DownloadHandlerTexture.GetContent(request);
+        if (texture != null)
+        {
+            texture.filterMode = FilterMode.Bilinear;
+            texture.wrapMode = TextureWrapMode.Clamp;
+        }
+
+        setter(texture);
     }
 
     private static List<string> BuildImageRoots()

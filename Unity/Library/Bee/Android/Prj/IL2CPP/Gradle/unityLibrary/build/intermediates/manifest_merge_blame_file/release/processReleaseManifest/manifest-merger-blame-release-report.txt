@@ -1,0 +1,156 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="com.unity3d.player" >
+5
+6    <uses-sdk android:minSdkVersion="25" />
+7
+8    <uses-permission android:name="android.permission.INTERNET" />
+8-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:3:3-65
+8-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:3:20-62
+9
+10    <uses-feature android:glEsVersion="0x00030000" />
+10-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:3-52
+10-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:17-49
+11    <uses-feature
+11-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:5:3-91
+12        android:name="android.hardware.vulkan.version"
+12-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:5:17-63
+13        android:required="false" />
+13-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:5:64-88
+14    <uses-feature
+14-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:6:3-88
+15        android:name="android.hardware.touchscreen"
+15-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:6:17-60
+16        android:required="false" />
+16-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:6:61-85
+17
+18    <application
+18-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:7:3-28:17
+19        android:appCategory="game"
+19-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:7:16-42
+20        android:enableOnBackInvokedCallback="true"
+20-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:7:43-85
+21        android:extractNativeLibs="true" >
+21-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:7:86-118
+22        <meta-data
+22-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:8:5-69
+23            android:name="unity.splash-mode"
+23-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:8:16-48
+24            android:value="0" />
+24-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:8:49-66
+25        <meta-data
+25-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:9:5-74
+26            android:name="unity.splash-enable"
+26-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:9:16-50
+27            android:value="True" />
+27-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:9:51-71
+28        <meta-data
+28-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:10:5-78
+29            android:name="unity.launch-fullscreen"
+29-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:10:16-54
+30            android:value="True" />
+30-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:10:55-75
+31        <meta-data
+31-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:11:5-84
+32            android:name="unity.render-outside-safearea"
+32-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:11:16-60
+33            android:value="True" />
+33-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:11:61-81
+34        <meta-data
+34-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:12:5-81
+35            android:name="notch.config"
+35-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:12:16-43
+36            android:value="portrait|landscape" />
+36-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:12:44-78
+37        <meta-data
+37-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:13:5-84
+38            android:name="unity.auto-report-fully-drawn"
+38-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:13:16-60
+39            android:value="true" />
+39-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:13:61-81
+40        <meta-data
+40-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:14:5-78
+41            android:name="unity.strip-engine-code"
+41-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:14:16-54
+42            android:value="true" />
+42-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:14:55-75
+43        <meta-data
+43-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:15:5-80
+44            android:name="unity.auto-set-game-state"
+44-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:15:16-56
+45            android:value="true" />
+45-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:15:57-77
+46
+47        <activity
+47-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:5-27:16
+48            android:name="com.unity3d.player.UnityPlayerGameActivity"
+48-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:312-369
+49            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+49-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:15-196
+50            android:enabled="true"
+50-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:197-219
+51            android:exported="true"
+51-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:220-243
+52            android:hardwareAccelerated="false"
+52-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:244-279
+53            android:launchMode="singleTask"
+53-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:280-311
+54            android:resizeableActivity="true"
+54-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:370-403
+55            android:screenOrientation="fullUser"
+55-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:404-440
+56            android:theme="@style/BaseUnityGameActivityTheme" >
+56-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:441-490
+57            <intent-filter>
+57-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:17:7-20:23
+58                <category android:name="android.intent.category.LAUNCHER" />
+58-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:18:9-69
+58-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:18:19-66
+59
+60                <action android:name="android.intent.action.MAIN" />
+60-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:19:9-61
+60-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:19:17-58
+61            </intent-filter>
+62
+63            <meta-data
+63-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:21:7-82
+64                android:name="unityplayer.UnityActivity"
+64-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:21:18-58
+65                android:value="true" />
+65-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:21:59-79
+66            <meta-data
+66-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:22:7-77
+67                android:name="android.app.lib_name"
+67-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:22:18-53
+68                android:value="game" />
+68-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:22:54-74
+69            <meta-data
+69-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:7-130
+70                android:name="WindowManagerPreference:FreeformWindowSize"
+70-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:18-75
+71                android:value="@string/FreeformWindowSize_maximize" />
+71-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:76-127
+72            <meta-data
+72-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:24:7-145
+73                android:name="WindowManagerPreference:FreeformWindowOrientation"
+73-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:24:18-82
+74                android:value="@string/FreeformWindowOrientation_landscape" />
+74-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:24:83-142
+75            <meta-data
+75-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:25:7-70
+76                android:name="notch_support"
+76-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:25:18-46
+77                android:value="true" />
+77-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:25:47-67
+78
+79            <layout
+79-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:26:7-68
+80                android:minHeight="300px"
+80-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:26:15-40
+81                android:minWidth="400px" />
+81-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:26:41-65
+82        </activity>
+83    </application>
+84
+85</manifest>
