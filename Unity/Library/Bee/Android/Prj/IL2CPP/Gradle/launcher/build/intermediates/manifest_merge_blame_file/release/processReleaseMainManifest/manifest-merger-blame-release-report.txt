@@ -3,7 +3,7 @@
 3    package="com.simon.simpybigtwo"
 4    android:installLocation="preferExternal"
 5    android:versionCode="1"
-6    android:versionName="2.0" >
+6    android:versionName="2.1" >
 7
 8    <uses-sdk
 9        android:minSdkVersion="25"
@@ -131,8 +131,8 @@
 73-->[:unityLibrary] /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/release/processReleaseManifest/AndroidManifest.xml:53:13-44
 74            android:resizeableActivity="true"
 74-->[:unityLibrary] /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/release/processReleaseManifest/AndroidManifest.xml:54:13-46
-75            android:screenOrientation="fullUser"
-75-->[:unityLibrary] /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/release/processReleaseManifest/AndroidManifest.xml:55:13-49
+75            android:screenOrientation="landscape"
+75-->[:unityLibrary] /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/release/processReleaseManifest/AndroidManifest.xml:55:13-50
 76            android:theme="@style/BaseUnityGameActivityTheme" >
 76-->[:unityLibrary] /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/release/processReleaseManifest/AndroidManifest.xml:56:13-62
 77            <intent-filter>

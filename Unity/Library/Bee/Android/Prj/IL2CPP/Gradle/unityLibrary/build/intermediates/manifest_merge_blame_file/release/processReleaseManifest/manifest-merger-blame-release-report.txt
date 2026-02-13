@@ -98,10 +98,10 @@
 53-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:280-311
 54            android:resizeableActivity="true"
 54-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:370-403
-55            android:screenOrientation="fullUser"
-55-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:404-440
+55            android:screenOrientation="landscape"
+55-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:404-441
 56            android:theme="@style/BaseUnityGameActivityTheme" >
-56-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:441-490
+56-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:442-491
 57            <intent-filter>
 57-->/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:17:7-20:23
 58                <category android:name="android.intent.category.LAUNCHER" />

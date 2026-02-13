@@ -11,6 +11,7 @@ public static class BuildAutomation
 
     public static void BuildAndroidApk()
     {
+        ConfigureAndroidOrientation();
         EnsureScenesConfigured();
 
         string outputDir = Path.Combine("Builds", "Android");
@@ -68,6 +69,15 @@ public static class BuildAutomation
             .Where(scene => scene.enabled)
             .Select(scene => scene.path)
             .ToArray();
+    }
+
+    private static void ConfigureAndroidOrientation()
+    {
+        PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
+        PlayerSettings.allowedAutorotateToLandscapeLeft = true;
+        PlayerSettings.allowedAutorotateToLandscapeRight = true;
+        PlayerSettings.allowedAutorotateToPortrait = false;
+        PlayerSettings.allowedAutorotateToPortraitUpsideDown = false;
     }
 }
 #endif

@@ -7,9 +7,11 @@ Darwin version:          24.6.0
 Architecture:            arm64
 Running under Rosetta:   NO
 Available memory:        24576 MB
-Date:                    2026-02-13T10:46:50Z
+Date:                    2026-02-13T12:42:44Z
 [Licensing::Module] Trying to connect to existing licensing client channel...
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-fit0721" at "2026-02-13T10:46:50.473191Z"
+[Licensing::IpcConnector] Channel LicenseClient-fit0721 doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 4281)
 Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/PackageManager/Server/UnityPackageManager
 
 COMMAND LINE ARGUMENTS:
@@ -60,25 +62,27 @@ Successfully changed project path to: /Users/fit0721/Documents/GitHub/bigtwo/Uni
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [8672993472]  Target information:
+Player connection [8656036032]  Target information:
 
-Player connection [8672993472]  * "[IP] 192.168.0.121 [Port] 55504 [Flags] 2 [Guid] 3589915418 [EditorId] 3589915418 [Version] 1048832 [Id] OSXEditor(0,FIT0721deMacBook-Pro-2.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+Player connection [8656036032]  * "[IP] 192.168.0.121 [Port] 55504 [Flags] 2 [Guid] 3167926430 [EditorId] 3167926430 [Version] 1048832 [Id] OSXEditor(0,FIT0721deMacBook-Pro-2.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
 
-Player connection [8672993472] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [8672993472] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [8656036032] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8656036032] Host joined alternative multi-casting on [225.0.0.222:34997]...
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
-[Package Manager] Connected to IPC stream "Upm-5979" after 0.1 seconds.
+[Package Manager] Connected to IPC stream "Upm-4280" after 0.1 seconds.
 [Licensing::Module] Licensing is not yet initialized.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-fit0721" at "2026-02-13T12:42:45.385293Z"
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.17.4+4293ba1
-  Session Id:              b88661f997154a09baeac0106ccdc2e3
-  Correlation Id:          3842a4707e9efaf7d0c84064e7fe4219
-  External correlation Id: 7781915749158705723
+  Session Id:              04a6bb21cfd34ad48de7c3dafbcc954c
+  Correlation Id:          01242504c32a5c9f1a77be8c5b0fd471
+  External correlation Id: 5621506750808132999
   Machine Id:              j2oavUz7Pxw7CUERKAvmf1BkjQk=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-fit0721" (connect: 0.00s, validation: 0.00s, handshake: 0.16s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-fit0721-notifications" at "2026-02-13T10:46:50.635984Z"
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-fit0721" (connect: 0.58s, validation: 0.01s, handshake: 0.17s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-fit0721-notifications" at "2026-02-13T12:42:45.567209Z"
+[Licensing::Module] Connected to LicensingClient (PId: 4281, launch time: 0.00, total connection time: 0.76s)
 [Licensing::Module] Error: Access token is unavailable; failed to update
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
@@ -88,8 +92,8 @@ Input System module state changed to: Initialized.
   Expiration: Unlimited
 [Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
 [Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] Licensing Background thread has ended after 0.17s
-[Licensing::Module] Licensing is initialized (took 0.01s).
+[Licensing::Module] Licensing Background thread has ended after 0.77s
+[Licensing::Module] Licensing is initialized (took 0.61s).
 [Licensing::Client] Successfully resolved entitlement details
 Library Redirect Path: Library/
 [Physics::Module] Selected backend.
@@ -114,7 +118,7 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56979
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56280
 Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
 Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
 ImportWorker Server TCP listen port: 0
@@ -124,8 +128,8 @@ Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.001373 seconds.
-- Loaded All Assemblies, in  0.242 seconds
+Registered in 0.000368 seconds.
+- Loaded All Assemblies, in  0.183 seconds
 Native extension for Android target not found
 Multiple ADB server instances found, the following ADB server instance have been terminated due to being run from another SDK. Process paths: 
 /opt/homebrew/Caskroom/android-platform-tools/36.0.2/platform-tools/adb
@@ -143,39 +147,39 @@ UnityEditor.Modules.ModuleManager:InitializePlatformSupportModules () (at /Users
 
 (Filename: /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/DeploymentTargets/AndroidDeploymentTargetsExtension.cs Line: 384)
 
-Android Extension - Scanning For ADB Devices 3071 ms
+Android Extension - Scanning For ADB Devices 3074 ms
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.331 seconds
-Domain Reload Profiling: 3573ms
-	BeginReloadAssembly (97ms)
+- Finished resetting the current domain, in  3.327 seconds
+Domain Reload Profiling: 3510ms
+	BeginReloadAssembly (40ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (21ms)
-	RebuildCommonClasses (19ms)
+		CreateAndSetChildDomain (5ms)
+	RebuildCommonClasses (20ms)
 	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (21ms)
-	LoadAllAssembliesAndSetupDomain (98ms)
-		LoadAssemblies (78ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (96ms)
+		LoadAssemblies (36ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (95ms)
-			TypeCache.Refresh (95ms)
-				TypeCache.ScanAssembly (88ms)
+		AnalyzeDomain (94ms)
+			TypeCache.Refresh (93ms)
+				TypeCache.ScanAssembly (86ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (3331ms)
+	FinalizeReload (3327ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (3311ms)
+		SetupLoadedEditorAssemblies (3306ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3123ms)
+			InitializePlatformSupportModulesInManaged (3126ms)
 			SetLoadedEditorAssemblies (6ms)
 			BeforeProcessingInitializeOnLoad (68ms)
-			ProcessInitializeOnLoadAttributes (73ms)
-			ProcessInitializeOnLoadMethodAttributes (41ms)
+			ProcessInitializeOnLoadAttributes (74ms)
+			ProcessInitializeOnLoadMethodAttributes (32ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -216,105 +220,99 @@ Package Manager log level set to [2]
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 18.5175ms
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 17.6007ms
 Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
 WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
 DisplayProgressbar: Compiling Scripts
-ExitCode: 4 Duration: 0s37ms
-Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1300b0aE-inputdata.json
-*** Tundra requires additional run (0.03 seconds), 0 items updated, 206 evaluated
-Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/ScriptCompilationBuildProgram.exe" "Library/Bee/1300b0aE.dag.json" "Library/Bee/1300b0aE-inputdata.json" "Library/Bee/buildprogram0.traceevents"
-WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
-ExitCode: 0 Duration: 0s216ms
-Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aE.dag" --continue-on-failure --dagfilejson="Library/Bee/1300b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
-WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
-ExitCode: 0 Duration: 1s36ms
-Finished compiling graph: 209 nodes, 1420 flattened edges (1342 ToBuild, 14 ToUse), maximum node priority 101
-[172/206    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.rsp
-[203/206    1s] Csc Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+ExitCode: 0 Duration: 1s601ms
+[200/206    1s] Csc Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.dll (+2 others)
+[201/206    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+[202/206    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[203/206    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
 [204/206    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
 [205/206    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
-*** Tundra build success (1.02 seconds), 4 items updated, 206 evaluated
-AssetDatabase: script compilation time: 1.541899s
+*** Tundra build success (1.59 seconds), 6 items updated, 206 evaluated
+AssetDatabase: script compilation time: 1.845372s
 Begin MonoManager ReloadAssembly
 Total cache size 135218632
-Total cache size after purge 135218632, took 00:00:00.0293837
-- Loaded All Assemblies, in  0.150 seconds
+Total cache size after purge 135218632, took 00:00:00.0211520
+- Loaded All Assemblies, in  0.151 seconds
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.225 seconds
-Domain Reload Profiling: 375ms
-	BeginReloadAssembly (97ms)
+- Finished resetting the current domain, in  0.227 seconds
+Domain Reload Profiling: 378ms
+	BeginReloadAssembly (99ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (38ms)
-	RebuildCommonClasses (19ms)
-	RebuildNativeTypeToScriptingClass (6ms)
+		CreateAndSetChildDomain (48ms)
+	RebuildCommonClasses (20ms)
+	RebuildNativeTypeToScriptingClass (7ms)
 	initialDomainReloadingComplete (8ms)
-	LoadAllAssembliesAndSetupDomain (19ms)
-		LoadAssemblies (35ms)
+	LoadAllAssembliesAndSetupDomain (17ms)
+		LoadAssemblies (30ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
 		AnalyzeDomain (13ms)
 			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (6ms)
+				TypeCache.ScanAssembly (7ms)
 			BuildScriptInfoCaches (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (225ms)
+	FinalizeReload (227ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (159ms)
+		SetupLoadedEditorAssemblies (160ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (16ms)
 			SetLoadedEditorAssemblies (2ms)
-			BeforeProcessingInitializeOnLoad (68ms)
-			ProcessInitializeOnLoadAttributes (56ms)
-			ProcessInitializeOnLoadMethodAttributes (16ms)
-			AfterProcessingInitializeOnLoad (1ms)
+			BeforeProcessingInitializeOnLoad (67ms)
+			ProcessInitializeOnLoadAttributes (57ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (2ms)
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Asset Pipeline Refresh (id=354f409940b534613bd2b9c0d639001c): Total: 2.011 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+Asset Pipeline Refresh (id=5c42e421331fa4e2b84aea443f23b991): Total: 2.314 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
 	Summary:
 		Imports: total=0 (actual=0, local cache=0, cache server=0)
-		Asset DB Process Time: managed=0 ms, native=282 ms
-		Asset DB Callback time: managed=28 ms, native=4 ms
-		Scripting: domain reloads=1, domain reload time=150 ms, compile time=1543 ms, other=2 ms
+		Asset DB Process Time: managed=0 ms, native=283 ms
+		Asset DB Callback time: managed=27 ms, native=3 ms
+		Scripting: domain reloads=1, domain reload time=151 ms, compile time=1846 ms, other=2 ms
 		Project Asset Count: scripts=123, non-scripts=176
-		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Asset File Changes: new=0, changed=2, moved=0, deleted=0
 		Scan Filter Count: 1
 	InvokeCustomDependenciesCallbacks: 0.000ms
-	InvokePackagesCallback: 4.060ms
-	ApplyChangesToAssetFolders: 0.085ms
-	Scan: 27.286ms
-	OnSourceAssetsModified: 0.258ms
-	CategorizeAssetsWithTransientArtifact: 0.529ms
-	ProcessAssetsWithTransientArtifactChanges: 2.766ms
-	CategorizeAssets: 0.777ms
-	ImportOutOfDateAssets: 225.548ms (-1317.409ms without children)
-		CompileScripts: 1542.753ms
-		UnloadImportedAssets: 0.087ms
-		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.025ms
+	InvokePackagesCallback: 2.756ms
+	ApplyChangesToAssetFolders: 0.080ms
+	Scan: 25.720ms
+	OnSourceAssetsModified: 0.335ms
+	CategorizeAssetsWithTransientArtifact: 0.530ms
+	ProcessAssetsWithTransientArtifactChanges: 3.347ms
+	CategorizeAssets: 0.821ms
+	ImportOutOfDateAssets: 227.893ms (-1618.620ms without children)
+		CompileScripts: 1846.290ms
+		ReloadNativeAssets: 0.000ms
+		UnloadImportedAssets: 0.100ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.029ms
 		InitializingProgressBar: 0.000ms
 		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
-		OnDemandSchedulerStart: 0.093ms
-	PostProcessAllAssets: 28.235ms
-	Hotreload: 0.454ms
+		OnDemandSchedulerStart: 0.095ms
+	PostProcessAllAssets: 27.560ms
+	Hotreload: 0.267ms
 	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
-	UnloadStreamsBegin: 0.433ms
-	PersistCurrentRevisions: 0.006ms
+	UnloadStreamsBegin: 0.527ms
+	PersistCurrentRevisions: 0.008ms
 	UnloadStreamsEnd: 0.000ms
 	GenerateScriptTypeHashes: 0.003ms
-	Untracked: 1720.384ms
+	Untracked: 2023.885ms
 
 Application.AssetDatabase Initial Refresh End
-Scanning for USB devices : 0.099ms
+Scanning for USB devices : 0.023ms
 Initializing Unity extensions:
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
@@ -322,21 +320,21 @@ Initializing Unity extensions:
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 367 unused Assets / (1.0 MB). Loaded Objects now: 970.
 Memory consumption went from 106.0 MB to 105.0 MB.
-Total: 3.715209 ms (FindLiveObjects: 0.035000 ms CreateObjectMapping: 0.007625 ms MarkObjects: 3.334208 ms  DeleteObjects: 0.338042 ms)
+Total: 3.610750 ms (FindLiveObjects: 0.030083 ms CreateObjectMapping: 0.008250 ms MarkObjects: 3.239625 ms  DeleteObjects: 0.332459 ms)
 
-Start importing ProjectSettings/EditorBuildSettings.asset using Guid(0000000000000000b000000000000000) (LibraryAssetImporter) -> (artifact id: 'e41da3063df7606f1625eb46e76b7b41') in 0.002498833 seconds
+Start importing ProjectSettings/ProjectSettings.asset using Guid(00000000000000004000000000000000) (LibraryAssetImporter) -> (artifact id: '51a836f443c1c26a14265d77e62c1ad5') in 0.003021291 seconds
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Asset Pipeline Refresh (id=09ec733918a9348c2856b25b8c9c4a6f): Total: 0.007 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=cf9733b3b3d6241fba1a5d9e80e7ae87): Total: 0.017 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
 DisplayProgressbar: Checking prerequisites
 Reporting tool paths:
  JDK: '/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/OpenJDK'
  Android SDK: '/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/SDK'
  Android NDK: '/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/NDK'
  Gradle: '/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Tools/gradle' (Gradle Version: '8.13' Android Plugin Version: '8.10.0')
-Android PostProcess task "Checking prerequisites" took 16.9914 ms
+Android PostProcess task "Checking prerequisites" took 16.4138 ms
 DisplayProgressbar: Detect Java Development Kit (JDK)
-Android PostProcess task "Detect Java Development Kit (JDK)" took 99.3613 ms
+Android PostProcess task "Detect Java Development Kit (JDK)" took 97.7006 ms
 DisplayProgressbar: Detecting Android SDK
 AndroidSDKTools:
 
@@ -347,14 +345,14 @@ AndroidSDKTools:
 
 	adb           : /Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/SDK/platform-tools/adb
 
-Android PostProcess task "Detecting Android SDK" took 3902.5715 ms
+Android PostProcess task "Detecting Android SDK" took 2571.2527 ms
 DisplayProgressbar: Detect Android NDK
-Android PostProcess task "Detect Android NDK" took 0.3156 ms
-Android PostProcess task "Trying to find a suitable Android device" took 0.1928 ms
+Android PostProcess task "Detect Android NDK" took 0.3245 ms
+Android PostProcess task "Trying to find a suitable Android device" took 0.1977 ms
 DisplayProgressbar: Check resources
-Android PostProcess task "Check resources" took 0.0817 ms
+Android PostProcess task "Check resources" took 0.0792 ms
 DisplayProgressbar: Check Android Player Settings
-Android PostProcess task "Check Android Player Settings" took 0.9605 ms
+Android PostProcess task "Check Android Player Settings" took 0.96 ms
 Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/UnityShaderCompiler
 Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
@@ -364,26 +362,18 @@ Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 1.1618ms
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.9302ms
 Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aESkipCompile.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssembliesAndTypeDB
 WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
 DisplayProgressbar: Compiling Scripts
-ExitCode: 4 Duration: 0s39ms
-Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1300b0aESkipCompile-inputdata.json
-*** Tundra requires additional run (0.03 seconds), 0 items updated, 3 evaluated
-Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/ScriptCompilationBuildProgram.exe" "Library/Bee/1300b0aESkipCompile.dag.json" "Library/Bee/1300b0aESkipCompile-inputdata.json" "Library/Bee/buildprogram0.traceevents"
-WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
-ExitCode: 0 Duration: 0s246ms
-Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aESkipCompile.dag" --continue-on-failure --dagfilejson="Library/Bee/1300b0aESkipCompile.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssembliesAndTypeDB
-WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
-ExitCode: 0 Duration: 0s17ms
-Finished compiling graph: 4 nodes, 5 flattened edges (5 ToBuild, 0 ToUse), maximum node priority 3
-*** Tundra build success (0.01 seconds), 0 items updated, 3 evaluated
-Asset Pipeline Refresh (id=620ad0c5b95d547ad81c3c3836dcabe1): Total: 0.006 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+ExitCode: 0 Duration: 0s131ms
+[2/3        0s] BuildPlayerDataGenerator Library/BuildPlayerData/Editor/TypeDb-All.json
+*** Tundra build success (0.12 seconds), 1 items updated, 3 evaluated
+Asset Pipeline Refresh (id=a3876bc67be2d45efbd42bde5f284b6a): Total: 0.005 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
 [ScriptCompilation] Requested script compilation because: Recompiling scripts for player build.
 BuildPlayer: start building target 13
 Total cache size 135218632
-Total cache size after purge 135218632, took 00:00:00.0249626
+Total cache size after purge 135218632, took 00:00:00.0231746
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
@@ -391,44 +381,37 @@ Total cache size after purge 135218632, took 00:00:00.0249626
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.2809ms
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.2742ms
 Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aP.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssembliesAndTypeDB
 WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
-Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/ScriptCompilationBuildProgram.exe" "Library/Bee/1300b0aP.dag.json" "Library/Bee/1300b0aP-inputdata.json" "Library/Bee/buildprogram0.traceevents"
-WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
-ExitCode: 4 Duration: 0s119ms
-[73/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll
-[74/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.InternalAPIEngineBridge.004.dll
-[77/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.InternalAPIEngineBridge.004.pdb
-[78/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.pdb
-[80/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.dll
-[81/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.pdb
+Total cache size 135218632
+Total cache size after purge 135218632, took 00:00:00.0173572
+ExitCode: 0 Duration: 0s407ms
+[73/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.pdb
+[75/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.InternalAPIEngineBridge.004.pdb
+[76/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.InternalAPIEngineBridge.004.dll
+[79/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll
+[80/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.pdb
+[81/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.dll
+[82/87      0s] Csc Library/Bee/artifacts/1300b0aP.dag/Assembly-CSharp.dll (+2 others)
 [83/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll
 [84/87      0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.pdb
-Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1300b0aP-inputdata.json
-*** Tundra requires additional run (0.01 seconds), 8 items updated, 85 evaluated
-ExitCode: 0 Duration: 0s154ms
-Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aP.dag" --continue-on-failure --dagfilejson="Library/Bee/1300b0aP.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssembliesAndTypeDB
-WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
-Total cache size 135218632
-Total cache size after purge 135218632, took 00:00:00.0154219
-ExitCode: 0 Duration: 0s117ms
-Finished compiling graph: 88 nodes, 426 flattened edges (392 ToBuild, 8 ToUse), maximum node priority 53
-*** Tundra build success (0.01 seconds), 0 items updated, 87 evaluated
-Rebuilding Data files because the build options have changed
+[86/87      0s] BuildPlayerDataGenerator Library/BuildPlayerData/Player/RuntimeInitializeOnLoads.json (+1 other)
+*** Tundra build success (0.30 seconds), 10 items updated, 87 evaluated
+Rebuilding Data files because ProjectSettings/ProjectSettings.asset is dirty (hash)
 Opening scene 'Assets/test_bigtwo.unity'
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Assets/test_bigtwo.unity'
-	Deserialize:            0.956 ms
-	Integration:            2.846 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.502 ms
-	Total Operation Time:   4.304 ms
-Unloading 24 unused Assets / (1.0 MB). Loaded Objects now: 1008.
-Memory consumption went from 109.4 MB to 108.4 MB.
-Total: 4.536083 ms (FindLiveObjects: 0.026167 ms CreateObjectMapping: 0.006250 ms MarkObjects: 4.168583 ms  DeleteObjects: 0.334875 ms)
+	Deserialize:            0.715 ms
+	Integration:            2.852 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       2.692 ms
+	Total Operation Time:   6.260 ms
+Unloading 23 unused Assets / (0.5 MB). Loaded Objects now: 1029.
+Memory consumption went from 107.7 MB to 107.2 MB.
+Total: 3.574875 ms (FindLiveObjects: 0.028125 ms CreateObjectMapping: 0.005875 ms MarkObjects: 3.373542 ms  DeleteObjects: 0.167166 ms)
 
-Created GICache directory at /Users/fit0721/Library/Caches/com.unity3d.UnityEditor/GiCache. Took: 0.001s, timestamps: [10.876 - 10.877]
+Created GICache directory at /Users/fit0721/Library/Caches/com.unity3d.UnityEditor/GiCache. Took: 0.001s, timestamps: [10.320 - 10.322]
 'AudioListener' is not supported because the module Audio is disabled in the build.
 Included from scene: 'Assets/test_bigtwo.unity'
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
@@ -437,7 +420,7 @@ UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,Uni
 UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:494)
 UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:410)
 UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:356)
-BuildAutomation:BuildAndroidApk () (at Assets/Editor/BuildAutomation.cs:32)
+BuildAutomation:BuildAndroidApk () (at Assets/Editor/BuildAutomation.cs:33)
 
 [/Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs line 494]
 
@@ -665,19 +648,19 @@ Dependency assembly - System.Drawing.Design.dll
 
 DisplayProgressbar: Fetching assembly references
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 19 unused Assets / (0.5 MB). Loaded Objects now: 1005.
-Memory consumption went from 111.5 MB to 110.9 MB.
-Total: 3.904167 ms (FindLiveObjects: 0.020875 ms CreateObjectMapping: 0.005083 ms MarkObjects: 3.718417 ms  DeleteObjects: 0.159459 ms)
+Unloading 19 unused Assets / (0.5 MB). Loaded Objects now: 1026.
+Memory consumption went from 109.9 MB to 109.4 MB.
+Total: 3.641125 ms (FindLiveObjects: 0.022083 ms CreateObjectMapping: 0.005875 ms MarkObjects: 3.470750 ms  DeleteObjects: 0.142208 ms)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 0 unused Assets / (0 B). Loaded Objects now: 1005.
-Memory consumption went from 110.9 MB to 110.9 MB.
-Total: 3.163208 ms (FindLiveObjects: 0.019583 ms CreateObjectMapping: 0.005000 ms MarkObjects: 3.136625 ms  DeleteObjects: 0.001916 ms)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1026.
+Memory consumption went from 109.3 MB to 109.3 MB.
+Total: 2.963708 ms (FindLiveObjects: 0.021292 ms CreateObjectMapping: 0.007666 ms MarkObjects: 2.933125 ms  DeleteObjects: 0.001500 ms)
 
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 177 unused Assets / (146.7 MB). Loaded Objects now: 1005.
-Memory consumption went from 258.7 MB to 112.0 MB.
-Total: 9.350333 ms (FindLiveObjects: 0.016833 ms CreateObjectMapping: 0.006166 ms MarkObjects: 3.711917 ms  DeleteObjects: 5.615125 ms)
+Unloading 176 unused Assets / (146.3 MB). Loaded Objects now: 1026.
+Memory consumption went from 256.6 MB to 110.4 MB.
+Total: 9.287291 ms (FindLiveObjects: 0.019500 ms CreateObjectMapping: 0.006500 ms MarkObjects: 3.160042 ms  DeleteObjects: 6.100958 ms)
 
 Compiling shader "Skybox/Procedural" pass "" (vp)
     Target graphics API: gles3
@@ -805,8 +788,8 @@ Compiling shader "Legacy Shaders/Diffuse" pass "DEFERRED" (vp)
     gles3 finished in 0.00 seconds. Local cache hits 24 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     vulkan finished in 0.00 seconds. Local cache hits 24 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     Prepared data for serialisation in 0.00s
-    gles3 finished in 0.00 seconds. Local cache hits 15 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
-    vulkan finished in 0.00 seconds. Local cache hits 15 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    gles3 finished in 0.00 seconds. Local cache hits 15 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    vulkan finished in 0.00 seconds. Local cache hits 15 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     Prepared data for serialisation in 0.00s
     gles3 finished in 0.00 seconds. Local cache hits 12 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     vulkan finished in 0.00 seconds. Local cache hits 12 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
@@ -1079,9 +1062,9 @@ Compiling shader "Hidden/Internal-ScreenSpaceShadows" pass "" (vp)
     Processed in 0.00 seconds
     starting compilation...
     gles3 finished in 0.00 seconds. Local cache hits 12 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
-    vulkan finished in 0.00 seconds. Local cache hits 12 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    vulkan finished in 0.00 seconds. Local cache hits 12 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     Prepared data for serialisation in 0.00s
-    gles3 finished in 0.00 seconds. Local cache hits 12 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    gles3 finished in 0.00 seconds. Local cache hits 12 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     vulkan finished in 0.00 seconds. Local cache hits 12 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     Prepared data for serialisation in 0.00s
     gles3 finished in 0.00 seconds. Local cache hits 12 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
@@ -1207,11 +1190,11 @@ Compiling shader "Hidden/Internal-DeferredShading" pass "" (vp)
     After scriptable stripping: 3
     Processed in 0.00 seconds
     starting compilation...
-    gles3 finished in 0.00 seconds. Local cache hits 78 (0.02s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
-    vulkan finished in 0.00 seconds. Local cache hits 78 (0.02s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    gles3 finished in 0.00 seconds. Local cache hits 78 (0.04s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    vulkan finished in 0.01 seconds. Local cache hits 78 (0.02s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     Prepared data for serialisation in 0.00s
-    gles3 finished in 0.00 seconds. Local cache hits 3 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
-    vulkan finished in 0.00 seconds. Local cache hits 3 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    gles3 finished in 0.01 seconds. Local cache hits 3 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    vulkan finished in 0.01 seconds. Local cache hits 3 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     Prepared data for serialisation in 0.00s
 Serialized binary data for shader Hidden/Internal-DeferredShading in 0.00s
     gles3 (total internal programs: 81, unique: 53)
@@ -1744,8 +1727,8 @@ Compiling shader "Hidden/Internal-UIRDefault" pass "" (vp)
     After scriptable stripping: 120
     Processed in 0.00 seconds
     starting compilation...
-    gles3 finished in 0.00 seconds. Local cache hits 120 (0.03s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
-    vulkan finished in 0.00 seconds. Local cache hits 120 (0.03s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    gles3 finished in 0.00 seconds. Local cache hits 120 (0.06s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    vulkan finished in 0.01 seconds. Local cache hits 120 (0.05s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     Prepared data for serialisation in 0.00s
 Serialized binary data for shader Hidden/Internal-UIRDefault in 0.00s
     gles3 (total internal programs: 120, unique: 40)
@@ -1786,7 +1769,7 @@ Compiling shader "Sprites/Default" pass "" (vp)
     After scriptable stripping: 12
     Processed in 0.00 seconds
     starting compilation...
-    gles3 finished in 0.00 seconds. Local cache hits 12 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    gles3 finished in 0.00 seconds. Local cache hits 12 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     vulkan finished in 0.00 seconds. Local cache hits 12 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     Prepared data for serialisation in 0.00s
 Serialized binary data for shader Sprites/Default in 0.00s
@@ -1807,8 +1790,8 @@ Compiling shader "Sprites/Mask" pass "" (vp)
     After scriptable stripping: 12
     Processed in 0.00 seconds
     starting compilation...
-    gles3 finished in 0.00 seconds. Local cache hits 12 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
-    vulkan finished in 0.00 seconds. Local cache hits 12 (0.01s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    gles3 finished in 0.00 seconds. Local cache hits 12 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
+    vulkan finished in 0.00 seconds. Local cache hits 12 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 0 variants (0.00s CPU time), skipped 0 variants
     Prepared data for serialisation in 0.00s
 Serialized binary data for shader Sprites/Mask in 0.00s
     gles3 (total internal programs: 12, unique: 4)
@@ -2545,13 +2528,12 @@ Compiling shader "Hidden/Physics2D/SDF_Point" pass "" (vp)
 Serialized binary data for shader Hidden/Physics2D/SDF_Point in 0.00s
     gles3 (total internal programs: 3, unique: 1)
     vulkan (total internal programs: 3, unique: 1)
-Asset Pipeline Refresh (id=0a086b4ae46a844ea8c13f6c505537f9): Total: 0.011 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
 DisplayProgressbar: Initializing
-Android PostProcess task "Initializing" took 0.3868 ms
+Android PostProcess task "Initializing" took 0.3991 ms
 DisplayProgressbar: Check gradle project collisions
-Android PostProcess task "Check gradle project collisions" took 0.0999 ms
+Android PostProcess task "Check gradle project collisions" took 0.0983 ms
 DisplayProgressbar: Preparing banner
-Android PostProcess task "Preparing banner" took 0.1618 ms
+Android PostProcess task "Preparing banner" took 0.1476 ms
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
       Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
@@ -2559,72 +2541,144 @@ Android PostProcess task "Preparing banner" took 0.1618 ms
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
       Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
 [40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
-      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.1728ms
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.1482ms
 Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --dagfile="Library/Bee/Playerf0c4891e.dag" --profile="Library/Bee/backend1.traceevents" Player
 WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
 Rebuilding DAG because FileSignature timestamp changed: Library/Bee/Playerf0c4891e-inputdata.json
 *** Tundra requires additional run (0.01 seconds), 0 items updated, 0 evaluated
 Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/AndroidPlayerBuildProgram.exe" "/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Bee:/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline" "Library/Bee/Playerf0c4891e.dag.json" "Library/Bee/Playerf0c4891e-inputdata.json" "Library/Bee/buildprogram0.traceevents"
 WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
-DisplayProgressbar: Incremental Player Build
 ExitCode: 4 Duration: 0s106ms
-ExitCode: 0 Duration: 0s450ms
+DisplayProgressbar: Incremental Player Build
+ExitCode: 0 Duration: 0s424ms
 Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --dagfile="Library/Bee/Playerf0c4891e.dag" --dagfilejson="Library/Bee/Playerf0c4891e.dag.json" --profile="Library/Bee/backend2.traceevents" Player
 WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
-Finished compiling graph: 710 nodes, 1766 flattened edges (1762 ToBuild, 4 ToUse), maximum node priority 329
-[           0s] Delete 1 artifact files that are no longer in use. (like /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/data.unity3d)
-[ 38/519    0s] WriteText Library/Bee/artifacts/csharpactions/unity_app_guid_5ewj.info
-[ 42/519    0s] WriteText Library/Bee/artifacts/csharpactions/level0_isf5.info
-[ 43/519    0s] WriteText Library/Bee/artifacts/csharpactions/sharedassets0.assets_v4ez.info
-[ 44/519    0s] WriteText Library/Bee/artifacts/csharpactions/globalgamemanagers.assets_wxz5.info
-[ 46/519    0s] WriteText Library/Bee/artifacts/csharpactions/boot.config_x4e9.info
-[ 76/519    0s] WriteText /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/strings.xml
-[180/519    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/Resources/unity_builtin_extra
-[181/519    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/globalgamemanagers
-[500/519    0s] AddBootConfigGUID Library/Bee/artifacts/Android/boot.config
-[501/519    0s] SplitFile Library/Bee/artifacts/Android/Split/sharedassets0.assets
-[502/519    0s] SplitFile Library/Bee/artifacts/Android/Split/level0
-[503/519    0s] SplitFile Library/Bee/artifacts/Android/Split/globalgamemanagers.assets
-[504/519    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/boot.config
-*** Tundra requires additional run (0.13 seconds), 13 items updated, 519 evaluated
-*** Additional run caused by: contents change of Library/Bee/artifacts/Android/Split/level0
+Finished compiling graph: 712 nodes, 1772 flattened edges (1768 ToBuild, 4 ToUse), maximum node priority 329
+[ 43/521    0s] WriteText Library/Bee/artifacts/csharpactions/IntermediateLauncherManifestDiag.txt_4oyd.info
+[180/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/globalgamemanagers
+[181/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/Resources/unity_builtin_extra
+[183/521    0s] AddBootConfigGUID Library/Bee/artifacts/Android/boot.config
+[184/521    0s] SplitFile Library/Bee/artifacts/Android/Split/level0
+[185/521    0s] SplitFile Library/Bee/artifacts/Android/Split/sharedassets0.assets
+[186/521    0s] SplitFile Library/Bee/artifacts/Android/Split/globalgamemanagers.assets
+[187/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/level0
+[188/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/sharedassets0.assets
+[189/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/globalgamemanagers.assets.split0
+[190/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/globalgamemanagers.assets.split1
+[191/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/globalgamemanagers.assets.split2
+[192/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/boot.config
+[193/521    1s] UnityLinker /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/unitylinker_xy1a.traceevents
+/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/il2cpp/build/deploy/UnityLinker --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.AIModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.ARModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.AccessibilityModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.AdaptivePerformanceModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.AndroidJNIModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.AnimationModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.AssetBundleModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.AudioModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.ClothModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.ContentLoadModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.CoreModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.CrashReportingModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.DSPGraphModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.DirectorModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.GIModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.GameCenterModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.GraphicsStateCollectionSerializerModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.GridModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.HierarchyCoreModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.HierarchyModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.HotReloadModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.IMGUIModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.IdentifiersModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.ImageConversionModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.InputForUIModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.InputLegacyModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.InputModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.InsightsModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.JSONSerializeModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.LocalizationModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.MarshallingModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.MultiplayerModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.ParticleSystemModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.PerformanceReportingModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.Physics2DModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.PhysicsBackendPhysXModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.PhysicsModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.PropertiesModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.RenderAs2DModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.ScreenCaptureModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.ShaderRuntimeModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.ShaderVariantAnalyticsModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.SharedInternalsModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.SpriteMaskModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.SpriteShapeModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.StreamingModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.SubstanceModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.SubsystemsModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.TLSModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.TerrainModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.TerrainPhysicsModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.TextCoreFontEngineModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.TextCoreTextEngineModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.TextRenderingModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.TilemapModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UIElementsModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UIModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UmbraModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UnityAnalyticsCommonModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UnityAnalyticsModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UnityConnectModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UnityConsentModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UnityCurlModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UnityWebRequestAudioModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UnityWebRequestModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UnityWebRequestTextureModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.UnityWebRequestWWWModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.VFXModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.VRModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.VectorGraphicsModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.VehiclesModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.VideoModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.WindModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.XRModule.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed/UnityEngine.dll --allowed-assembly=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll --allowed-assembly=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/PlayerScriptAssemblies/Unity.InternalAPIEngineBridge.004.dll --allowed-assembly=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.dll --allowed-assembly=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Accessibility.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/Microsoft.Win32.Primitives.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/Microsoft.Win32.Registry.AccessControl.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/Microsoft.Win32.Registry.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.AppContext.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Buffers.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Collections.Concurrent.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Collections.NonGeneric.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Collections.Specialized.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Collections.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ComponentModel.Annotations.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ComponentModel.EventBasedAsync.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ComponentModel.Primitives.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ComponentModel.TypeConverter.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ComponentModel.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Console.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Data.Common.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Data.SqlClient.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Diagnostics.Contracts.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Diagnostics.Debug.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Diagnostics.FileVersionInfo.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Diagnostics.Process.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Diagnostics.StackTrace.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Diagnostics.TextWriterTraceListener.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Diagnostics.Tools.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Diagnostics.TraceEvent.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Diagnostics.TraceSource.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Diagnostics.Tracing.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Drawing.Primitives.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Dynamic.Runtime.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Globalization.Calendars.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Globalization.Extensions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Globalization.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.IO.Compression.ZipFile.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.IO.FileSystem.AccessControl.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.IO.FileSystem.DriveInfo.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.IO.FileSystem.Primitives.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.IO.FileSystem.Watcher.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.IO.FileSystem.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.IO.IsolatedStorage.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.IO.MemoryMappedFiles.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.IO.Pipes.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.IO.UnmanagedMemoryStream.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.IO.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Linq.Expressions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Linq.Parallel.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Linq.Queryable.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Linq.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Memory.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.AuthenticationManager.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.Cache.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.HttpListener.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.Mail.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.NameResolution.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.NetworkInformation.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.Ping.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.Primitives.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.Requests.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.Security.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.ServicePoint.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.Sockets.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.Utilities.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.WebHeaderCollection.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.WebSockets.Client.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Net.WebSockets.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ObjectModel.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Reflection.DispatchProxy.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Reflection.Emit.ILGeneration.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Reflection.Emit.Lightweight.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Reflection.Emit.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Reflection.Extensions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Reflection.Primitives.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Reflection.TypeExtensions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Reflection.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Resources.Reader.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Resources.ReaderWriter.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Resources.ResourceManager.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Resources.Writer.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.CompilerServices.VisualC.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.Extensions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.Handles.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.InteropServices.RuntimeInformation.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.InteropServices.WindowsRuntime.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.InteropServices.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.Loader.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.Numerics.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.Serialization.Formatters.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.Serialization.Json.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.Serialization.Primitives.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.Serialization.Xml.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Runtime.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.AccessControl.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Claims.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Algorithms.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Cng.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Csp.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.DeriveBytes.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Encoding.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Encryption.Aes.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Encryption.ECDiffieHellman.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Encryption.ECDsa.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Encryption.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Hashing.Algorithms.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Hashing.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.OpenSsl.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Pkcs.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.Primitives.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.ProtectedData.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.RSA.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.RandomNumberGenerator.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Cryptography.X509Certificates.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Principal.Windows.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.Principal.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Security.SecureString.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ServiceModel.Duplex.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ServiceModel.Http.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ServiceModel.NetTcp.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ServiceModel.Primitives.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ServiceModel.Security.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ServiceProcess.ServiceController.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Text.Encoding.CodePages.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Text.Encoding.Extensions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Text.Encoding.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Text.RegularExpressions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Threading.AccessControl.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Threading.Overlapped.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Threading.Tasks.Extensions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Threading.Tasks.Parallel.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Threading.Tasks.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Threading.Thread.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Threading.ThreadPool.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Threading.Timer.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Threading.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.ValueTuple.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Xml.ReaderWriter.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Xml.XDocument.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Xml.XPath.XDocument.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Xml.XPath.XmlDocument.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Xml.XPath.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Xml.XmlDocument.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Xml.XmlSerializer.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/System.Xml.Xsl.Primitives.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades/netstandard.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/I18N.CJK.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/I18N.MidEast.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/I18N.Other.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/I18N.Rare.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/I18N.West.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/I18N.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Microsoft.CSharp.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Mono.Data.Sqlite.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Mono.Data.Tds.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Mono.Security.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.ComponentModel.Composition.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.ComponentModel.DataAnnotations.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Configuration.Install.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Configuration.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Core.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Data.DataSetExtensions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Data.Entity.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Data.Linq.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Data.OracleClient.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Data.Services.Client.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Data.Services.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Data.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Design.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.DirectoryServices.Protocols.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.DirectoryServices.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Drawing.Design.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Drawing.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.EnterpriseServices.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.IO.Compression.FileSystem.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.IO.Compression.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.IdentityModel.Selectors.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.IdentityModel.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Json.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Management.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Messaging.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Net.Http.WebRequest.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Net.Http.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Net.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Numerics.Vectors.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Numerics.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Reflection.Context.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Runtime.Caching.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Runtime.DurableInstancing.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Runtime.Remoting.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Runtime.Serialization.Formatters.Soap.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Runtime.Serialization.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Security.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.ServiceModel.Activation.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.ServiceModel.Discovery.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.ServiceModel.Internals.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.ServiceModel.Routing.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.ServiceModel.Web.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.ServiceModel.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.ServiceProcess.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Transactions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Web.ApplicationServices.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Web.DynamicData.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Web.Extensions.Design.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Web.Extensions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Web.RegularExpressions.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Web.Services.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Web.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Windows.Forms.DataVisualization.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Windows.Forms.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Windows.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Xaml.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Xml.Linq.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Xml.Serialization.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.Xml.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/System.dll --allowed-assembly=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/mscorlib.dll --out=Library/Bee/artifacts/Android/ManagedStripped --include-link-xml=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/UnityLinkerInputs/TypesInScenes.xml --include-link-xml=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Tools/AndroidNativeLink.xml --include-directory=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/PlayerScriptAssemblies --include-directory=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed --include-directory=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux --include-directory=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityaot-linux/Facades --profiler-report --profiler-output-file=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/unitylinker_xy1a.traceevents --dotnetprofile=unityaot-linux --dotnetruntime=Il2Cpp --platform=Android --use-editor-options --enable-engine-module-stripping --engine-modules-asset-file=/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/modules.asset --editor-data-file=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/UnityLinkerInputs/EditorToUnityLinkerData.json --include-unity-root-assembly=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll --print-command-line --enable-analytics
+*** Tundra requires additional run (1.16 seconds), 14 items updated, 521 evaluated
+*** Additional run caused by: contents change of Library/Bee/artifacts/Android/ManagedStripped
 Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/AndroidPlayerBuildProgram.exe" "/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Bee:/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline" "Library/Bee/Playerf0c4891e.dag.json" "Library/Bee/Playerf0c4891e-inputdata.json" "Library/Bee/buildprogram1.traceevents"
 WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
-ExitCode: 4 Duration: 0s206ms
-ExitCode: 0 Duration: 0s424ms
+ExitCode: 4 Duration: 1s214ms
+ExitCode: 0 Duration: 0s420ms
 Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --dagfile="Library/Bee/Playerf0c4891e.dag" --dagfilejson="Library/Bee/Playerf0c4891e.dag.json" --profile="Library/Bee/backend3.traceevents" Player
 WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
+[W] opendir() failed: /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/Android/il2cppOutput/cpp/Symbols
+Finished compiling graph: 711 nodes, 1769 flattened edges (1765 ToBuild, 4 ToUse), maximum node priority 328
+[           0s] Delete 1 artifact files that are no longer in use. (like /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/icallsummary.txt)
+[250/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.CoreModule.pdb
+[252/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.CoreModule.dll
+[255/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.pdb
+[256/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Assembly-CSharp.dll
+[257/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.dll
+[259/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Assembly-CSharp.pdb
+[261/520    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.CoreModule-FeaturesChecked.txt
+[262/520    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine-FeaturesChecked.txt
+[263/520    0s] ICallRegistrationGenerator /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/Android/il2cppOutput/UnityICallRegistration.cpp
+[264/520    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/Assembly-CSharp-FeaturesChecked.txt
+[265/520    0s] Compile UnityICallRegistration Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityICallRegistration.o
+clang++: warning: '-x c++' after last input file has no effect [-Wunused-command-line-argument]
+[266/520    0s] Link libunity Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so
+[267/520    0s] Stripping Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so -> Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so
+[268/520    0s] Generate Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so from Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so
+[269/520    0s] Generate Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.sym.so from Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.sym.so
+[270/520    0s] Adding note Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so -> /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libunity.so /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libunity.so
+[271/520    1s] IL2CPP_CodeGen /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/il2cpp_conv_0rxj.traceevents
+/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/il2cpp/build/deploy/il2cpp --convert-to-cpp --assembly=Library/Bee/artifacts/Android/ManagedStripped/Assembly-CSharp.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/Mono.Security.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/mscorlib.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/System.Configuration.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/System.Core.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/System.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/System.Xml.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.AIModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.AndroidJNIModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.AudioModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.CoreModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.ImageConversionModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.IMGUIModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.InputLegacyModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.MultiplayerModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.PhysicsModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.PropertiesModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.SharedInternalsModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.TextCoreFontEngineModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.TextCoreTextEngineModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.TextRenderingModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.UnityWebRequestModule.dll --assembly=Library/Bee/artifacts/Android/ManagedStripped/UnityEngine.UnityWebRequestTextureModule.dll --generatedcppdir=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/Android/il2cppOutput/cpp --symbols-folder=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/Android/il2cppOutput/cpp/Symbols --enable-analytics --emit-null-checks --enable-array-bounds-check --dotnetprofile=unityaot-linux --usymtool-path=/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Helpers/usymtool --profiler-report --profiler-output-file=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/il2cpp_conv_0rxj.traceevents --print-command-line --static-lib-il2-cpp --data-folder=/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/Android/il2cppOutput/data
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32&,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean&) - High Variable Count of 250
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32&,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean&) - High Instruction Count of 6305
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Boolean UnityEngine.TextCore.Text.TextGenerator::ValidateHtmlTag(UnityEngine.TextCore.Text.TextProcessingElement[],System.Int32,System.Int32&,UnityEngine.TextCore.Text.TextGenerationSettings,UnityEngine.TextCore.Text.TextInfo,System.Boolean&) - High CodeSize of 17778
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32&,System.Single&) - High Variable Count of 306
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32&,System.Single&) - High Instruction Count of 5887
+Warning: [UnityEngine.TextCoreTextEngineModule] - System.Void UnityEngine.TextCore.Text.TextGenerator::ParsingPhase(UnityEngine.TextCore.Text.TextInfo,UnityEngine.TextCore.Text.TextGenerationSettings,System.UInt32&,System.Single&) - High CodeSize of 15305
+[370/520    0s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/kk9ym2vjo4o9.o
+[372/520    0s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/u0diqxhu3t2i.o
+[386/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/Metadata/global-metadata.dat
+[394/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/Il2CppCCalculateTypeValues.cpp
+[395/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/Il2CppCCalculateFieldValues.cpp
+[396/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/Android/il2cppOutput/build/arm64-v8a/Data/Metadata/global-metadata.dat
+[397/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/Android/il2cppOutput/build/arm64-v8a/Data/Resources/mscorlib.dll-resources.dat
+[405/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/Il2CppCCTypeValuesTable.c
+[407/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/Il2CppTypeDefinitions.c
+[440/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/Il2CppMetadataUsage.c
+[444/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/Assembly-CSharp.cpp
+[464/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/Il2CppRgctxTable.c
+[470/520    0s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/o7732uiapkwj.o
+[474/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/UnityEngine.CoreModule.cpp
+[477/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/Il2CppCCFieldValuesTable.c
+[479/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/Managed/Resources/mscorlib.dll-resources.dat
+[480/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/Il2CppMetadataRegistration.c
+[494/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/UnityEngine.CoreModule_CodeGen.c
+[498/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/il2cppOutput/Il2CppGenericMethodDefinitions.c
+[499/520    0s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/qxei6zir7si1.o
+[500/520    0s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/wmbq7gaz5ut1.o
+[501/520    0s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/cuksxte7ijdi.o
+[502/520    0s] GuidGenerator /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid
+[503/520    0s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/4b525obuxcdo.o
+[504/520    0s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/ocjsbllnr2xg.o
+[505/520    0s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/rku3e1bmtvoa.o
+[506/520    0s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/f34vzzf85hxy.o
+[507/520    0s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/0s7isojqpaii.o
+[508/520    1s] C_Android_arm64 Library/Bee/artifacts/Android/d8kzr/erga9xewsegn.o
+[509/520    0s] Link_Android_arm64 Library/Bee/artifacts/Android/d8kzr/libil2cpp.so
+[510/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/Android/il2cppOutput/build/arm64-v8a/libil2cpp.dbg.so
+[511/520    0s] CopyFiles Library/Bee/artifacts/objcopy_5lmi/libil2cpp.dbg.so
+[512/520    0s] NdkObjCopy Library/Bee/artifacts/objcopy_5lmi/stripped/libil2cpp.so
+[513/520    0s] NdkObjCopy Library/Bee/artifacts/objcopy_5lmi/libil2cpp.sym.so
+[514/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/Android/il2cppOutput/build/arm64-v8a/libil2cpp.sym.so
+[515/520    0s] NdkObjCopy Library/Bee/artifacts/objcopy_5lmi/libil2cpp.so
+[516/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/artifacts/Android/il2cppOutput/build/arm64-v8a/libil2cpp.so
+[517/520    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libil2cpp.so
+*** Tundra requires additional run (2.79 seconds), 55 items updated, 520 evaluated
+*** Additional run caused by: timestamp change of Library/Bee/artifacts/Android/Features/Assembly-CSharp-FeaturesChecked.txt
+Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/AndroidPlayerBuildProgram.exe" "/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Bee:/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline" "Library/Bee/Playerf0c4891e.dag.json" "Library/Bee/Playerf0c4891e-inputdata.json" "Library/Bee/buildprogram2.traceevents"
+WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
+ExitCode: 4 Duration: 2s833ms
+ExitCode: 0 Duration: 0s416ms
+Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --dagfile="Library/Bee/Playerf0c4891e.dag" --dagfilejson="Library/Bee/Playerf0c4891e.dag.json" --profile="Library/Bee/backend4.traceevents" Player
+WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity
 Finished compiling graph: 712 nodes, 1772 flattened edges (1768 ToBuild, 4 ToUse), maximum node priority 329
-[ 44/521    0s] WriteText Library/Bee/artifacts/csharpactions/unity_app_guid_5ewj.info
-[ 91/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/globalgamemanagers.assets.split1
-[ 92/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/globalgamemanagers.assets.split0
-[ 95/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/sharedassets0.assets
-[ 96/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/level0
-[ 97/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/globalgamemanagers.assets.split2
-[520/521    0s] GuidGenerator /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid
-*** Tundra build success (0.10 seconds), 7 items updated, 521 evaluated
+[270/521    0s] CopyFiles /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/icallsummary.txt
+[519/521    0s] Generate Manifests Library/Bee/artifacts/Android/Manifest/IntermediateLauncherManifestDiag.txt (+3 others)
+[520/521    0s] ModifyAndroidProjectCallback /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml (+8 others)
+*** Tundra build success (0.29 seconds), 3 items updated, 521 evaluated
 DisplayProgressbar: Calling IPostGenerateGradleAndroidProject callbacks
 Calling IPostGenerateGradleAndroidProject callbacks on '/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary':
-Android PostProcess task "Calling IPostGenerateGradleAndroidProject callbacks" took 0.6181 ms
+Android PostProcess task "Calling IPostGenerateGradleAndroidProject callbacks" took 0.586 ms
 DisplayProgressbar: Validate Gradle Project
-Android PostProcess task "Validate Gradle Project" took 0.2886 ms
-Android PostProcess task "Unity Services Symbol Upload" took 0.1303 ms
+Android PostProcess task "Validate Gradle Project" took 0.2216 ms
+Android PostProcess task "Unity Services Symbol Upload" took 0.1198 ms
 DisplayProgressbar: Building Gradle project
 Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/OpenJDK/bin/java -classpath "/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Tools/gradle/lib/gradle-launcher-8.13.jar" org.gradle.launcher.GradleMain "-Dorg.gradle.jvmargs=-Xmx4096m" "assembleRelease" 
 WorkingDir: /Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher
 Total cache size 135218632
-Total cache size after purge 135218632, took 00:00:00.0217937
-ExitCode: 0 Duration: 0s211ms
-Android PostProcess task "Building Gradle project" took 25642.5871 ms
+Total cache size after purge 135218632, took 00:00:00.0228172
+ExitCode: 0 Duration: 0s405ms
+Android PostProcess task "Building Gradle project" took 23847.4687 ms
 DisplayProgressbar: Building Gradle Symbols
-Android PostProcess task "Building Gradle Symbols" took 0.352 ms
+Android PostProcess task "Building Gradle Symbols" took 0.175 ms
 DisplayProgressbar: Processing Mapping File
-Android PostProcess task "Processing Mapping File" took 0.3193 ms
+Android PostProcess task "Processing Mapping File" took 0.2079 ms
 DisplayProgressbar: Moving output package(s)
+Deleting file '/Users/fit0721/Documents/GitHub/bigtwo/Unity/Builds/Android/BigTwo.apk'
 Copy '/Users/fit0721/Documents/GitHub/bigtwo/Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/outputs/apk/release/launcher-release.apk' -> 
  '/Users/fit0721/Documents/GitHub/bigtwo/Unity/Builds/Android/BigTwo.apk'
-Android PostProcess task "Moving output package(s)" took 6.824 ms
-Android PostProcess task "Checking Symbols size" took 0.8023 ms
+Android PostProcess task "Moving output package(s)" took 5.2151 ms
+Android PostProcess task "Checking Symbols size" took 0.5486 ms
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 
@@ -2787,32 +2841,31 @@ Used Assets and files from the Resources folder, sorted by uncompressed size:
  0.1 kb	 0.0% Packages/com.unity.ugui/Runtime/UGUI/UI/Core/Mask.cs
  0.1 kb	 0.0% Assets/Scripts/BigTwoGame.cs
 -------------------------------------------------------------------------------
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (0.6 MB). Loaded Objects now: 1031.
-Memory consumption went from 113.6 MB to 113.1 MB.
-Total: 5.681917 ms (FindLiveObjects: 0.028291 ms CreateObjectMapping: 0.007542 ms MarkObjects: 5.187291 ms  DeleteObjects: 0.458167 ms)
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 23 unused Assets / (0.6 MB). Loaded Objects now: 1031.
+Memory consumption went from 112.9 MB to 112.3 MB.
+Total: 5.796667 ms (FindLiveObjects: 0.032042 ms CreateObjectMapping: 0.008250 ms MarkObjects: 5.412625 ms  DeleteObjects: 0.343291 ms)
 
 Build Finished, Result: Success.
 Launching external process: /Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/Resources/Scripting/il2cpp/build/deploy/Analytics
-##utp:{"type":"PlayerBuildInfo","version":2,"phase":"Immediate","time":1770979648719,"processId":5979,"steps":[{"description":"Preprocess Player","duration":4},{"description":"Prepare For Build","duration":4026},{"description":"ProducePlayerScriptAssemblies","duration":772},{"description":"Verify Build setup","duration":9},{"description":"Prepare assets for target platform","duration":1},{"description":"Prepare splash screen","duration":0},{"description":"Building scenes","duration":46},{"description":"Build scripts DLLs","duration":3},{"description":"Build GlobalGameManagers file","duration":59},{"description":"Writing asset files","duration":12},{"description":"Building Resources/unity_builtin_extra","duration":56},{"description":"Write data build dirty tracking information","duration":9},{"description":"Postprocess built player","duration":26948}],"duration":31945}
+##utp:{"type":"PlayerBuildInfo","version":2,"phase":"Immediate","time":1770986605027,"processId":4280,"steps":[{"description":"Preprocess Player","duration":4},{"description":"Prepare For Build","duration":2692},{"description":"ProducePlayerScriptAssemblies","duration":712},{"description":"Verify Build setup","duration":21},{"description":"Prepare assets for target platform","duration":0},{"description":"Prepare splash screen","duration":0},{"description":"Building scenes","duration":41},{"description":"Build scripts DLLs","duration":2},{"description":"Build GlobalGameManagers file","duration":37},{"description":"Writing asset files","duration":12},{"description":"Building Resources/unity_builtin_extra","duration":62},{"description":"Write data build dirty tracking information","duration":5},{"description":"Postprocess built player","duration":29544}],"duration":33132}
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Temp/__Backupscenes/0.backup'
-	Deserialize:            0.225 ms
-	Integration:            2.519 ms
+	Deserialize:            0.206 ms
+	Integration:            2.652 ms
 	Integration of assets:  0.001 ms
 	Thread Wait Time:       0.003 ms
-	Total Operation Time:   2.748 ms
-Unloading 0 unused Assets / (0 B). Loaded Objects now: 1024.
-Memory consumption went from 113.1 MB to 113.1 MB.
-Total: 3.958292 ms (FindLiveObjects: 0.022709 ms CreateObjectMapping: 0.004959 ms MarkObjects: 3.927375 ms  DeleteObjects: 0.003042 ms)
+	Total Operation Time:   2.861 ms
+Unloading 0 unused Assets / (Unknown). Loaded Objects now: 1024.
+Memory consumption went from 112.1 MB to 112.1 MB.
+Total: 3.888458 ms (FindLiveObjects: 0.022916 ms CreateObjectMapping: 0.004917 ms MarkObjects: 3.856625 ms  DeleteObjects: 0.003875 ms)
 
 Android build succeeded: Builds/Android/BigTwo.apk
-Thread 0x16d1d3000 may have been prematurely finalized
 Batchmode quit successfully invoked - shutting down!
 Starting: /Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/OpenJDK/bin/java -classpath "/Applications/Unity/Hub/Editor/6000.3.2f1/PlaybackEngines/AndroidPlayer/Tools/gradle/lib/gradle-launcher-8.13.jar" org.gradle.launcher.GradleMain "-Dorg.gradle.jvmargs=-Xmx4096m" "--stop" 
 WorkingDir: 
-Killing ADB server in 0.014918 seconds.
-Thread 0x16dd2b000 may have been prematurely finalized
+Killing ADB server in 0.014673 seconds.
+Thread 0x16dcaf000 may have been prematurely finalized
 Input System module state changed to: ShutdownInProgress.
 Input System polling thread exited.
 Input System module state changed to: Shutdown.
@@ -2820,8 +2873,8 @@ Input System module state changed to: Shutdown.
 [Physics::Module] Id: 0xf2b8ea05
 [Licensing::IpcConnector] LicenseClient-fit0721-notifications channel disconnected successfully.
 [Licensing::IpcConnector] LicenseClient-fit0721 channel disconnected successfully.
-Thread 0x17e153000 may have been prematurely finalized
-Thread 0x17e1df000 may have been prematurely finalized
+Thread 0x175dd3000 may have been prematurely finalized
+Thread 0x175e5f000 may have been prematurely finalized
 AcceleratorClientConnectionCallback - disconnected - :0
 [40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
       Application is shutting down...

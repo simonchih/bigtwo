@@ -78,6 +78,7 @@ public sealed class BigTwoGame : MonoBehaviour
 
     private void Awake()
     {
+        ConfigureMobileOrientation();
         EnsureCamera();
         Application.targetFrameRate = 60;
         _random = new System.Random();
@@ -90,6 +91,14 @@ public sealed class BigTwoGame : MonoBehaviour
         StartCoroutine(LoadAssetsRoutine());
         StartNewRound();
         Debug.Log($"[BigTwo] Awake complete. dataPath={Application.dataPath}, streamingAssetsPath={Application.streamingAssetsPath}");
+    }
+
+    private static void ConfigureMobileOrientation()
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        // Force landscape on Android so device rotation lock won't keep the game in portrait.
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+#endif
     }
 
     private static void EnsureCamera()

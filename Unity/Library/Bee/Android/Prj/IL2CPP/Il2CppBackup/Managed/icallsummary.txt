@@ -464,6 +464,7 @@ UnityEngine.ResourcesAPIInternal::FindShaderByName_Injected
 UnityEngine.ResourcesAPIInternal::Load_Injected
 UnityEngine.Screen::get_height
 UnityEngine.Screen::get_width
+UnityEngine.Screen::RequestOrientation
 UnityEngine.ScriptableObject::CreateScriptableObjectInstanceFromType_Injected
 UnityEngine.ScriptableObject::CreateScriptableObject
 UnityEngine.Shader::PropertyToID_Injected
