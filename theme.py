@@ -14,7 +14,8 @@ def font(size, serif=False):
     if serif:
         path = pygame.font.match_font('georgia,timesnewroman,dejavuserif')
     else:
-        path = pygame.font.match_font('microsoftjhenghei,notosanscjk,wenquanyizenhei')
+        # Ship the TC face so Chinese works even without system CJK fonts.
+        path = str(ROOT / 'fonts' / 'NotoSansCJKtc-Regular.otf')
     return pygame.font.Font(path or str(ROOT / 'FreeSansBold.ttf'), size)
 
 

@@ -2,10 +2,12 @@ import os
 os.environ['SDL_VIDEODRIVER']='dummy'
 os.environ['SDL_AUDIODRIVER']='dummy'
 import unittest
+import ast
+from unittest.mock import patch
 import pygame
 from main import App
 from game import Game
-from theme import ROOT
+from theme import ROOT, font
 
 class UITests(unittest.TestCase):
     @classmethod
@@ -17,6 +19,20 @@ class UITests(unittest.TestCase):
         for path in (ROOT/'Image').iterdir():
             if path.suffix in ('.png','.gif','.jpg','.ico'):
                 self.assertGreater(pygame.image.load(str(path)).get_width(),0,path.name)
+
+    def test_chinese_glyphs_without_system_fonts(self):
+        # Cover every CJK character used in UI labels and game messages.
+        chars = set()
+        for name in ('main.py', 'game.py'):
+            tree = ast.parse((ROOT / name).read_text(encoding='utf-8'))
+            for node in ast.walk(tree):
+                if isinstance(node, ast.Constant) and isinstance(node.value, str):
+                    chars.update(c for c in node.value if '\u3400' <= c <= '\u9fff')
+        self.assertTrue(chars)
+        with patch('pygame.font.match_font', return_value=None):
+            ui_font = font(19)
+        for char in sorted(chars):
+            self.assertIsNotNone(ui_font.metrics(char)[0], char)
 
     def test_interaction_and_round(self):
         a=self.app

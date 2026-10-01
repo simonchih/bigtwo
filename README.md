@@ -32,7 +32,7 @@ A2345 為最小順子、23456 最大；同型順子比最大牌，A2345 比 5。
 - `theme.py`、`tools/build_assets.py`：精確繪製數字／花色與匯出相容素材。
 - `art/`：畫面截圖、生成提示詞與原程式封存。
 
-中文字型優先使用 Windows 微軟正黑體，Linux 可安裝 Noto Sans CJK 或 WenQuanYi Zen Hei。舊 `dist/main.exe` 是原版封存，不含本次修改；請使用 `play.bat` 或新版原始碼啟動。
+中文介面使用內附的 Noto Sans CJK TC 繁體中文字型，Windows、macOS 與 Linux 均不需另外安裝字型。字型來源為 [Noto CJK](https://github.com/notofonts/noto-cjk/tree/Sans2.004)，授權文件位於 `fonts/OFL.txt`。舊 `dist/main.exe` 是原版封存，不含本次修改；請使用 `play.bat` 或新版原始碼啟動。
 
 ## 驗證與重建
 
@@ -55,4 +55,8 @@ A2345 為最小順子、23456 最大；同型順子比最大牌，A2345 比 5。
 
 自動化環境可使用 `build.bat --no-pause`，成功回傳 0、失敗回傳 1。`BigTwo.spec` 定義單檔、無主控台視窗、內嵌圖示與素材的封裝設定。遊戲規則不受建置影響。
 
-單檔 EXE 啟動時會自動將內嵌資源解壓到系統暫存目錄，因此第一次啟動可能稍慢；不會要求使用者手動解壓。中文字型仍優先使用 Windows 微軟正黑體。
+單檔 EXE 啟動時會自動將內嵌資源解壓到系統暫存目錄，因此第一次啟動可能稍慢；不會要求使用者手動解壓。繁體中文字型與授權文件也已內嵌。
+
+macOS / Linux 使用 `./build.sh` 建置。腳本同樣會建立 `.build-venv`、安裝 `requirements-build.txt`，完成後執行 `./dist/BigTwo`。可用 `PYTHON=/path/to/python3 ./build.sh` 指定建立環境的 Python。
+
+兩個建置腳本均會清除 PyInstaller 快取後重新封裝。缺少繁體中文字型或授權文件時會停止建置，避免產生無法顯示中文的執行檔。執行檔僅適用於建置時的作業系統與 CPU 架構；Windows EXE 需在 Windows 上建置。

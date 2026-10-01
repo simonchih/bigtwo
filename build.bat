@@ -18,13 +18,13 @@ echo [1/2] Installing build dependencies...
 if errorlevel 1 goto failed
 
 echo [2/2] Building standalone BigTwo.exe...
-"%BUILD_PY%" -m PyInstaller --noconfirm "%~dp0BigTwo.spec"
+"%BUILD_PY%" -m PyInstaller --clean --noconfirm "%~dp0BigTwo.spec"
 if errorlevel 1 goto failed
 if not exist "%~dp0dist\BigTwo.exe" goto failed
 
 echo.
 echo Build succeeded: "%~dp0dist\BigTwo.exe"
-echo All game images and the fallback font are embedded in this EXE.
+echo All game images, Traditional Chinese font and font license are embedded in this EXE.
 echo Copy only BigTwo.exe to another Windows computer to play.
 if /i not "%~1"=="--no-pause" pause
 exit /b 0
